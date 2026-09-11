@@ -1,0 +1,8 @@
+export { default as AboutUs } from './AboutUs/AboutUs'
+export { default as Bulletin } from './Bulletin/Bulletin'
+export { default as Committee } from './Committee/Committee'
+export { default as FAQ } from './FAQ/FAQ'
+export { default as Home } from './Home/Home'
+export { default as Maps } from './Maps/Maps'
+export { default as Resources } from './Resources/Resources'
+export { default as StudentSupport } from './StudentSupport/StudentSupport'
