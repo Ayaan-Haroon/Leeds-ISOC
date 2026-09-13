@@ -1,6 +1,11 @@
-// Add the homepage content here, such as the hero section, highlights, and latest updates.
+import Hero from '../../components/layout/Hero'
+
 const Home = () => {
-  return <></>
+  return (
+    <>
+      <Hero />
+    </>
+  )
 }
 
 export default Home
