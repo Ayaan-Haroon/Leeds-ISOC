@@ -1,5 +1,7 @@
-@import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600;700&family=Special+Elite&display=swap');
+
 
 :root {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -25,7 +27,8 @@ body {
 
 @theme {
   --color-isoc-green: #1e4d39;
-  --color-isoc-cream: #f2eae0;
-  --font-display: 'Bodoni Moda', Georgia, serif;
+  --color-isoc-cream: #f4f1ea;
+  --font-display: 'Bodoni Moda', 'Bodoni FLF', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --font-typewriter: 'Special Elite', monospace;
 }
