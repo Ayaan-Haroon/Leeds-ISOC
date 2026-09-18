@@ -7,6 +7,7 @@ const Events = () => {
     <section className="relative isolate min-h-screen overflow-hidden flex flex-col justify-center">
 
       {/* GRAIN OVERLAY */}
+
       <div
         className="absolute inset-0 z-0 opacity-100 mix-blend-multiply pointer-events-none"
         style={{
@@ -18,26 +19,29 @@ const Events = () => {
       />
 
       {/* Main container */}
-      <div className="relative z-10 w-[98%] max-w-[1800px] mx-auto">
+
+      <div className="relative z-10 w-[92%] max-w-[1150px] mx-auto">
 
         {/* TITLE */}
-        <div className="mb-16">
 
-          <p className="font-display font-black text-[#f2eae0] text-4xl leading-none">
+        <div className="mb-10">
+
+          <p className="font-display font-black text-[#f2eae0] text-3xl leading-none">
             UPCOMING
           </p>
 
-          <h1 className="font-display font-black text-[#f2eae0] text-[clamp(4.2rem,9.6vw,8.4rem)] leading-[0.9] -mt-2">
+          <h1 className="font-display font-black text-[#f2eae0] text-[clamp(3.5rem,7.5vw,6.5rem)] leading-[0.9] -mt-2">
             EVENTS
           </h1>
 
         </div>
 
-
         {/* EVENT CARDS */}
+
         <div className="relative flex items-start justify-center">
 
           {/* CARD 1 */}
+
           <EventCard
             topEvent={{
               day: "24",
@@ -47,6 +51,7 @@ const Events = () => {
               description: "lorem ipsum dolor sit amet consectetur adipiscing elit laborum o facere animi reprehenderit nisi velit corrupti id d",
               location: "Leeds University Union",
             }}
+
             bottomEvent={{
               day: "28",
               suffix: "th",
@@ -55,11 +60,12 @@ const Events = () => {
               description: "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat a assumenda facere animi reprehenderit nisi velit corrupti id d",
               location: "Leeds University",
             }}
+
             rotate="-rotate-11 z-10 -mr-[1.5vw]"
           />
 
-
           {/* CARD 2 — HIGHER */}
+
           <EventCard
             topEvent={{
               day: "2",
@@ -69,6 +75,7 @@ const Events = () => {
               description: "lorem ipsum dolor sit amet consectetur veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
               location: "Leeds University Union",
             }}
+
             bottomEvent={{
               day: "5",
               suffix: "th",
@@ -77,11 +84,12 @@ const Events = () => {
               description: "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
               location: "Leeds",
             }}
-            rotate="rotate-1 z-20 -mr-[1.5vw] -translate-y-[12rem]"
+
+            rotate="rotate-1 z-20 -mr-[1.5vw] -translate-y-[6rem]"
           />
 
-
           {/* CARD 3 */}
+
           <EventCard
             topEvent={{
               day: "10",
@@ -91,6 +99,7 @@ const Events = () => {
               description: "sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
               location: "Leeds University",
             }}
+
             bottomEvent={{
               day: "12",
               suffix: "th",
@@ -99,13 +108,13 @@ const Events = () => {
               description: "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam re animi reprehenderit nisi velit corrupti id d",
               location: "Leeds University Union",
             }}
+
             rotate="rotate-11 z-30 -mr-[1.5vw]"
           />
 
         </div>
 
       </div>
-
     </section>
   )
 }
