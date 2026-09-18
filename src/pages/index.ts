@@ -1,4 +1,5 @@
 export { default as AboutUs } from './AboutUs/AboutUs'
+export { default as AboutUs2 } from './AboutUs/AboutUs2'
 export { default as Bulletin } from './Bulletin/Bulletin'
 export { default as Committee } from './Committee/Committee'
 export { default as FAQ } from './FAQ/FAQ'
