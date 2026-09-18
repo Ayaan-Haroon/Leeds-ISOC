@@ -6,7 +6,6 @@ const Hero = () => {
       className="
         relative
         min-h-screen
-        bg-isoc-green
         overflow-hidden
         isolate
         flex
@@ -24,19 +23,14 @@ const Hero = () => {
           ========================= */}
 
       <div
-        className="
-          absolute
-          inset-0
-          z-0
-          pointer-events-none
-          opacity-[0.12]
-          mix-blend-soft-light
-          bg-[url('/images/home/isocbitstrans/grain.png')]
-          bg-repeat
-          bg-[length:300px_300px]
-        "
+        className="absolute inset-0 z-0 opacity-100 mix-blend-multiply pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/home/stickers-n-that/darkone.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       />
-
 
       {/* =========================
           TITLE
@@ -52,9 +46,9 @@ const Hero = () => {
             tracking-[-0.01em]
             leading-[0.30]
             mb-1
-            text-[clamp(1rem,6vw,2.2rem)]
-            lg:text-[clamp(1.5rem,4vw,3.2rem)]
-            2xl:text-[clamp(3.2rem,3vw,4.5rem)]
+            text-[clamp(1.25rem,7.5vw,2.75rem)]
+            lg:text-[clamp(1.875rem,5vw,4rem)]
+            2xl:text-[clamp(4rem,3.75vw,5.625rem)]
           "
         >
           WELCOME TO
@@ -67,16 +61,15 @@ const Hero = () => {
             text-isoc-cream
             leading-[1.2]
             tracking-[-0.1em]
-            text-[clamp(2.5rem,10vw,6rem)]
-            lg:text-[clamp(6rem,9vw,10rem)]
-            2xl:text-[clamp(10rem,8vw,13rem)]
+            text-[clamp(3.125rem,12.5vw,7.5rem)]
+            lg:text-[clamp(7.5rem,11.25vw,12.5rem)]
+            2xl:text-[clamp(12.5rem,10vw,16.25rem)]
           "
         >
           LEEDS ISOC
         </h1>
 
       </div>
-
 
       {/* =========================
           BUILDINGS — BOTTOM CORNERS
@@ -90,7 +83,7 @@ const Hero = () => {
           bottom-0
           left-0
           z-20
-          w-[62vw]
+          w-[58.9vw]
           drop-shadow-lg
         "
       />
@@ -103,11 +96,10 @@ const Hero = () => {
           bottom-0
           right-0
           z-10
-          w-[44vw]
+          w-[41.8vw]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           GIRLS WALKING
@@ -121,12 +113,11 @@ const Hero = () => {
           bottom-[0%]
           right-[0%]
           z-30
-          w-[24vw]
+          w-[22.8vw]
           max-w-[900px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           BIRDS
@@ -140,12 +131,11 @@ const Hero = () => {
           top-[30%]
           left-[35%]
           z-30
-          w-[20vw]
+          w-[19vw]
           max-w-[800px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           EXCLAMATION MARKS
@@ -159,12 +149,11 @@ const Hero = () => {
           bottom-[40%]
           right-[34%]
           z-30
-          w-[9vw]
+          w-[8.55vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           BOOKS
@@ -178,12 +167,11 @@ const Hero = () => {
           bottom-[18%]
           right-[30%]
           z-30
-          w-[14vw]
+          w-[13.3vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           MOON
@@ -197,12 +185,11 @@ const Hero = () => {
           bottom-[12%]
           right-[35%]
           z-30
-          w-[8vw]
+          w-[7.6vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           DUAS
@@ -216,12 +203,11 @@ const Hero = () => {
           bottom-[18%]
           right-[40%]
           z-25
-          w-[18vw]
+          w-[17.1vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           SAJDA FIGURE
@@ -235,12 +221,11 @@ const Hero = () => {
           bottom-[0%]
           left-[18%]
           z-30
-          w-[20vw]
+          w-[19vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           TEA HANDS
@@ -254,12 +239,11 @@ const Hero = () => {
           bottom-[14%]
           left-[12%]
           z-30
-          w-[10vw]
+          w-[9.5vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           PALESTINE
@@ -273,12 +257,11 @@ const Hero = () => {
           bottom-[0%]
           left-[2%]
           z-25
-          w-[14vw]
+          w-[13.3vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
-
 
       {/* =========================
           MEGAPHONE
@@ -292,14 +275,13 @@ const Hero = () => {
           bottom-[40%]
           left-[0%]
           z-30
-          w-[12vw]
+          w-[11.4vw]
           max-w-[1000px]
           drop-shadow-lg
         "
       />
 
     </section>
-
   )
 }
 

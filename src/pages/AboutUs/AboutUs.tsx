@@ -8,6 +8,7 @@ const AboutUs = () => {
       <section
         className="
           relative
+          isolate
           h-[100vh]
           bg-cover
           bg-center
@@ -15,12 +16,26 @@ const AboutUs = () => {
           items-center
           justify-center
           px-8
+          overflow-hidden
         "
         style={{ backgroundImage: "url('/images/home/isocbitstrans/aboutusfr.png')" }}
       >
 
+         {/* GRAIN OVERLAY */}
+        <div
+          className="absolute inset-0 z-0 opacity-100 mix-blend-multiply pointer-events-none"
+          style={{
+            backgroundImage: "url('/images/home/stickers-n-that/beige-paper.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
         <h1
           className="
+            relative
+            z-10
             font-display
             font-black
             text-isoc-cream
@@ -37,10 +52,21 @@ const AboutUs = () => {
 
 
       {/* Polaroid scatter section */}
-      <section className="relative min-h-screen bg-isoc-cream overflow-hidden">
+      <section className="relative isolate min-h-screen overflow-hidden">
+
+        {/* GRAIN OVERLAY */}
+        <div
+          className="absolute inset-0 z-0 opacity-30 mix-blend-multiply pointer-events-none"
+          style={{
+            backgroundImage: "url('/images/home/stickers-n-that/beige-paper.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
 
         {/* Leeds ISOC text */}
-        <div className="absolute top-[12%] left-[8%] w-[50%] max-w-[800px]">
+        <div className="absolute z-10 top-[12%] left-[8%] w-[50%] max-w-[800px]">
 
           <div className="flex items-center gap-5 mb-4">
 
@@ -68,7 +94,7 @@ const AboutUs = () => {
 
 
         {/* Our mission text */}
-        <div className="absolute top-[50%] right-[10%] w-[45%] max-w-[700px]">
+        <div className="absolute z-10 top-[50%] right-[10%] w-[45%] max-w-[700px]">
 
           <div className="flex items-center gap-5 mb-4">
 
@@ -94,7 +120,7 @@ const AboutUs = () => {
 
 
         {/* Bottom-left polaroid */}
-        <div className="absolute bottom-[8%] left-[3%] bg-white p-3 pb-8 -rotate-[6deg] shadow-xl w-[32vw] max-w-[460px]">
+        <div className="absolute z-10 bottom-[8%] left-[3%] bg-white p-3 pb-8 -rotate-[6deg] shadow-xl w-[32vw] max-w-[460px]">
 
           <img
             src="/images/home/isocbitstrans/trimmed-girls.png"

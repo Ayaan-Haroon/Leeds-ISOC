@@ -4,10 +4,21 @@ const Events = () => {
 
   return (
 
-    <section className="relative min-h-screen bg-[#60785e] overflow-hidden flex flex-col justify-center">
+    <section className="relative isolate min-h-screen overflow-hidden flex flex-col justify-center">
+
+      {/* GRAIN OVERLAY */}
+      <div
+        className="absolute inset-0 z-0 opacity-100 mix-blend-multiply pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/home/stickers-n-that/light-green-paper.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
 
       {/* Main container */}
-      <div className="w-[98%] max-w-[1800px] mx-auto">
+      <div className="relative z-10 w-[98%] max-w-[1800px] mx-auto">
 
         {/* TITLE */}
         <div className="mb-16">

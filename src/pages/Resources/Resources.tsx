@@ -4,6 +4,17 @@ const Resources = () => {
 
     <section className="relative min-h-screen bg-[#f2eae0] overflow-hidden">
 
+      {/* GRAIN OVERLAY */}
+        <div
+          className="absolute inset-0 z-0 opacity-80 mix-blend-multiply pointer-events-none"
+          style={{
+            backgroundImage: "url('/images/home/stickers-n-that/beige-paper.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
       {/* SOCIAL MEDIA */}
       <div className="absolute left-[5%] top-[3%] z-20 flex flex-col items-center gap-8">
 

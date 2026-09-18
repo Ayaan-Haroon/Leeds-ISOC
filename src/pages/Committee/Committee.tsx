@@ -25,10 +25,21 @@ const Committee = () => {
 
   return (
 
-    <section className="relative min-h-screen bg-[#254c3a] overflow-hidden flex flex-col">
+    <section className="relative isolate min-h-screen bg-[#fff]  overflow-hidden flex flex-col">
+
+      {/* GRAIN OVERLAY */}
+      <div
+        className="absolute inset-0 z-0 opacity-90 mix-blend-multiply pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/home/stickers-n-that/darkone.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
 
       {/* CARDS AREA */}
-      <div className="relative flex-1 flex items-center justify-center">
+      <div className="relative z-10 flex-1 flex items-center justify-center">
 
         {/* LEFT ARROW */}
         <button
@@ -119,7 +130,7 @@ const Committee = () => {
 
 
       {/* TITLE */}
-      <div className="w-full text-center pb-8">
+      <div className="relative z-10 w-full text-center pb-8">
 
         <h1 className="font-display font-black text-[#f2eae0] text-[clamp(5rem,12vw,9.6rem)] leading-[0.8] uppercase">
           COMMITTEE
