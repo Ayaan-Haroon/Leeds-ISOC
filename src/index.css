@@ -28,7 +28,36 @@ body {
 @theme {
   --color-isoc-green: #1e4d39;
   --color-isoc-cream: #f4f1ea;
-  --font-display: 'Bodoni Moda', 'Bodoni FLF', Georgia, serif;
+  --font-display: 'Bodoni FLF', 'Bodoni Moda',  Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-typewriter: 'Special Elite', monospace;
+}
+
+
+@font-face {
+  font-family: 'Bodoni FLF';
+  src: url('/fonts/BodoniFLF-Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bodoni FLF';
+  src: url('public/fonts/bodoni-FLF/BodoniFLF-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bodoni FLF';
+  src: url('/fonts/BodoniFLF-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Bodoni FLF';
+  src: url('/fonts/BodoniFLF-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
 }
