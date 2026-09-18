@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import { AboutUs, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ} from './pages'
-
-=======
-import { AboutUs,AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport} from './pages'
->>>>>>> 3520042 (yh I coded on main again lol)
+import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ } from './pages'
 
 function App() {
   return (
