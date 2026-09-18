@@ -1,4 +1,4 @@
-import { AboutUs,AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport} from './pages'
+import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ } from './pages'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Committee/>
       <Resources/>
       <Maps/>
+      <FAQ />
     </>
   )
 }
