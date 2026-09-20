@@ -1,10 +1,11 @@
-import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ } from './pages'
+import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer, Navbar } from './pages'
 import GetInvolved from './pages/GetInvolved/GetInvolved'
 import OurSponsors from './pages/OurSponsors/OurSponsors'
 
 function App() {
   return (
     <>
+      {/* <Navbar/> */}
       <Home />
       <Announcements/>
       <AboutUs />
@@ -17,6 +18,8 @@ function App() {
       <OurSponsors/>
       <Maps/>
       <FAQ />
+      <Footer/>
+      
     </>
   )
 }
