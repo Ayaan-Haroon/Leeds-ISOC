@@ -28,7 +28,7 @@ const Maps = () => {
               <img
                 src="/images/home/isocbitstrans/lgm.jpg"
                 alt="Leeds Grand Mosque"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
               />
             </div>
 
@@ -57,7 +57,7 @@ const Maps = () => {
               <img
                 src="/images/home/isocbitstrans/makkah-masjid.jpg"
                 alt="Makkah Masjid"
-                className="w-full h-full object-cover"
+                className=" drop-shadow-[0_3px_4px_rgba(0,0,0,1)] w-full h-full object-cover"
               />
             </div>
 
@@ -157,6 +157,7 @@ const Maps = () => {
               tracking-[-7px]
               uppercase
               whitespace-nowrap
+               drop-shadow-[0_3px_4px_rgba(0,0,0,0.5)]
             "
           >
             MOSQUES &amp; MAPS
@@ -198,7 +199,22 @@ const Maps = () => {
           />
 
           {/* TRANSPARENT MAP IMAGE */}
-          <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <div
+            className="
+              absolute
+              inset-0
+              z-10
+              flex
+              items-center
+              justify-center
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+              cursor-pointer
+            "
+          >
             <img
               src="/images/home/isocbitstrans/leeds-map.png"
               alt="Map of Leeds"
