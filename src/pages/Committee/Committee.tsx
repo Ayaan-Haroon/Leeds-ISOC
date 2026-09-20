@@ -5,12 +5,202 @@ const Committee = () => {
   const [areCardsVisible, setAreCardsVisible] = useState(false)
 
   const cards = [
+{
+  id: 1,
+  name: 'Ayaan Haroon',
+  role: 'Official Tek Bro',
+  image: '/images/prettypretty.jpg',
+  description:
+    "Ayaan is a nice guy but he's a bit smelly. He lets me sleep over at his so I guess he's alright. Decent guy fr.\n\nAyaan doesn't eat enough sweet treats. If I were Ayaan I'd still be skinny but I'd have blocked arteries. My glucose levels aren't as bad as they could be because when I put on weight I think, OH NO! My sweet treats, how could they betray me like this :(\n\nThen I try to stop eating them for a while. Anyways, as I say. I love sweet things. The best version of things in this world are sweet. Sweet treats, sweet smells, sweet people.",
+  angle: '-rotate-4',
+},
     {
-      id: 1,
+      id: 2,
+      name: 'Person 2',
+      role: 'Role 2',
+      image: '/images/committee/person-2.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 3,
+      name: 'Person 3',
+      role: 'Role 3',
+      image: '/images/committee/person-3.jpg',
+      description:
+        'Committee member description goes here.',
       angle: '-rotate-4',
     },
     {
-      id: 2,
+      id: 4,
+      name: 'Person 4',
+      role: 'Role 4',
+      image: '/images/committee/person-4.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 5,
+      name: 'Person 5',
+      role: 'Role 5',
+      image: '/images/committee/person-5.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 6,
+      name: 'Person 6',
+      role: 'Role 6',
+      image: '/images/committee/person-6.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 7,
+      name: 'Person 7',
+      role: 'Role 7',
+      image: '/images/committee/person-7.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 8,
+      name: 'Person 8',
+      role: 'Role 8',
+      image: '/images/committee/person-8.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 9,
+      name: 'Person 9',
+      role: 'Role 9',
+      image: '/images/committee/person-9.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 10,
+      name: 'Person 10',
+      role: 'Role 10',
+      image: '/images/committee/person-10.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 11,
+      name: 'Person 11',
+      role: 'Role 11',
+      image: '/images/committee/person-11.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 12,
+      name: 'Person 12',
+      role: 'Role 12',
+      image: '/images/committee/person-12.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 13,
+      name: 'Person 13',
+      role: 'Role 13',
+      image: '/images/committee/person-13.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 14,
+      name: 'Person 14',
+      role: 'Role 14',
+      image: '/images/committee/person-14.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 15,
+      name: 'Person 15',
+      role: 'Role 15',
+      image: '/images/committee/person-15.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 16,
+      name: 'Person 16',
+      role: 'Role 16',
+      image: '/images/committee/person-16.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 17,
+      name: 'Person 17',
+      role: 'Role 17',
+      image: '/images/committee/person-17.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 18,
+      name: 'Person 18',
+      role: 'Role 18',
+      image: '/images/committee/person-18.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 19,
+      name: 'Person 19',
+      role: 'Role 19',
+      image: '/images/committee/person-19.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 20,
+      name: 'Person 20',
+      role: 'Role 20',
+      image: '/images/committee/person-20.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: 'rotate-4',
+    },
+    {
+      id: 21,
+      name: 'Person 21',
+      role: 'Role 21',
+      image: '/images/committee/person-21.jpg',
+      description:
+        'Committee member description goes here.',
+      angle: '-rotate-4',
+    },
+    {
+      id: 22,
+      name: 'Person 22',
+      role: 'Role 22',
+      image: '/images/committee/person-22.jpg',
+      description:
+        'Committee member description goes here.',
       angle: 'rotate-4',
     },
   ]
@@ -20,7 +210,9 @@ const Committee = () => {
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length)
+    setCurrentIndex(
+      (prev) => (prev - 1 + cards.length) % cards.length
+    )
   }
 
   useEffect(() => {
@@ -32,8 +224,6 @@ const Committee = () => {
       const rect = committee.getBoundingClientRect()
       const vh = window.innerHeight
 
-      // Trigger when the Committee section
-      // is around 30% into the viewport.
       if (rect.top <= vh * 0.7) {
         setAreCardsVisible(true)
       }
@@ -47,6 +237,9 @@ const Committee = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [areCardsVisible])
+
+  // This is the person currently shown on the front card.
+  const currentCard = cards[currentIndex]
 
   return (
     <section
@@ -177,9 +370,7 @@ const Committee = () => {
 
       <div className="relative z-10 flex-1 flex items-center justify-center">
 
-        {/* =========================
-            LEFT ARROW
-            ========================= */}
+        {/* LEFT ARROW */}
 
         <button
           onClick={prevSlide}
@@ -205,33 +396,8 @@ const Committee = () => {
 
         <div className="relative w-[70vw] max-w-[800px] h-[55vh]">
 
-          {/* =========================
-              BACK CARD
-              ========================= */}
+          {/* BACK CARD */}
 
-          <div
-            className={`
-              absolute
-              inset-0
-              bg-[#f2e2d3]
-              border-[7px]
-              border-white
-              shadow-[0_12px_24px_rgba(0,0,0,0.3)]
-              ${cards[currentIndex].angle}
-              committee-back-card
-              transition-all
-              duration-300
-              ease-out
-              hover:-translate-y-2
-              hover:shadow-[0_20px_32px_rgba(0,0,0,0.45)]
-              cursor-pointer
-              ${areCardsVisible ? 'animate' : ''}
-            `}
-          />
-
-          {/* =========================
-              FRONT CARD
-              ========================= */}
 
           <div
             className={`
@@ -242,6 +408,29 @@ const Committee = () => {
               border-white
               shadow-[0_12px_24px_rgba(0,0,0,0.3)]
               ${cards[(currentIndex + 1) % cards.length].angle}
+              committee-back-card
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:shadow-[0_20px_32px_rgba(0,0,0,0.45)]
+              cursor-pointer
+              ${areCardsVisible ? 'animate' : ''}
+            `}
+          >
+          </div>
+
+          {/* FRONT CARD */}
+
+          <div
+            className={`
+              absolute
+              inset-0
+              bg-[#f2e2d3]
+              border-[7px]
+              border-white
+              shadow-[0_12px_24px_rgba(0,0,0,0.3)]
+              ${currentCard.angle}
               scale-[0.96]
               overflow-hidden
               committee-front-card
@@ -256,7 +445,7 @@ const Committee = () => {
           >
 
             {/* =========================
-                LEFT SIDE — IMAGE
+                LEFT SIDE — PERSON IMAGE
                 ========================= */}
 
             <div
@@ -271,8 +460,8 @@ const Committee = () => {
               "
             >
               <img
-                src="/images/prettypretty.jpg"
-                alt="Committee member"
+                src={currentCard.image}
+                alt={currentCard.name}
                 className="
                   w-full
                   h-full
@@ -283,7 +472,7 @@ const Committee = () => {
             </div>
 
             {/* =========================
-                RIGHT SIDE — TEXT
+                RIGHT SIDE — PERSON INFO
                 ========================= */}
 
             <div
@@ -302,9 +491,7 @@ const Committee = () => {
               "
             >
 
-              {/* =========================
-                  NAME + ROLE + STAMP
-                  ========================= */}
+              {/* NAME + ROLE + STAMP */}
 
               <div
                 className="
@@ -336,7 +523,7 @@ const Committee = () => {
                       whitespace-nowrap
                     "
                   >
-                    Ayaan Haroon
+                    {currentCard.name}
                   </h2>
 
                   <p
@@ -351,13 +538,11 @@ const Committee = () => {
                       leading-none
                     "
                   >
-                    Official Tek Bro
+                    {currentCard.role}
                   </p>
                 </div>
 
-                {/* =========================
-                    STAMP
-                    ========================= */}
+                {/* STAMP */}
 
                 <div
                   className="
@@ -403,17 +588,10 @@ const Committee = () => {
                     text-[15px]
                     leading-[1.35]
                     text-center
+                    whitespace-pre-line
                   "
                 >
-                  Ayaan is nice guy but he's a bit smelly. 
-                  He lets me sleep over at his so I guess he's alright
-                  Decent guy fr. 
-                  <br />
-                  <br />
-                  Ayaan doesn't eat enough sweet treats. If I were Ayaan I'd still be skinny but I'd have blocked arteries. My glucose levels aren't as bad as they could be becuase when I put on weight I think, OH NO! my sweet treats, how could they betray me like htis :( then I try to stop eating them for a while
-                  <br />
-                  <br />
-                  Anyways, as I say. I love sweet things. The best version of things in this world are sweet. Sweet treats, sweet smells, sweet people. 
+                  {currentCard.description}
                 </p>
               </div>
 
@@ -422,9 +600,7 @@ const Committee = () => {
           </div>
         </div>
 
-        {/* =========================
-            RIGHT ARROW
-            ========================= */}
+        {/* RIGHT ARROW */}
 
         <button
           onClick={nextSlide}

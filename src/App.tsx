@@ -6,6 +6,7 @@ import { Footer } from './pages'
 function App() {
   return (
     <>
+      {/* <Navbar/> */}
       <Home />
       <Announcements/>
       <AboutUs />
@@ -19,6 +20,7 @@ function App() {
       <Maps/>
       <FAQ />
       <Footer/>
+      
     </>
   )
 }
