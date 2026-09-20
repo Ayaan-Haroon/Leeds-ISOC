@@ -34,6 +34,7 @@ export default function FAQ() {
   return (
     <main
       className="
+        faq-page
         relative
         min-h-screen
         w-full
@@ -47,7 +48,7 @@ export default function FAQ() {
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
-      <div className="relative min-h-screen w-full">
+      <div className="faq-content relative min-h-screen w-full">
 
         {/* =========================================
             NOTEPAD
@@ -76,6 +77,7 @@ export default function FAQ() {
           />
         </div>
 
+
         {/* =========================================
             PICTURE CARD
         ========================================== */}
@@ -95,6 +97,7 @@ export default function FAQ() {
           <div className="relative w-full">
 
             {/* White picture card */}
+
             <img
               src="/images/FAQ/piccard.png"
               alt=""
@@ -104,6 +107,7 @@ export default function FAQ() {
                 object-contain
               "
             />
+
 
             {/* =====================================
                 MOSQUE IMAGE
@@ -131,6 +135,7 @@ export default function FAQ() {
               />
             </div>
 
+
             {/* =====================================
                 FAQ TITLE
             ====================================== */}
@@ -138,27 +143,38 @@ export default function FAQ() {
             <div
               className="
                 absolute
-                left-[24%]
-                top-[78%]
+                left-[10%]
+                top-[77%]
                 z-30
                 flex
-                w-[54%]
+                w-[80%]
                 items-center
                 justify-center
               "
             >
-              <img
-                src="/images/FAQ/faq.png"
-                alt="FAQs"
+              <h1
                 className="
-                  block
-                  w-full
-                  object-contain
+                  whitespace-nowrap
+                  text-[7rem]
+                  font-bold
+                  leading-[0.8]
+                  tracking-[-0.07em]
+                  text-[#1f513f]
+                  md:text-[8rem]
+                  lg:text-[9rem]
+                  xl:text-[10rem]
                 "
-              />
+                style={{
+                  fontFamily: "'Bodoni FLF', serif",
+                }}
+              >
+                FAQS
+              </h1>
             </div>
+
           </div>
         </div>
+
 
         {/* =========================================
             FAQ QUESTIONS
@@ -166,6 +182,7 @@ export default function FAQ() {
 
         <section
           className="
+            faq-questions
             absolute
             left-[5%]
             top-1/2
@@ -181,7 +198,11 @@ export default function FAQ() {
             return (
               <div
                 key={faq.question}
-                className="border-b-2 border-white/60"
+                className="
+                  border-b-[5px]
+                  border-white/80
+                  last:border-b-[5px]
+                "
               >
                 <button
                   type="button"
@@ -194,47 +215,61 @@ export default function FAQ() {
                     items-center
                     justify-between
                     gap-6
-                    py-7
+                    py-[2rem]
                     text-left
+                    transition-opacity
+                    duration-200
+                    hover:opacity-80
                   "
                 >
+
+                  {/* QUESTION */}
+
                   <span
                     className="
-                      font-serif
-                      text-[1.6rem]
-                      leading-tight
-                      text-white
-                      md:text-[1.8rem]
+                      text-[2rem]
+                      font-medium
+                      leading-[1.1]
+                      tracking-[-0.025em]
+                      text-[#f2eae0]
+                      md:text-[2.25rem]
                     "
+                    style={{
+                      fontFamily: "'Bodoni FLF', serif",
+                    }}
                   >
                     {faq.question}
                   </span>
 
+
+                  {/* PLUS */}
+
                   <span
-                    className={`
+                    className="
                       flex
-                      h-11
-                      w-11
                       shrink-0
                       items-center
                       justify-center
-                      rounded-full
-                      border-2
-                      border-white
-                      text-3xl
+                      text-[2.7rem]
                       font-light
                       leading-none
-                      text-white
+                      text-[#f2eae0]
                       transition-transform
                       duration-300
-                      ${isOpen ? "rotate-45" : "rotate-0"}
-                    `}
+                    "
+                    style={{
+                      transform: isOpen
+                        ? "rotate(45deg)"
+                        : "rotate(0deg)",
+                    }}
                   >
-                    <span className="-mt-1">+</span>
+                    +
                   </span>
                 </button>
 
-                {/* Answer */}
+
+                {/* ANSWER */}
+
                 <div
                   className={`
                     grid
@@ -251,13 +286,14 @@ export default function FAQ() {
                   <div className="overflow-hidden">
                     <p
                       className="
-                        max-w-[600px]
+                        max-w-[570px]
                         pb-8
                         pr-12
                         font-sans
-                        text-base
-                        leading-relaxed
-                        text-white/80
+                        text-[1rem]
+                        font-medium
+                        leading-[1.55]
+                        text-[#f2eae0]/85
                       "
                     >
                       {faq.answer}
@@ -268,6 +304,7 @@ export default function FAQ() {
             );
           })}
         </section>
+
       </div>
     </main>
   );

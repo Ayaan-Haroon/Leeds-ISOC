@@ -156,6 +156,7 @@ const AboutUs2 = () => {
   return (
     <section
       className="
+        about-us-collage
         relative
         min-h-screen
         bg-[#f2eae0]
