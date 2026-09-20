@@ -4,6 +4,7 @@ export default function GetInvolved() {
   return (
     <main
       className="
+        get-involved-page
         relative
         min-h-screen
         w-full
@@ -17,7 +18,7 @@ export default function GetInvolved() {
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
-      <div className="relative min-h-screen w-full">
+      <div className="get-involved-artboard relative min-h-screen w-full">
 
         {/* =====================================================
             LEFT 50% — COLLAGE
@@ -25,6 +26,7 @@ export default function GetInvolved() {
 
         <div
           className="
+            get-involved-collage
             absolute
             left-0
             top-0
@@ -53,6 +55,7 @@ export default function GetInvolved() {
 
         <div
           className="
+            get-involved-content
             absolute
             right-0
             top-0
@@ -110,6 +113,7 @@ export default function GetInvolved() {
 
           <div
             className="
+              get-involved-options
               absolute
               bottom-[9%]
               left-[7%]

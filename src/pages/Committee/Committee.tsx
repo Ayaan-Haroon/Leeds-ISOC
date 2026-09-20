@@ -245,6 +245,7 @@ const Committee = () => {
     <section
       className="
         committee-trigger
+        committee-section
         relative
         isolate
         min-h-screen
@@ -368,7 +369,7 @@ const Committee = () => {
           CARDS AREA
           ========================= */}
 
-      <div className="relative z-10 flex-1 flex items-center justify-center">
+      <div className="committee-cards relative z-10 flex-1 flex items-center justify-center">
 
         {/* LEFT ARROW */}
 
@@ -394,7 +395,7 @@ const Committee = () => {
             CARDS
             ========================= */}
 
-        <div className="relative w-[70vw] max-w-[800px] h-[55vh]">
+        <div className="committee-card relative w-[70vw] max-w-[800px] h-[55vh]">
 
           {/* BACK CARD */}
 
