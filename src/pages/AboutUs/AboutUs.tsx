@@ -30,7 +30,7 @@ const AboutUs = () => {
           tracking-[-0.08em]
           text-[clamp(3rem,8vw,8rem)]
           text-center
-          drop-shadow-[0_4px_8px_rgba(0,0,0,0.45)]
+          drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]
         "
       >
         ABOUT US

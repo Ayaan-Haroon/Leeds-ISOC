@@ -227,8 +227,7 @@ const Hero = () => {
 
         {/* WELCOME TO */}
 
-        <p
-
+       <p
           className="
             font-display
             font-black
@@ -237,22 +236,14 @@ const Hero = () => {
             leading-[0.30]
             mb-1
             text-[clamp(1.25rem,4.2rem,3.6rem)]
+            drop-shadow-[0_3px_4px_rgba(0,0,0,0.5)]
           "
-
         >
-
           WELCOME TO
-
         </p>
 
-
-
-
-
         {/* LEEDS ISOC */}
-
         <h1
-
           className="
             font-display
             font-black
@@ -260,12 +251,10 @@ const Hero = () => {
             leading-[1.1]
             tracking-[-0.1em]
             text-[clamp(3.125rem,10.2rem,10.2rem)]
+            drop-shadow-[0_4px_5px_rgba(0,0,0,0.5)]
           "
-
         >
-
           LEEDS ISOC
-
         </h1>
 
       </div>

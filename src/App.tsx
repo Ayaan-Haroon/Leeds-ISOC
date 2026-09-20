@@ -1,6 +1,7 @@
 import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ } from './pages'
 import GetInvolved from './pages/GetInvolved/GetInvolved'
 import OurSponsors from './pages/OurSponsors/OurSponsors'
+import { Footer } from './pages'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <OurSponsors/>
       <Maps/>
       <FAQ />
+      <Footer/>
     </>
   )
 }

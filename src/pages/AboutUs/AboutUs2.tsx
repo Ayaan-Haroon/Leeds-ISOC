@@ -6,12 +6,20 @@ const AboutUs2 = () => {
   const [isPlasterVisible, setIsPlasterVisible] = useState(false)
   const [areStarsVisible, setAreStarsVisible] = useState(false)
 
+  const [isQuranTextVisible, setIsQuranTextVisible] = useState(false)
+  const [isHadithTextVisible, setIsHadithTextVisible] = useState(false)
+  const [isDescriptionTextVisible, setIsDescriptionTextVisible] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
       const thumbpin = document.querySelector('.thumbpin-trigger')
       const flower = document.querySelector('.flower-trigger')
       const plaster = document.querySelector('.plaster-trigger')
       const stars = document.querySelector('.stars-trigger')
+
+      const quranText = document.querySelector('.quran-text-trigger')
+      const hadithText = document.querySelector('.hadith-text-trigger')
+      const descriptionText = document.querySelector('.description-text-trigger')
 
       // =========================
       // THUMB PIN — fires as soon as it enters viewport
@@ -37,34 +45,81 @@ const AboutUs2 = () => {
       }
 
       // =========================
-// GREEN PLASTER — delayed slightly more than before
-// GATED: only after flower has fired
-// =========================
-if (plaster && !isPlasterVisible && isFlowerVisible) {
-  const rect = plaster.getBoundingClientRect()
+      // GREEN PLASTER — delayed slightly more than before
+      // GATED: only after flower has fired
+      // =========================
+      if (plaster && !isPlasterVisible && isFlowerVisible) {
+        const rect = plaster.getBoundingClientRect()
 
-  if (rect.top <= window.innerHeight * 0.65) {
-    setIsPlasterVisible(true)
-  }
-}
+        if (rect.top <= window.innerHeight * 0.65) {
+          setIsPlasterVisible(true)
+        }
+      }
 
-// =========================
-// STARS — delayed slightly more than before
-// GATED: only after plaster has fired
-// =========================
-if (stars && !areStarsVisible && isPlasterVisible) {
-  const rect = stars.getBoundingClientRect()
+      // =========================
+      // STARS — delayed slightly more than before
+      // GATED: only after plaster has fired
+      // =========================
+      if (stars && !areStarsVisible && isPlasterVisible) {
+        const rect = stars.getBoundingClientRect()
 
-  if (rect.top <= window.innerHeight * 0.65) {
-    setAreStarsVisible(true)
-  }
-}
+        if (rect.top <= window.innerHeight * 0.65) {
+          setAreStarsVisible(true)
+        }
+      }
+
+      // =========================
+      // QUR'AN TEXT — STICKS ON
+      // =========================
+      if (quranText && !isQuranTextVisible) {
+        const rect = quranText.getBoundingClientRect()
+
+        if (rect.top <= window.innerHeight * 0.9) {
+          setIsQuranTextVisible(true)
+        }
+      }
+
+      // =========================
+      // HADITH TEXT — STICKS ON
+      // GATED: after Qur'an text
+      // =========================
+      if (
+        hadithText &&
+        !isHadithTextVisible &&
+        isQuranTextVisible
+      ) {
+        const rect = hadithText.getBoundingClientRect()
+
+        if (rect.top <= window.innerHeight * 0.9) {
+          setIsHadithTextVisible(true)
+        }
+      }
+
+      // =========================
+      // DESCRIPTION TEXT — STICKS ON
+      // GATED: after Hadith text
+      // =========================
+      if (
+        descriptionText &&
+        !isDescriptionTextVisible &&
+        isHadithTextVisible
+      ) {
+        const rect = descriptionText.getBoundingClientRect()
+
+        if (rect.top <= window.innerHeight * 0.9) {
+          setIsDescriptionTextVisible(true)
+        }
+      }
+
       // Stop listening once everything has triggered
       if (
         isThumbpinVisible &&
         isFlowerVisible &&
         isPlasterVisible &&
-        areStarsVisible
+        areStarsVisible &&
+        isQuranTextVisible &&
+        isHadithTextVisible &&
+        isDescriptionTextVisible
       ) {
         window.removeEventListener('scroll', handleScroll)
       }
@@ -83,6 +138,9 @@ if (stars && !areStarsVisible && isPlasterVisible) {
     isFlowerVisible,
     isPlasterVisible,
     areStarsVisible,
+    isQuranTextVisible,
+    isHadithTextVisible,
+    isDescriptionTextVisible,
   ])
 
   return (
@@ -204,6 +262,32 @@ if (stars && !areStarsVisible && isPlasterVisible) {
           }
         }
 
+        /* TEXT — STICKS ONTO PAPER */
+        @keyframes textStick {
+          0% {
+            opacity: 0;
+            transform: translateY(-25px) rotate(-2deg) scale(0.98);
+          }
+
+          55% {
+            opacity: 1;
+            transform: translateY(4px) rotate(0.5deg) scale(1.01);
+          }
+
+          75% {
+            transform: translateY(-2px) rotate(-0.2deg) scale(1);
+          }
+
+          90% {
+            transform: translateY(1px) rotate(0deg) scale(1);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg) scale(1);
+          }
+        }
+
         /* ANIMATION CLASSES */
 
         .thumbpin-animate {
@@ -258,11 +342,25 @@ if (stars && !areStarsVisible && isPlasterVisible) {
             forwards;
         }
 
+        .text-stick-animate {
+          opacity: 0;
+        }
+
+        .text-stick-animate.animate {
+          animation:
+            textStick
+            0.40s
+            cubic-bezier(0.2, 0.8, 0.2, 1)
+            0s
+            forwards;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .thumbpin-animate,
           .flower-animate,
           .plaster-animate,
-          .stars-animate {
+          .stars-animate,
+          .text-stick-animate {
             opacity: 1;
             animation: none;
           }
@@ -331,81 +429,255 @@ if (stars && !areStarsVisible && isPlasterVisible) {
       />
 
       {/* =========================
-          WHO WE ARE
+          QUR'AN PAPER
           ========================= */}
       <div
         className="
           absolute
-          z-10
-          top-[75px]
-          left-[100px]
-          w-[820px]
+          z-[1]
+          top-[25px]
+          left-[50px]
+          w-[450px]
+          h-[450px]
+          pointer-events-none
         "
       >
-        <h2
+        <img
+          src="/images/about-us-img-2/qur'an.png"
+          alt=""
           className="
-            font-display
-            font-black
-            text-[clamp(2.5rem,5.2rem,6.4rem)]
-            tracking-[-0.05em]
-            leading-none
-            text-isoc-green
+            absolute
+            inset-0
+            w-full
+            h-full
           "
-        >
-          Leeds ISOC
-        </h2>
+        />
 
-        <p
-          className="
-            mt-6
-            text-base
-            md:text-xl
-            leading-[1.6]
-            text-isoc-green
-          "
+        <div
+          className={`
+            text-stick-animate
+            quran-text-trigger
+            absolute
+            top-[75px]
+            left-[60px]
+            rotate-[-5deg]
+            w-[340px]
+            text-center
+            text-[#254c3a]
+            font-body
+            font-bold
+            ${isQuranTextVisible ? 'animate' : ''}
+          `}
         >
-          Leeds ISOC is a welcoming community for Muslim students at the University of Leeds, bringing people together to learn, connect and grow. We aim to create a space where students can strengthen their faith, build meaningful friendships and feel at home on campus. From regular talks and study circles to socials, community events and opportunities for volunteering, there is something for everyone. Whether you are looking to deepen your understanding of Islam, meet new people or simply get involved, Leeds ISOC is here to support you throughout your university journey.
-        </p>
+          {/* First Qur'an verse */}
+          <p
+            dir="rtl"
+            className="
+              text-[18px]
+              leading-[1.8]
+              mb-[14px]
+            "
+          >
+            وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا
+          </p>
+
+          <p
+            className="
+              text-[16px]
+              leading-[1.3]
+              mb-[3px]
+            "
+          >
+            And hold firmly to the rope of Allah all
+            together and do not be divided
+          </p>
+
+          <p
+            className="
+              text-[14px]
+              leading-none
+              mb-[20px]
+            "
+          >
+            Qur&apos;an [3:103]
+          </p>
+
+          {/* Second Qur'an verse */}
+          <p
+            dir="rtl"
+            className="
+              text-[18px]
+              leading-[1.8]
+              mb-[12px]
+            "
+          >
+            وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ
+          </p>
+
+          <p
+            className="
+              text-[16px]
+              leading-[1.3]
+              mb-[3px]
+            "
+          >
+            And do not lose hope in the mercy of
+            Allah, for no one loses hope in Allah&apos;s
+            mercy except those with no faith.
+          </p>
+
+          <p
+            className="
+              text-[14px]
+              leading-none
+            "
+          >
+            Qur&apos;an [12:87]
+          </p>
+        </div>
       </div>
 
       {/* =========================
-          MISSION
+          HADITH PAPER
           ========================= */}
       <div
         className="
           absolute
-          z-10
-          top-[50%]
-          right-[50px]
-          w-[625px]
+          z-[1]
+          top-[50px]
+          left-[600px]
+          w-[400px]
+          h-[400px]
+          pointer-events-none
         "
       >
-        <h2
+        <img
+          src="/images/about-us-img-2/hadith.png"
+          alt=""
           className="
-            font-display
-            font-black
-            text-[clamp(2.5rem,5.2rem,6.4rem)]
-            tracking-[-0.05em]
-            leading-none
-            text-isoc-green
+            absolute
+            inset-0
+            w-full
+            h-full
           "
-        >
-          Our Mission
-        </h2>
+        />
 
-        <p
-          className="
-            mt-6
-            text-base
-            md:text-xl
-            leading-[1.6]
-            text-isoc-green
-          "
+        <div
+          className={`
+            text-stick-animate
+            hadith-text-trigger
+            absolute
+            top-[70px]
+            left-[85px]
+            w-[275px]
+            text-center
+            text-[#254c3a]
+            font-body
+            font-bold
+            rotate-[5deg]
+            ${isHadithTextVisible ? 'animate' : ''}
+          `}
         >
-          We strive to support students throughout their university journey
-          through regular events, educational opportunities, social activities
-          and a strong sense of community.
-        </p>
+          <p
+            dir="rtl"
+            className="
+              text-[18px]
+              leading-[1.7]
+              mb-[12px]
+            "
+          >
+            قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:
+            <br />
+            الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا
+          </p>
+
+          <p
+            className="
+              text-[14px]
+              leading-[1.3]
+              mb-[10px]
+            "
+          >
+            The Messenger of Allah (Peace and
+            Blessings be unto him):
+          </p>
+
+          <p
+            className="
+              text-[14px]
+              leading-[1.3]
+              mb-[10px]
+            "
+          >
+            “The relationship of the believer with
+            another believer is like (the bricks of)
+            a building, each strengthening the
+            other.”
+          </p>
+
+          <p
+            className="
+              text-[14px]
+              leading-[1.3]
+            "
+          >
+            He (ﷺ) illustrated this by interlacing
+            the fingers of both his hands.
+          </p>
+        </div>
+      </div>
+
+      {/* =========================
+          DESCRIPTION PAPER
+          ========================= */}
+      <div
+        className="
+          absolute
+          z-[1]
+          bottom-[50px]
+          right-[100px]
+          w-[700px]
+          h-[350px]
+          pointer-events-none
+        "
+      >
+        <img
+          src="/images/about-us-img-2/desc.png"
+          alt=""
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+          "
+        />
+
+        <div
+          className={`
+            text-stick-animate
+            description-text-trigger
+            absolute
+            top-[140px]
+            left-[100px]
+            rotate-[3deg]
+            w-[565px]
+            text-center
+            text-[#254c3a]
+            font-body
+            font-bold
+            text-[18px]
+            leading-[1.35]
+            ${isDescriptionTextVisible ? 'animate' : ''}
+          `}
+        >
+          <p>
+            Leeds ISOC brings Muslim students together to strengthen
+            their faith, seek knowledge and build meaningful friendships.
+            Through talks, study circles, socials and community events, we
+            aim to create a welcoming space where students can learn,
+            connect and grow throughout their university journey.
+          </p>
+        </div>
       </div>
 
       {/* =========================
