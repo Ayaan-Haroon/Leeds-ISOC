@@ -20,7 +20,7 @@ const EventCard = ({
 }: EventCardProps) => {
   return (
     <div
-      className={`bg-[#f2eae0] rounded-[40px] shadow-[0_10px_25px_rgba(0,0,0,0.3)] px-8 py-5 h-[580px] w-[400px] flex flex-col ${rotate}`}
+      className={`event-card bg-[#f2eae0] rounded-[40px] shadow-[0_10px_25px_rgba(0,0,0,0.3)] px-8 py-5 h-[580px] w-[400px] flex flex-col ${rotate}`}
     >
       {/* TOP EVENT */}
       <div className="flex-1 flex flex-col">

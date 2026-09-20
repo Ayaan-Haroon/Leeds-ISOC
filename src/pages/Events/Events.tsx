@@ -53,14 +53,14 @@ const Events = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate h-[300vh]"
+      className="events-section relative isolate h-[300vh]"
       style={
         {
           '--scroll-progress': '0',
         } as React.CSSProperties
       }
     >
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+      <div className="events-sticky sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
 
         {/* =========================
             GRAIN OVERLAY
@@ -88,7 +88,7 @@ const Events = () => {
             TITLE
             ========================= */}
 
-        <div className="absolute left-[48px] top-[48px] z-10">
+        <div className="events-title absolute left-[48px] top-[48px] z-10">
 
           <p
             className="
@@ -131,14 +131,14 @@ const Events = () => {
               EVENT CARDS
               ========================= */}
 
-          <div className="relative flex items-start justify-center translate-y-[80px]">
+          <div className="events-cards relative flex items-start justify-center translate-y-[80px]">
 
             {/* =========================
                 CARD 1 — ENTERS FROM LEFT
                 ========================= */}
 
             <div
-              className="will-change-transform"
+              className="event-card-wrapper will-change-transform"
               style={{
                 transform:
                   'translate3d(calc(-120vw * (1 - min(1, calc(var(--scroll-progress) * 3)))), 0, 0)',
@@ -200,7 +200,7 @@ const Events = () => {
                 ========================= */}
 
             <div
-              className="will-change-transform"
+              className="event-card-wrapper will-change-transform"
               style={{
                 transform:
                   'translate3d(0, calc(-90vh * (1 - max(0, min(1, ((var(--scroll-progress) - 0.6667) * 3))))), 0)',
@@ -261,7 +261,7 @@ const Events = () => {
                 ========================= */}
 
             <div
-              className="will-change-transform"
+              className="event-card-wrapper will-change-transform"
               style={{
                 transform:
                   'translate3d(calc(120vw * (1 - max(0, min(1, ((var(--scroll-progress) - 0.3333) * 3))))), 0, 0)',

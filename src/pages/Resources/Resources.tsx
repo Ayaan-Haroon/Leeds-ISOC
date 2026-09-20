@@ -7,6 +7,7 @@ const Resources = () => {
   return (
     <section
       className="
+        resources-section
         relative
         min-h-screen
         w-full
@@ -26,6 +27,7 @@ const Resources = () => {
 
       <div
         className="
+          resources-social
           absolute
           left-[5.2%]
           top-[3.2%]
@@ -142,6 +144,7 @@ const Resources = () => {
 
       <div
         className="
+          resources-copy
           absolute
           left-[12%]
           top-[3.4%]
@@ -213,6 +216,7 @@ const Resources = () => {
 
       <div
         className="
+          resources-copy-right
           absolute
           left-[47.5%]
           top-[37.2%]
@@ -243,6 +247,7 @@ const Resources = () => {
 
       <div
         className="
+          resources-empty-box
           absolute
           right-[3.7%]
           top-[45.5%]
@@ -262,6 +267,7 @@ const Resources = () => {
 
      <div
   className="
+    resources-title
     absolute
     bottom-[6%]
     right-[5%]

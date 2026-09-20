@@ -81,7 +81,7 @@ const leftSponsors = [
 export default function OurSponsors() {
   return (
     <main
-      className="
+      className="sponsors-page
         relative
         min-h-screen
         w-full
@@ -95,7 +95,7 @@ export default function OurSponsors() {
           "url('/images/OurSponsors/background.png')",
       }}
     >
-      <div className="relative min-h-screen w-full">
+      <div className="sponsors-artboard relative min-h-screen w-full">
 
         {/* =====================================================
             TITLE
@@ -103,6 +103,7 @@ export default function OurSponsors() {
 
         <h1
           className="
+            sponsors-title
             absolute
             left-[12.5%]
             top-[17%]
@@ -131,6 +132,7 @@ export default function OurSponsors() {
 
         <section
           className="
+            sponsors-list
             absolute
             left-[50.7%]
             top-[13.5%]
@@ -190,6 +192,7 @@ export default function OurSponsors() {
 
         <section
           className="
+            sponsors-list
             absolute
             left-[5%]
             top-[35.5%]
@@ -253,6 +256,7 @@ export default function OurSponsors() {
           src="/images/OurSponsors/arrows.png"
           alt=""
           className="
+            sponsors-arrows
             absolute
             left-[53%]
             top-[73.5%]

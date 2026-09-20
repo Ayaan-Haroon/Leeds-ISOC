@@ -34,6 +34,7 @@ export default function FAQ() {
   return (
     <main
       className="
+        faq-page
         relative
         min-h-screen
         w-full
@@ -47,7 +48,7 @@ export default function FAQ() {
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
-      <div className="relative min-h-screen w-full">
+      <div className="faq-content relative min-h-screen w-full">
 
         {/* =========================================
             NOTEPAD
@@ -181,6 +182,7 @@ export default function FAQ() {
 
         <section
           className="
+            faq-questions
             absolute
             left-[5%]
             top-1/2

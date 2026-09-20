@@ -1,6 +1,6 @@
 
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600;700&family=Special+Elite&display=swap');
+@import "tailwindcss";
 
 
 :root {
@@ -15,6 +15,383 @@
 
 body {
   margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.announcements-collage {
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 640px) {
+  .about-us-collage {
+    overflow: hidden;
+  }
+
+  .hero-section {
+    min-height: 100svh;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero-section h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 17vw, 6rem);
+    line-height: 0.95;
+  }
+
+  .hero-section > div > p {
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-section > img {
+    max-width: 70vw;
+  }
+
+  .get-involved-page {
+    height: 86.111vw;
+    min-height: 0;
+    padding: 0 1rem;
+  }
+
+  .get-involved-page > div {
+    width: 720px;
+    height: 620px;
+    min-height: 620px;
+    margin: 0 auto;
+    zoom: calc((100vw - 2rem) / 720px);
+  }
+
+  .get-involved-page .get-involved-collage,
+  .get-involved-page .get-involved-content {
+    height: 100%;
+  }
+
+  .get-involved-page .get-involved-collage img {
+    width: 100%;
+  }
+
+  .get-involved-page .get-involved-content h1 {
+    width: 100%;
+  }
+
+  .get-involved-page .get-involved-content > img {
+    width: 25%;
+  }
+
+  .get-involved-page .get-involved-options {
+    width: 100%;
+  }
+
+  .resources-section {
+    min-height: 100svh;
+    padding: 0 1rem;
+  }
+
+  .resources-section .resources-social {
+    left: 5%;
+    top: 3%;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .resources-section .resources-social svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .resources-section .resources-copy {
+    left: 6%;
+    top: 14%;
+    width: 88%;
+    height: 17%;
+  }
+
+  .resources-section .resources-copy-right {
+    left: 6%;
+    top: 36%;
+    width: 82%;
+    height: 23%;
+  }
+
+  .resources-section .resources-copy p,
+  .resources-section .resources-copy-right p {
+    font-size: clamp(0.65rem, 2.1vw, 0.9rem);
+  }
+
+  .resources-section .resources-empty-box {
+    right: 5%;
+    top: 62%;
+    width: 27%;
+    height: 19%;
+  }
+
+  .resources-section .resources-title {
+    right: 4%;
+    bottom: 10%;
+    width: 58%;
+  }
+
+  .resources-section .resources-title h1 {
+    font-size: clamp(2.25rem, 10vw, 4.5rem);
+    white-space: normal;
+  }
+
+  .announcements-section {
+    height: 86.111vw;
+    min-height: 0;
+    padding: 0 1rem;
+  }
+
+  .announcements-collage {
+    position: relative;
+    width: 720px;
+    min-height: 620px;
+    margin: 0 auto;
+    zoom: calc((100vw - 2rem) / 720px);
+  }
+
+  .announcements-collage > img,
+  .announcements-collage > h1,
+  .announcements-collage > div.text-stick-animate,
+  .announcements-collage > div.font-bold {
+    position: absolute;
+  }
+
+  .events-section {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .events-section .events-sticky {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    padding: 7rem 1rem 3rem;
+    overflow: hidden;
+  }
+
+  .events-section .events-title {
+    position: relative;
+    inset: auto;
+    margin-bottom: 2rem;
+  }
+
+  .events-section .events-title p,
+  .events-section .events-title h1 {
+    font-size: clamp(3rem, 17vw, 5rem);
+    letter-spacing: -0.08em;
+  }
+
+  .events-section .events-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transform: none;
+  }
+
+  .events-section .event-card-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    transform: none !important;
+  }
+
+  .events-section .event-card-wrapper > div {
+    transform: none !important;
+  }
+
+  .events-section .event-card {
+    width: min(100%, 22rem);
+    height: auto;
+    min-height: 31rem;
+    padding: 1.25rem;
+    border-radius: 1.75rem;
+    transform: none !important;
+    rotate: 0deg !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+  }
+
+  .events-section .event-card h3 {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+
+  .maps-section .maps-half {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 3rem 0;
+  }
+
+  .maps-section .mosque-information,
+  .maps-section .mosque-image,
+  .maps-section .maps-title,
+  .maps-section .paper-container {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  .maps-section .mosque-information {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .maps-section .mosque-image {
+    margin: 2rem auto 0;
+  }
+
+  .maps-section .maps-title {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .maps-section .maps-title h1 {
+    font-size: clamp(2.5rem, 13vw, 5rem);
+    letter-spacing: -0.08em;
+    white-space: normal;
+  }
+
+  .maps-section .paper-container {
+    min-height: 22rem;
+  }
+
+  .maps-section .paper-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .sponsors-page,
+  .sponsors-page > div {
+    min-height: 0;
+  }
+
+  .sponsors-page > div {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .sponsors-page .sponsors-title,
+  .sponsors-page .sponsors-list,
+  .sponsors-page .sponsors-arrows {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+
+  .sponsors-page .sponsors-title {
+    text-align: center;
+    font-size: clamp(3rem, 17vw, 6rem);
+  }
+
+  .sponsors-page .sponsors-list {
+    width: 100%;
+  }
+
+  .sponsors-page .sponsors-list > div {
+    min-height: 0;
+  }
+
+  .sponsors-page .sponsors-list p {
+    white-space: normal;
+    font-size: clamp(1rem, 4.5vw, 1.4rem);
+  }
+
+  .sponsors-page .sponsors-arrows {
+    width: 35%;
+    margin: 0 auto;
+    max-width: none;
+  }
+
+  .faq-page {
+    min-height: auto;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .faq-page .faq-content {
+    min-height: auto;
+  }
+
+  .faq-page .faq-questions {
+    position: static;
+    width: 100%;
+    max-width: none;
+    transform: none;
+  }
+
+  .faq-page .faq-questions button {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .faq-page .faq-questions button > span:first-child {
+    font-size: clamp(1.35rem, 6vw, 2rem);
+  }
+
+  .faq-page .faq-questions button > span:last-child {
+    font-size: 2rem;
+  }
+
+  .committee-section {
+    min-height: 100svh;
+  }
+
+  .committee-section .committee-cards {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .committee-section .committee-card {
+    width: 100%;
+    max-width: 25rem;
+    height: 32rem;
+  }
+
+  .committee-section .committee-card h2 {
+    white-space: normal;
+    font-size: 1.25rem;
+  }
+
+  .committee-section .committee-card .w-\[95px\] {
+    width: 4rem;
+    height: 4.75rem;
+  }
+
+  .committee-section .committee-cards > button {
+    font-size: 4rem;
+  }
 }
 
 @font-face {

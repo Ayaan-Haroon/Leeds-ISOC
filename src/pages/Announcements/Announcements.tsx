@@ -46,7 +46,7 @@ const Announcements = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden isolate">
+    <section className="announcements-section relative min-h-screen overflow-hidden isolate">
 
       {/* =========================
           ANIMATION STYLES
@@ -138,6 +138,8 @@ const Announcements = () => {
           backgroundRepeat: 'no-repeat',
         }}
       />
+
+      <div className="announcements-collage">
 
       {/* =========================
           LARGE GREEN POST-IT
@@ -439,6 +441,8 @@ const Announcements = () => {
       >
         ANNOUNCEMENTS
       </h1>
+
+      </div>
 
     </section>
   )

@@ -5,6 +5,7 @@ const Hero = () => {
     <section
 
       className="
+        hero-section
         relative
         min-h-screen
         overflow-hidden
@@ -349,7 +350,7 @@ const Hero = () => {
         className="
           sticker-animate
           absolute
-          bottom-[40%]
+          bottom-[8%]
           right-[34%]
           z-30
           w-[9vw]
@@ -552,7 +553,7 @@ const Hero = () => {
         className="
           sticker-animate
           absolute
-          bottom-[40%]
+          bottom-[5%]
           left-[0%]
           z-30
           w-[12vw]

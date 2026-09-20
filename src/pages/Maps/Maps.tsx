@@ -1,6 +1,6 @@
 const Maps = () => {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="maps-section relative isolate overflow-hidden">
       {/* GRAIN OVERLAY */}
       <div
         className="absolute inset-0 z-0 opacity-90 mix-blend-multiply pointer-events-none"
@@ -17,10 +17,10 @@ const Maps = () => {
           FIRST HALF
           ========================= */}
 
-      <div className="relative z-10 w-[90%] max-w-[1250px] h-screen mx-auto">
+      <div className="maps-half relative z-10 w-[90%] max-w-[1250px] h-screen mx-auto">
 
         {/* MOSQUE INFORMATION */}
-        <div className="absolute left-0 top-[15%] w-[64%] grid grid-cols-2 gap-x-14 gap-y-16">
+        <div className="mosque-information absolute left-0 top-[15%] w-[64%] grid grid-cols-2 gap-x-14 gap-y-16">
 
           {/* LEEDS GRAND MOSQUE */}
           <div className="flex gap-5">
@@ -137,7 +137,7 @@ const Maps = () => {
         </div>
 
         {/* MOSQUE IMAGE */}
-        <div className="absolute right-[-3%] top-[8%] w-[46%] h-[57%]">
+        <div className="mosque-image absolute right-[-3%] top-[8%] w-[46%] h-[57%]">
           <img
             src="/images/home/isocbitstrans/masjid-map-img.png"
             alt="Mosque"
@@ -146,7 +146,7 @@ const Maps = () => {
         </div>
 
         {/* TITLE */}
-        <div className="absolute bottom-[14%] left-1/2 -translate-x-1/2">
+        <div className="maps-title absolute bottom-[14%] left-1/2 -translate-x-1/2">
           <h1
             className="
               font-display
@@ -169,10 +169,10 @@ const Maps = () => {
           SECOND HALF
           ========================= */}
 
-      <div className="relative z-10 w-[90%] max-w-[1250px] h-screen mx-auto">
+      <div className="maps-half relative z-10 w-[90%] max-w-[1250px] h-screen mx-auto">
 
         {/* PAPER CONTAINER */}
-        <div className="absolute top-[0%] left-1/2 -translate-x-1/2 w-[1000px] max-w-[1000px] h-[650px]">
+        <div className="paper-container absolute top-[0%] left-1/2 -translate-x-1/2 w-[1000px] max-w-[1000px] h-[650px]">
 
           {/* BACK PAPER */}
           <div
