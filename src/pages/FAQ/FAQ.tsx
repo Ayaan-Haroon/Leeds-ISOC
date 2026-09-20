@@ -140,36 +140,36 @@ export default function FAQ() {
             ====================================== */}
 
             <div
-  className="
-    absolute
-    left-[10%]
-    top-[77%]
-    z-30
-    flex
-    w-[80%]
-    items-center
-    justify-center
-  "
->
-  <h1
-    className="
-      whitespace-nowrap
-      text-[7rem]
-      font-bold
-      leading-[0.8]
-      tracking-[-0.07em]
-      text-[#1f513f]
-      md:text-[8rem]
-      lg:text-[9rem]
-      xl:text-[10rem]
-    "
-    style={{
-      fontFamily: "'Bodoni FLF', serif",
-    }}
-  >
-    FAQS
-  </h1>
-</div>
+              className="
+                absolute
+                left-[10%]
+                top-[77%]
+                z-30
+                flex
+                w-[80%]
+                items-center
+                justify-center
+              "
+            >
+              <h1
+                className="
+                  whitespace-nowrap
+                  text-[7rem]
+                  font-bold
+                  leading-[0.8]
+                  tracking-[-0.07em]
+                  text-[#1f513f]
+                  md:text-[8rem]
+                  lg:text-[9rem]
+                  xl:text-[10rem]
+                "
+                style={{
+                  fontFamily: "'Bodoni FLF', serif",
+                }}
+              >
+                FAQS
+              </h1>
+            </div>
 
           </div>
         </div>
@@ -225,12 +225,12 @@ export default function FAQ() {
 
                   <span
                     className="
-                      text-[1.65rem]
+                      text-[2rem]
                       font-medium
                       leading-[1.1]
                       tracking-[-0.025em]
                       text-[#f2eae0]
-                      md:text-[1.9rem]
+                      md:text-[2.25rem]
                     "
                     style={{
                       fontFamily: "'Bodoni FLF', serif",
