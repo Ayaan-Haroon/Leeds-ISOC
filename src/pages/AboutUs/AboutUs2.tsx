@@ -8,7 +8,8 @@ const AboutUs2 = () => {
 
   const [isQuranTextVisible, setIsQuranTextVisible] = useState(false)
   const [isHadithTextVisible, setIsHadithTextVisible] = useState(false)
-  const [isDescriptionTextVisible, setIsDescriptionTextVisible] = useState(false)
+  const [isDescriptionTextVisible, setIsDescriptionTextVisible] =
+    useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +20,14 @@ const AboutUs2 = () => {
 
       const quranText = document.querySelector('.quran-text-trigger')
       const hadithText = document.querySelector('.hadith-text-trigger')
-      const descriptionText = document.querySelector('.description-text-trigger')
+      const descriptionText = document.querySelector(
+        '.description-text-trigger'
+      )
 
       // =========================
       // THUMB PIN — fires as soon as it enters viewport
       // =========================
+
       if (thumbpin && !isThumbpinVisible) {
         const rect = thumbpin.getBoundingClientRect()
 
@@ -36,6 +40,7 @@ const AboutUs2 = () => {
       // PRETTY FLOWER — fires as soon as it enters viewport
       // GATED: only after thumbpin has fired
       // =========================
+
       if (flower && !isFlowerVisible && isThumbpinVisible) {
         const rect = flower.getBoundingClientRect()
 
@@ -48,6 +53,7 @@ const AboutUs2 = () => {
       // GREEN PLASTER — delayed slightly more than before
       // GATED: only after flower has fired
       // =========================
+
       if (plaster && !isPlasterVisible && isFlowerVisible) {
         const rect = plaster.getBoundingClientRect()
 
@@ -60,6 +66,7 @@ const AboutUs2 = () => {
       // STARS — delayed slightly more than before
       // GATED: only after plaster has fired
       // =========================
+
       if (stars && !areStarsVisible && isPlasterVisible) {
         const rect = stars.getBoundingClientRect()
 
@@ -71,6 +78,7 @@ const AboutUs2 = () => {
       // =========================
       // QUR'AN TEXT — STICKS ON
       // =========================
+
       if (quranText && !isQuranTextVisible) {
         const rect = quranText.getBoundingClientRect()
 
@@ -83,6 +91,7 @@ const AboutUs2 = () => {
       // HADITH TEXT — STICKS ON
       // GATED: after Qur'an text
       // =========================
+
       if (
         hadithText &&
         !isHadithTextVisible &&
@@ -99,6 +108,7 @@ const AboutUs2 = () => {
       // DESCRIPTION TEXT — STICKS ON
       // GATED: after Hadith text
       // =========================
+
       if (
         descriptionText &&
         !isDescriptionTextVisible &&
@@ -156,9 +166,13 @@ const AboutUs2 = () => {
       {/* =========================
           ANIMATION STYLES
           ========================= */}
+
       <style>{`
 
-        /* THUMB PIN — DROP ON */
+        /* =========================
+           THUMB PIN — DROP ON
+           ========================= */
+
         @keyframes thumbPinDrop {
           0% {
             opacity: 0;
@@ -184,7 +198,10 @@ const AboutUs2 = () => {
           }
         }
 
-        /* PRETTY FLOWER */
+        /* =========================
+           PRETTY FLOWER
+           ========================= */
+
         @keyframes flowerStick {
           0% {
             opacity: 0;
@@ -210,7 +227,10 @@ const AboutUs2 = () => {
           }
         }
 
-        /* STARS — STICK ON */
+        /* =========================
+           STARS — STICK ON
+           ========================= */
+
         @keyframes starsStick {
           0% {
             opacity: 0;
@@ -236,7 +256,10 @@ const AboutUs2 = () => {
           }
         }
 
-        /* GREEN PLASTER */
+        /* =========================
+           GREEN PLASTER
+           ========================= */
+
         @keyframes plasterStick {
           0% {
             opacity: 0;
@@ -262,7 +285,10 @@ const AboutUs2 = () => {
           }
         }
 
-        /* TEXT — STICKS ONTO PAPER */
+        /* =========================
+           TEXT — STICKS ONTO PAPER
+           ========================= */
+
         @keyframes textStick {
           0% {
             opacity: 0;
@@ -288,7 +314,9 @@ const AboutUs2 = () => {
           }
         }
 
-        /* ANIMATION CLASSES */
+        /* =========================
+           ANIMATION CLASSES
+           ========================= */
 
         .thumbpin-animate {
           opacity: 0;
@@ -355,6 +383,10 @@ const AboutUs2 = () => {
             forwards;
         }
 
+        /* =========================
+           REDUCED MOTION
+           ========================= */
+
         @media (prefers-reduced-motion: reduce) {
           .thumbpin-animate,
           .flower-animate,
@@ -371,6 +403,7 @@ const AboutUs2 = () => {
       {/* =========================
           BEIGE PAPER BACKGROUND
           ========================= */}
+
       <div
         className="
           absolute
@@ -397,6 +430,7 @@ const AboutUs2 = () => {
       {/* =========================
           WIDE RULED PAPER
           ========================= */}
+
       <img
         src="/images/home/stickers-n-that/wide-ruled.png"
         alt=""
@@ -414,6 +448,7 @@ const AboutUs2 = () => {
       {/* =========================
           FAT RULED PAPER
           ========================= */}
+
       <img
         src="/images/home/stickers-n-that/fat-ruled.png"
         alt=""
@@ -430,7 +465,9 @@ const AboutUs2 = () => {
 
       {/* =========================
           QUR'AN PAPER
+          HOVER ENABLED
           ========================= */}
+
       <div
         className="
           absolute
@@ -439,7 +476,13 @@ const AboutUs2 = () => {
           left-[50px]
           w-[450px]
           h-[450px]
-          pointer-events-none
+          pointer-events-auto
+          transition-all
+          duration-300
+          ease-out
+          hover:-translate-y-2
+          hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+          cursor-pointer
         "
       >
         <img
@@ -450,6 +493,7 @@ const AboutUs2 = () => {
             inset-0
             w-full
             h-full
+            pointer-events-none
           "
         />
 
@@ -466,10 +510,12 @@ const AboutUs2 = () => {
             text-[#254c3a]
             font-body
             font-bold
+            pointer-events-none
             ${isQuranTextVisible ? 'animate' : ''}
           `}
         >
           {/* First Qur'an verse */}
+
           <p
             dir="rtl"
             className="
@@ -503,6 +549,7 @@ const AboutUs2 = () => {
           </p>
 
           {/* Second Qur'an verse */}
+
           <p
             dir="rtl"
             className="
@@ -539,7 +586,9 @@ const AboutUs2 = () => {
 
       {/* =========================
           HADITH PAPER
+          HOVER ENABLED
           ========================= */}
+
       <div
         className="
           absolute
@@ -548,7 +597,13 @@ const AboutUs2 = () => {
           left-[600px]
           w-[400px]
           h-[400px]
-          pointer-events-none
+          pointer-events-auto
+          transition-all
+          duration-300
+          ease-out
+          hover:-translate-y-2
+            hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+          cursor-pointer
         "
       >
         <img
@@ -559,6 +614,7 @@ const AboutUs2 = () => {
             inset-0
             w-full
             h-full
+            pointer-events-none
           "
         />
 
@@ -575,6 +631,7 @@ const AboutUs2 = () => {
             font-body
             font-bold
             rotate-[5deg]
+            pointer-events-none
             ${isHadithTextVisible ? 'animate' : ''}
           `}
         >
@@ -629,7 +686,9 @@ const AboutUs2 = () => {
 
       {/* =========================
           DESCRIPTION PAPER
+          HOVER ENABLED
           ========================= */}
+
       <div
         className="
           absolute
@@ -638,7 +697,13 @@ const AboutUs2 = () => {
           right-[100px]
           w-[700px]
           h-[350px]
-          pointer-events-none
+          pointer-events-auto
+          transition-all
+          duration-300
+          ease-out
+          hover:-translate-y-2
+       hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+          cursor-pointer
         "
       >
         <img
@@ -649,6 +714,7 @@ const AboutUs2 = () => {
             inset-0
             w-full
             h-full
+            pointer-events-none
           "
         />
 
@@ -667,6 +733,7 @@ const AboutUs2 = () => {
             font-bold
             text-[18px]
             leading-[1.35]
+            pointer-events-none
             ${isDescriptionTextVisible ? 'animate' : ''}
           `}
         >
@@ -683,6 +750,7 @@ const AboutUs2 = () => {
       {/* =========================
           GIRLS CARD
           ========================= */}
+
       <div
         className="
           absolute
@@ -716,6 +784,7 @@ const AboutUs2 = () => {
       {/* =========================
           GREEN PLASTER
           ========================= */}
+
       <img
         src="/images/home/stickers-n-that/green-plaster.png"
         alt=""
@@ -735,6 +804,7 @@ const AboutUs2 = () => {
       {/* =========================
           GREEN STARS
           ========================= */}
+
       <img
         src="/images/home/stickers-n-that/green-starts-3.png"
         alt=""
@@ -755,6 +825,7 @@ const AboutUs2 = () => {
       {/* =========================
           TEA CARD
           ========================= */}
+
       <div
         className="
           absolute
@@ -785,6 +856,7 @@ const AboutUs2 = () => {
       {/* =========================
           THUMB PIN
           ========================= */}
+
       <img
         src="/images/home/stickers-n-that/thumbpin.png"
         alt=""
@@ -805,6 +877,7 @@ const AboutUs2 = () => {
       {/* =========================
           PRETTY FLOWER
           ========================= */}
+
       <img
         src="/images/home/announcements/pretty-flower.png"
         alt=""

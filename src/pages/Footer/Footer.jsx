@@ -48,8 +48,8 @@ const Footer = () => {
           mx-auto
           w-[92%]
           max-w-[1400px]
-          pt-20
-          pb-10
+          pt-12
+          pb-7
         "
       >
 
@@ -62,9 +62,9 @@ const Footer = () => {
             grid
             grid-cols-1
             lg:grid-cols-[1.4fr_1fr_0.65fr]
-            gap-12
-            lg:gap-16
-            pb-16
+            gap-9
+            lg:gap-12
+            pb-10
           "
         >
 
@@ -81,10 +81,10 @@ const Footer = () => {
                   font-display
                   font-black
                   text-[#f2eae0]
-                  text-[clamp(1.5rem,2.5vw,2.3rem)]
+                  text-[clamp(1.35rem,2rem,2rem)]
                   tracking-[-0.03em]
                   leading-none
-                  mb-2
+                  mb-1
                 "
               >
                 WELCOME TO
@@ -95,7 +95,7 @@ const Footer = () => {
                   font-display
                   font-black
                   text-[#f2eae0]
-                  text-[clamp(4rem,8vw,8rem)]
+                  text-[clamp(3.5rem,7vw,7rem)]
                   tracking-[-0.08em]
                   leading-[0.8]
                 "
@@ -109,14 +109,14 @@ const Footer = () => {
 
             <p
               className="
-                mt-10
+                mt-6
                 max-w-[500px]
                 font-body
                 font-bold
                 text-[#f2eae0]
-                text-[16px]
-                md:text-[17px]
-                leading-[1.5]
+                text-[15px]
+                md:text-[16px]
+                leading-[1.45]
               "
             >
               Bringing Muslim students together through faith,
@@ -137,10 +137,10 @@ const Footer = () => {
                 font-display
                 font-black
                 text-[#f2eae0]
-                text-[2rem]
+                text-[1.8rem]
                 uppercase
                 tracking-[-0.03em]
-                mb-7
+                mb-5
               "
             >
               Explore
@@ -150,8 +150,8 @@ const Footer = () => {
               className="
                 grid
                 grid-cols-2
-                gap-x-8
-                gap-y-4
+                gap-x-7
+                gap-y-3
               "
             >
               {pages.map((page) => (
@@ -163,8 +163,8 @@ const Footer = () => {
                     font-body
                     font-bold
                     text-[#f2eae0]
-                    text-[15px]
-                    md:text-[16px]
+                    text-[14px]
+                    md:text-[15px]
                     transition-all
                     duration-200
                     ease-out
@@ -190,16 +190,16 @@ const Footer = () => {
                 font-display
                 font-black
                 text-[#f2eae0]
-                text-[2rem]
+                text-[1.8rem]
                 uppercase
                 tracking-[-0.03em]
-                mb-7
+                mb-5
               "
             >
               Follow Us
             </h3>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
 
               {/* INSTAGRAM */}
 
@@ -210,14 +210,14 @@ const Footer = () => {
                   group
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   w-fit
                 "
               >
                 <div
                   className="
-                    w-[48px]
-                    h-[48px]
+                    w-[42px]
+                    h-[42px]
                     rounded-full
                     border-2
                     border-[#f2eae0]
@@ -233,8 +233,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[22px]
-                      h-[22px]
+                      w-[19px]
+                      h-[19px]
                       fill-none
                       stroke-[#f2eae0]
                       stroke-[1.8]
@@ -266,7 +266,7 @@ const Footer = () => {
                   className="
                     font-body
                     font-bold
-                    text-[16px]
+                    text-[15px]
                     group-hover:translate-x-1
                     transition-transform
                     duration-300
@@ -285,14 +285,14 @@ const Footer = () => {
                   group
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   w-fit
                 "
               >
                 <div
                   className="
-                    w-[48px]
-                    h-[48px]
+                    w-[42px]
+                    h-[42px]
                     rounded-full
                     border-2
                     border-[#f2eae0]
@@ -308,8 +308,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[21px]
-                      h-[21px]
+                      w-[19px]
+                      h-[19px]
                       fill-[#f2eae0]
                       transition-colors
                       duration-300
@@ -324,7 +324,7 @@ const Footer = () => {
                   className="
                     font-body
                     font-bold
-                    text-[16px]
+                    text-[15px]
                     group-hover:translate-x-1
                     transition-transform
                     duration-300
@@ -343,14 +343,14 @@ const Footer = () => {
                   group
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   w-fit
                 "
               >
                 <div
                   className="
-                    w-[48px]
-                    h-[48px]
+                    w-[42px]
+                    h-[42px]
                     rounded-full
                     border-2
                     border-[#f2eae0]
@@ -366,8 +366,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[21px]
-                      h-[21px]
+                      w-[19px]
+                      h-[19px]
                       fill-[#f2eae0]
                       transition-colors
                       duration-300
@@ -382,7 +382,7 @@ const Footer = () => {
                   className="
                     font-body
                     font-bold
-                    text-[16px]
+                    text-[15px]
                     group-hover:translate-x-1
                     transition-transform
                     duration-300
@@ -416,32 +416,33 @@ const Footer = () => {
             items-start
             md:items-center
             justify-between
-            gap-4
-            pt-7
+            gap-3
+            pt-5
           "
         >
 
           <p
             className="
-              font-body
-              font-bold
-              text-[#f2eae0]
-              text-[13px]
-              md:text-[14px]
-              uppercase
-              tracking-wide
+                font-body
+                text-[#f2eae0]
+                text-[12px]
+                md:text-[13px]
+                font-bold
+                uppercase
+                text-[#f2eae0]/70
+                tracking-wide
             "
-          >
-            © {new Date().getFullYear()} Leeds ISOC
-          </p>
+            >
+            Designed &amp; developed by Mariem Ibrahimova, Rafi Kyum &amp; Ayan Haroon
+            </p>
 
           <p
             className="
               font-body
               font-bold
               text-[#f2eae0]/70
-              text-[13px]
-              md:text-[14px]
+              text-[12px]
+              md:text-[13px]
             "
           >
             University of Leeds Islamic Society

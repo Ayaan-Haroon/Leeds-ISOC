@@ -1,8 +1,9 @@
-import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer} from './pages'
+import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer, Navbar} from './pages'
 
 function App() {
   return (
     <>
+      {/* <Navbar/> */}
       <Home />
       <Announcements/>
       <AboutUs />
@@ -14,6 +15,7 @@ function App() {
       <Maps/>
       <FAQ />
       <Footer/>
+      
     </>
   )
 }
