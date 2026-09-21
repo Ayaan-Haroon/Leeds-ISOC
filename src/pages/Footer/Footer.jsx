@@ -1,45 +1,45 @@
 const Footer = () => {
   const pages = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Announcements', href: '/announcements' },
-    { name: 'Bulletin', href: '/bulletin' },
-    { name: 'Committee', href: '/committee' },
-    { name: 'Events', href: '/events' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Maps', href: '/maps' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Student Support', href: '/student-support' },
-  ]
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Announcements", href: "/announcements" },
+    { name: "Bulletin", href: "/bulletin" },
+    { name: "Committee", href: "/committee" },
+    { name: "Events", href: "/events" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Maps", href: "/maps" },
+    { name: "Resources", href: "/resources" },
+    { name: "Student Support", href: "/student-support" },
+  ];
 
   return (
     <footer className="relative isolate overflow-hidden bg-[#254c3a] text-[#f2eae0]">
 
       {/* =========================
           GRAIN / PAPER OVERLAY
-          ========================= */}
+      ========================== */}
 
       <div
         className="
           absolute
           inset-0
           z-0
+          pointer-events-none
           opacity-25
           mix-blend-screen
-          pointer-events-none
         "
         style={{
           backgroundImage:
             "url('/images/home/stickers-n-that/light-green-paper.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
 
       {/* =========================
           MAIN FOOTER
-          ========================= */}
+      ========================== */}
 
       <div
         className="
@@ -50,97 +50,102 @@ const Footer = () => {
           max-w-[1400px]
           pt-12
           pb-7
+          md:pt-10
+          md:pb-6
         "
       >
 
         {/* =========================
             TOP AREA
-            ========================= */}
+        ========================== */}
 
         <div
           className="
             grid
             grid-cols-1
+            gap-8
+            pb-8
             lg:grid-cols-[1.4fr_1fr_0.65fr]
-            gap-9
             lg:gap-12
-            pb-10
+            lg:pb-10
           "
         >
 
           {/* =========================
-              BRAND
-              ========================= */}
+    BRAND
+========================== */}
 
-          <div className="flex flex-col justify-between">
+<div className="flex flex-col">
 
-            <div>
+  <div>
+    <p
+      className="
+        mb-1
+        font-display
+        text-[clamp(1.25rem,3vw,2rem)]
+        font-black
+        leading-none
+        tracking-[-0.03em]
+        text-[#f2eae0]
+      "
+    >
+      WELCOME TO
+    </p>
 
-              <p
-                className="
-                  font-display
-                  font-black
-                  text-[#f2eae0]
-                  text-[clamp(1.35rem,2rem,2rem)]
-                  tracking-[-0.03em]
-                  leading-none
-                  mb-1
-                "
-              >
-                WELCOME TO
-              </p>
+    <h2
+      className="
+        font-display
+        text-[clamp(3.2rem,10vw,7rem)]
+        font-black
+        leading-[0.8]
+        tracking-[-0.08em]
+        text-[#f2eae0]
+      "
+    >
+      LEEDS
+      <br />
+      ISOC
+    </h2>
+  </div>
 
-              <h2
-                className="
-                  font-display
-                  font-black
-                  text-[#f2eae0]
-                  text-[clamp(3.5rem,7vw,7rem)]
-                  tracking-[-0.08em]
-                  leading-[0.8]
-                "
-              >
-                LEEDS
-                <br />
-                ISOC
-              </h2>
+  <p
+    className="
+      mt-4
+      max-w-[500px]
+      font-body
+      text-[14px]
+      font-bold
+      leading-[1.45]
+      text-[#f2eae0]
+      md:mt-5
+      md:text-[15px]
+      lg:mt-6
+      lg:text-[16px]
+    "
+  >
+    Bringing Muslim students together through faith,
+    knowledge, community and friendship at the University
+    of Leeds.
+  </p>
 
-            </div>
-
-            <p
-              className="
-                mt-6
-                max-w-[500px]
-                font-body
-                font-bold
-                text-[#f2eae0]
-                text-[15px]
-                md:text-[16px]
-                leading-[1.45]
-              "
-            >
-              Bringing Muslim students together through faith,
-              knowledge, community and friendship at the University
-              of Leeds.
-            </p>
-
-          </div>
+</div>
 
           {/* =========================
               NAVIGATION
-              ========================= */}
+          ========================== */}
 
           <div>
 
             <h3
               className="
+                mb-4
                 font-display
-                font-black
-                text-[#f2eae0]
                 text-[1.8rem]
+                font-black
                 uppercase
                 tracking-[-0.03em]
-                mb-5
+                text-[#f2eae0]
+                lg:mb-5
               "
             >
               Explore
@@ -150,8 +155,14 @@ const Footer = () => {
               className="
                 grid
                 grid-cols-2
-                gap-x-7
-                gap-y-3
+                gap-x-6
+                gap-y-2
+                md:grid-cols-3
+                md:gap-x-8
+                md:gap-y-2
+                lg:grid-cols-2
+                lg:gap-x-7
+                lg:gap-y-3
               "
             >
               {pages.map((page) => (
@@ -161,15 +172,15 @@ const Footer = () => {
                   className="
                     w-fit
                     font-body
+                    text-[14px]
                     font-bold
                     text-[#f2eae0]
-                    text-[14px]
-                    md:text-[15px]
                     transition-all
                     duration-200
                     ease-out
-                    hover:text-[#dbd4c3]
                     hover:translate-x-1
+                    hover:text-[#dbd4c3]
+                    md:text-[15px]
                   "
                 >
                   {page.name}
@@ -181,19 +192,20 @@ const Footer = () => {
 
           {/* =========================
               SOCIALS
-              ========================= */}
+              DESKTOP ONLY
+          ========================== */}
 
-          <div>
+          <div className="hidden lg:block">
 
             <h3
               className="
+                mb-5
                 font-display
-                font-black
-                text-[#f2eae0]
                 text-[1.8rem]
+                font-black
                 uppercase
                 tracking-[-0.03em]
-                mb-5
+                text-[#f2eae0]
               "
             >
               Follow Us
@@ -206,24 +218,18 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-3
-                  w-fit
-                "
+                className="group flex w-fit items-center gap-3"
               >
                 <div
                   className="
-                    w-[42px]
+                    flex
                     h-[42px]
+                    w-[42px]
+                    items-center
+                    justify-center
                     rounded-full
                     border-2
                     border-[#f2eae0]
-                    flex
-                    items-center
-                    justify-center
                     transition-all
                     duration-300
                     group-hover:-translate-y-1
@@ -233,8 +239,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[19px]
                       h-[19px]
+                      w-[19px]
                       fill-none
                       stroke-[#f2eae0]
                       stroke-[1.8]
@@ -265,11 +271,11 @@ const Footer = () => {
                 <span
                   className="
                     font-body
-                    font-bold
                     text-[15px]
-                    group-hover:translate-x-1
+                    font-bold
                     transition-transform
                     duration-300
+                    group-hover:translate-x-1
                   "
                 >
                   Instagram
@@ -281,24 +287,18 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="TikTok"
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-3
-                  w-fit
-                "
+                className="group flex w-fit items-center gap-3"
               >
                 <div
                   className="
-                    w-[42px]
+                    flex
                     h-[42px]
+                    w-[42px]
+                    items-center
+                    justify-center
                     rounded-full
                     border-2
                     border-[#f2eae0]
-                    flex
-                    items-center
-                    justify-center
                     transition-all
                     duration-300
                     group-hover:-translate-y-1
@@ -308,8 +308,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[19px]
                       h-[19px]
+                      w-[19px]
                       fill-[#f2eae0]
                       transition-colors
                       duration-300
@@ -323,11 +323,11 @@ const Footer = () => {
                 <span
                   className="
                     font-body
-                    font-bold
                     text-[15px]
-                    group-hover:translate-x-1
+                    font-bold
                     transition-transform
                     duration-300
+                    group-hover:translate-x-1
                   "
                 >
                   TikTok
@@ -339,24 +339,18 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-3
-                  w-fit
-                "
+                className="group flex w-fit items-center gap-3"
               >
                 <div
                   className="
-                    w-[42px]
+                    flex
                     h-[42px]
+                    w-[42px]
+                    items-center
+                    justify-center
                     rounded-full
                     border-2
                     border-[#f2eae0]
-                    flex
-                    items-center
-                    justify-center
                     transition-all
                     duration-300
                     group-hover:-translate-y-1
@@ -366,8 +360,8 @@ const Footer = () => {
                   <svg
                     viewBox="0 0 24 24"
                     className="
-                      w-[19px]
                       h-[19px]
+                      w-[19px]
                       fill-[#f2eae0]
                       transition-colors
                       duration-300
@@ -381,11 +375,11 @@ const Footer = () => {
                 <span
                   className="
                     font-body
-                    font-bold
                     text-[15px]
-                    group-hover:translate-x-1
+                    font-bold
                     transition-transform
                     duration-300
+                    group-hover:translate-x-1
                   "
                 >
                   Facebook
@@ -393,67 +387,66 @@ const Footer = () => {
               </a>
 
             </div>
-
           </div>
-
         </div>
 
         {/* =========================
             DIVIDER
-            ========================= */}
+        ========================== */}
 
         <div className="w-full border-t-2 border-[#f2eae0]/40" />
 
         {/* =========================
             BOTTOM BAR
-            ========================= */}
+        ========================== */}
 
         <div
           className="
             flex
             flex-col
-            md:flex-row
             items-start
-            md:items-center
             justify-between
-            gap-3
-            pt-5
+            gap-2
+            pt-4
+            md:flex-row
+            md:items-center
+            md:gap-3
+            md:pt-5
           "
         >
-
           <p
             className="
-                font-body
-                text-[#f2eae0]
-                text-[12px]
-                md:text-[13px]
-                font-bold
-                uppercase
-                text-[#f2eae0]/70
-                tracking-wide
+              font-body
+              text-[11px]
+              font-bold
+              uppercase
+              tracking-wide
+              text-[#f2eae0]/70
+              md:text-[12px]
+              lg:text-[13px]
             "
-            >
-            Designed &amp; developed by Mariem Ibrahimova, Rafi Kyum &amp; Ayan Haroon
-            </p>
+          >
+            Designed &amp; developed by Mariem Ibrahimova, Rafi Kyum &amp; Ayan
+            Haroon
+          </p>
 
           <p
             className="
               font-body
+              text-[11px]
               font-bold
               text-[#f2eae0]/70
-              text-[12px]
-              md:text-[13px]
+              md:text-[12px]
+              lg:text-[13px]
             "
           >
             University of Leeds Islamic Society
           </p>
-
         </div>
 
       </div>
-
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
