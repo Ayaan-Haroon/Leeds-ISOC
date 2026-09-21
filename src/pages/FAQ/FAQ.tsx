@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MasterCanvas from "../../components/MasterCanvas";
 
 const faqs = [
   {
@@ -32,279 +33,288 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <main
-      className="
-        faq-page
-        relative
-        min-h-screen
-        w-full
-        overflow-hidden
-        bg-cover
-        bg-center
-        bg-no-repeat
+    <main className="faq-page relative w-full overflow-hidden 
       "
       style={{
         backgroundImage:
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
-      <div className="faq-content relative min-h-screen w-full">
+      {/* =====================================================
+          FULL-VIEWPORT BACKGROUND
+      ====================================================== */}
 
-        {/* =========================================
-            NOTEPAD
-        ========================================== */}
+      <div
+        className="
+          absolute
+          inset-0
+          z-0
+          bg-cover
+          bg-center
+          bg-no-repeat
+        "
+        style={{
+          backgroundImage:
+            "url('/images/FAQ/Welcome%20To%20Website.png')",
+        }}
+      />
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-[49%]
-            top-[5%]
-            z-10
-            hidden
-            w-[42%]
-            md:block
-          "
-        >
-          <img
-            src="/images/FAQ/notepad.png"
-            alt=""
+      {/* =====================================================
+          1460 × 900 MASTER CANVAS
+      ====================================================== */}
+
+      <div className="relative z-10 w-full flex justify-center">
+        <MasterCanvas>
+          <div
             className="
-              block
-              w-full
-              object-contain
+              faq-content
+              relative
+              h-[900px]
+              w-[1460px]
+              overflow-hidden
             "
-          />
-        </div>
-
-
-        {/* =========================================
-            PICTURE CARD
-        ========================================== */}
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-[51%]
-            top-[14%]
-            z-20
-            hidden
-            w-[48%]
-            md:block
-          "
-        >
-          <div className="relative w-full">
-
-            {/* White picture card */}
-
-            <img
-              src="/images/FAQ/piccard.png"
-              alt=""
-              className="
-                block
-                w-full
-                object-contain
-              "
-            />
-
-
-            {/* =====================================
-                MOSQUE IMAGE
-            ====================================== */}
+          >
+            {/* =================================================
+                NOTEPAD
+            ================================================== */}
 
             <div
               className="
+                pointer-events-none
                 absolute
-                left-[4.7%]
-                top-[6.5%]
-                z-20
-                w-[91.5%]
-                overflow-hidden
+                left-[715px]
+                top-[45px]
+                z-10
+                w-[613px]
               "
             >
               <img
-                src="/images/FAQ/masjidfaq.png"
-                alt="Mosque"
+                src="/images/FAQ/notepad.png"
+                alt=""
                 className="
                   block
-                  h-auto
                   w-full
-                  grayscale
+                  object-contain
                 "
               />
             </div>
 
-
-            {/* =====================================
-                FAQ TITLE
-            ====================================== */}
+            {/* =================================================
+                PICTURE CARD
+            ================================================== */}
 
             <div
               className="
+                pointer-events-none
                 absolute
-                left-[10%]
-                top-[77%]
-                z-30
-                flex
-                w-[80%]
-                items-center
-                justify-center
+                left-[745px]
+                top-[126px]
+                z-20
+                w-[701px]
               "
             >
-              <h1
-                className="
-                  whitespace-nowrap
-                  text-[7rem]
-                  font-bold
-                  leading-[0.8]
-                  tracking-[-0.07em]
-                  text-[#1f513f]
-                  md:text-[8rem]
-                  lg:text-[9rem]
-                  xl:text-[10rem]
-                "
-                style={{
-                  fontFamily: "'Bodoni FLF', serif",
-                }}
-              >
-                FAQS
-              </h1>
-            </div>
+              <div className="relative w-full">
 
-          </div>
-        </div>
+                {/* WHITE PICTURE CARD */}
 
-
-        {/* =========================================
-            FAQ QUESTIONS
-        ========================================== */}
-
-        <section
-          className="
-            faq-questions
-            absolute
-            left-[5%]
-            top-1/2
-            z-40
-            w-[40%]
-            max-w-[620px]
-            -translate-y-1/2
-          "
-        >
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-
-            return (
-              <div
-                key={faq.question}
-                className="
-                  border-b-[5px]
-                  border-white/80
-                  last:border-b-[5px]
-                "
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
+                <img
+                  src="/images/FAQ/piccard.png"
+                  alt=""
                   className="
-                    flex
+                    block
                     w-full
-                    items-center
-                    justify-between
-                    gap-6
-                    py-[2rem]
-                    text-left
-                    transition-opacity
-                    duration-200
-                    hover:opacity-80
+                    object-contain
+                  "
+                />
+
+                {/* =============================================
+                    MOSQUE IMAGE
+                ============================================== */}
+
+                <div
+                  className="
+                    absolute
+                    left-[33px]
+                    top-[46px]
+                    z-20
+                    w-[641px]
+                    overflow-hidden
                   "
                 >
-
-                  {/* QUESTION */}
-
-                  <span
+                  <img
+                    src="/images/FAQ/masjidfaq.png"
+                    alt="Mosque"
                     className="
-                      text-[2rem]
-                      font-medium
-                      leading-[1.1]
-                      tracking-[-0.025em]
-                      text-[#f2eae0]
-                      md:text-[2.25rem]
+                      block
+                      h-auto
+                      w-full
+                      grayscale
+                    "
+                  />
+                </div>
+
+                {/* =============================================
+                    FAQ TITLE
+                ============================================== */}
+
+                <div
+                  className="
+                    absolute
+                    left-[70px]
+                    top-[540px]
+                    z-30
+                    flex
+                    w-[561px]
+                    items-center
+                    justify-center
+                  "
+                >
+                  <h1
+                    className="
+                      whitespace-nowrap
+                      text-[160px]
+                      font-bold
+                      leading-[0.8]
+                      tracking-[-0.07em]
+                      text-[#1f513f]
                     "
                     style={{
                       fontFamily: "'Bodoni FLF', serif",
                     }}
                   >
-                    {faq.question}
-                  </span>
-
-
-                  {/* PLUS */}
-
-                  <span
-                    className="
-                      flex
-                      shrink-0
-                      items-center
-                      justify-center
-                      text-[2.7rem]
-                      font-light
-                      leading-none
-                      text-[#f2eae0]
-                      transition-transform
-                      duration-300
-                    "
-                    style={{
-                      transform: isOpen
-                        ? "rotate(45deg)"
-                        : "rotate(0deg)",
-                    }}
-                  >
-                    +
-                  </span>
-                </button>
-
-
-                {/* ANSWER */}
-
-                <div
-                  className={`
-                    grid
-                    transition-[grid-template-rows]
-                    duration-500
-                    ease-in-out
-                    ${
-                      isOpen
-                        ? "grid-rows-[1fr]"
-                        : "grid-rows-[0fr]"
-                    }
-                  `}
-                >
-                  <div className="overflow-hidden">
-                    <p
-                      className="
-                        max-w-[570px]
-                        pb-8
-                        pr-12
-                        font-sans
-                        text-[1rem]
-                        font-medium
-                        leading-[1.55]
-                        text-[#f2eae0]/85
-                      "
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
+                    FAQS
+                  </h1>
                 </div>
               </div>
-            );
-          })}
-        </section>
+            </div>
 
+            {/* =================================================
+                FAQ QUESTIONS
+            ================================================== */}
+
+            <section
+              className="
+                faq-questions
+                absolute
+                left-[73px]
+                top-1/2
+                z-40
+                w-[584px]
+                -translate-y-1/2
+              "
+            >
+              {faqs.map((faq, index) => {
+                const isOpen = openIndex === index;
+
+                return (
+                  <div
+                    key={faq.question}
+                    className="
+                      border-b-[5px]
+                      border-white/80
+                      last:border-b-[5px]
+                    "
+                  >
+                    {/* QUESTION */}
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenIndex(isOpen ? null : index)
+                      }
+                      className="
+                        flex
+                        w-full
+                        items-center
+                        justify-between
+                        gap-6
+                        py-[32px]
+                        text-left
+                        transition-opacity
+                        duration-200
+                        hover:opacity-80
+                      "
+                    >
+                      {/* QUESTION TEXT */}
+
+                      <span
+                        className="
+                          text-[36px]
+                          font-medium
+                          leading-[1.1]
+                          tracking-[-0.025em]
+                          text-[#f2eae0]
+                        "
+                        style={{
+                          fontFamily: "'Bodoni FLF', serif",
+                        }}
+                      >
+                        {faq.question}
+                      </span>
+
+                      {/* PLUS */}
+
+                      <span
+                        className="
+                          flex
+                          shrink-0
+                          items-center
+                          justify-center
+                          text-[43px]
+                          font-light
+                          leading-none
+                          text-[#f2eae0]
+                          transition-transform
+                          duration-300
+                        "
+                        style={{
+                          transform: isOpen
+                            ? "rotate(45deg)"
+                            : "rotate(0deg)",
+                        }}
+                      >
+                        +
+                      </span>
+                    </button>
+
+                    {/* ANSWER */}
+
+                    <div
+                      className={`
+                        grid
+                        transition-[grid-template-rows]
+                        duration-500
+                        ease-in-out
+                        ${
+                          isOpen
+                            ? "grid-rows-[1fr]"
+                            : "grid-rows-[0fr]"
+                        }
+                      `}
+                    >
+                      <div className="overflow-hidden">
+                        <p
+                          className="
+                            max-w-[570px]
+                            pb-[32px]
+                            pr-[48px]
+                            font-sans
+                            text-[16px]
+                            font-medium
+                            leading-[1.55]
+                            text-[#f2eae0]/85
+                          "
+                        >
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </section>
+          </div>
+        </MasterCanvas>
       </div>
     </main>
   );

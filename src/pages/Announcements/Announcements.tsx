@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+import TextLoop from '../../components/TextLoop'
+import MasterCanvas from '../../components/MasterCanvas'
+
 const Announcements = () => {
   const [visibleItems, setVisibleItems] = useState({
     idkgText: false,
@@ -8,7 +11,7 @@ const Announcements = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const getPos = (selector) => {
+      const getPos = (selector: string) => {
         const el = document.querySelector(selector)
         return el ? el.getBoundingClientRect().top : Infinity
       }
@@ -46,14 +49,13 @@ const Announcements = () => {
   }, [])
 
   return (
-    <section className="announcements-section relative min-h-screen overflow-hidden isolate">
+    <section className="announcements-section relative min-h-screen w-full overflow-hidden isolate">
 
       {/* =========================
           ANIMATION STYLES
           ========================= */}
 
       <style>{`
-
         /* =========================
            TEXT STICK ON
            ========================= */
@@ -114,11 +116,11 @@ const Announcements = () => {
             animation: none;
           }
         }
-
       `}</style>
 
+
       {/* =========================
-          BACKGROUND
+          FULL-SCREEN BACKGROUND
           ========================= */}
 
       <div
@@ -139,310 +141,394 @@ const Announcements = () => {
         }}
       />
 
+
+      {/* =========================
+          ANNOUNCEMENTS COLLAGE
+          ========================= */}
+
       <div className="announcements-collage">
 
-      {/* =========================
-          LARGE GREEN POST-IT
-          ========================= */}
+        {/* =========================
+            RESPONSIVE 1460 × 900 MASTER DESIGN
+            ========================= */}
 
-      <img
-        src="/images/home/announcements/long-green-postick.png"
-        alt=""
-        className="
-          absolute
-          top-[70px]
-          right-[100px]
-          z-10
-          w-[420px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
+        <MasterCanvas>
 
-      {/* =========================
-          MARIEM POST-IT
-          ========================= */}
+          <div
+            className="
+              relative
+              z-10
+              w-[1460px]
+              h-[900px]
+              overflow-hidden
+            "
+          >
 
-      <img
-        src="/images/home/announcements/mariem-postick.png"
-        alt=""
-        className="
-          absolute
-          bottom-[120px]
-          right-[70px]
-          z-10
-          w-[400px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
+            {/* =========================
+                LARGE GREEN POST-IT
+                ========================= */}
 
-      {/* =========================
-          FLOWER
-          ========================= */}
+            <img
+              src="/images/home/announcements/long-green-postick.png"
+              alt=""
+              className="
+                absolute
+                top-[70px]
+                right-[100px]
+                z-10
+                w-[420px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
 
-      <img
-        src="/images/home/announcements/pretty-flower.png"
-        alt=""
-        className="
-          absolute
-          top-[120px]
-          right-[650px]
-          z-10
-          w-[120px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
 
-      {/* =========================
-          IDKG
-          ========================= */}
+            {/* =========================
+                MARIEM POST-IT
+                ========================= */}
 
-      <img
-        src="/images/home/announcements/idkg.png"
-        alt=""
-        className="
-          absolute
-          top-[140px]
-          right-[350px]
-          z-15
-          w-[375px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
+            <img
+              src="/images/home/announcements/mariem-postick.png"
+              alt=""
+              className="
+                absolute
+                bottom-[120px]
+                right-[70px]
+                z-10
+                w-[400px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
 
-      {/* =========================
-          IDKG TEXT
-          ========================= */}
 
-      <div
-        className={`
-          text-stick-animate
-          idkg-text-trigger
-          absolute
-          top-[248px]
-          right-[415px]
-          z-20
-          w-[225px]
-          rotate-[-11deg]
-          text-center
-          font-bold
-          text-[#254c3a]
-          text-[20px]
-          leading-tight
-          ${visibleItems.idkgText ? 'animate' : ''}
-        `}
-      >
-        Freshers guide is out cuh!! Check it out to see wag1 for the week.
+            {/* =========================
+                FLOWER
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/pretty-flower.png"
+              alt=""
+              className="
+                absolute
+                top-[120px]
+                right-[650px]
+                z-10
+                w-[120px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                IDKG
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/idkg.png"
+              alt=""
+              className="
+                absolute
+                top-[140px]
+                right-[350px]
+                z-15
+                w-[375px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                IDKG TEXT
+                ========================= */}
+
+            <div
+              className={`
+                text-stick-animate
+                idkg-text-trigger
+                absolute
+                top-[248px]
+                right-[415px]
+                z-20
+                w-[225px]
+                rotate-[-11deg]
+                text-center
+                font-bold
+                text-[#254c3a]
+                text-[20px]
+                leading-tight
+                ${visibleItems.idkgText ? 'animate' : ''}
+              `}
+            >
+              Freshers guide is out cuh!! Check it out to see wag1 for the week.
+            </div>
+
+
+            {/* =========================
+                WHITE POST-IT LARGE
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/white-postick-l.png"
+              alt=""
+              className="
+                absolute
+                top-[300px]
+                right-[610px]
+                z-10
+                w-[340px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                LONG WHITE POST-IT
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/long-white-postick.png"
+              alt=""
+              className="
+                absolute
+                bottom-[180px]
+                left-[125px]
+                z-10
+                w-[500px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                LONG WHITE TEXT
+                ========================= */}
+
+            <div
+              className={`
+                text-stick-animate
+                long-white-text-trigger
+                absolute
+                bottom-[250px]
+                left-[150px]
+                z-20
+                text-center
+                w-[375px]
+                font-bold
+                text-[#254c3a]
+                text-[20px]
+                leading-tight
+                ${visibleItems.longWhiteText ? 'animate' : ''}
+              `}
+            >
+              Keep up to date for all the latest events through our website and
+              social, Don't miss out on a thing!!!
+            </div>
+
+
+            {/* =========================
+                SMALL RULED
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/ruled-narrow-postick.png"
+              alt=""
+              className="
+                absolute
+                top-[120px]
+                left-[420px]
+                z-10
+                w-[175px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                SMALL RULED TEXT
+                ========================= */}
+
+            <div
+              className="
+                absolute
+                top-[185px]
+                left-[450px]
+                z-20
+                w-[135px]
+                text-center
+                font-bold
+                text-[#254c3a]
+                text-[16px]
+                leading-tight
+              "
+            >
+              Air frier in the green room!!! chat to me nice rudeboy
+            </div>
+
+
+            {/* =========================
+                BIG GREEN
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/green-postick-l.png"
+              alt=""
+              className="
+                absolute
+                top-[25px]
+                left-[125px]
+                z-5
+                w-[395px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                MICROPHONE
+                ========================= */}
+
+            <img
+              src="/images/home/announcements/microphone-a.png"
+              alt=""
+              className="
+                absolute
+                top-[265px]
+                left-[100px]
+                z-5
+                w-[160px]
+                drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-2
+                hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
+                cursor-pointer
+              "
+            />
+
+
+            {/* =========================
+                TITLE
+                ========================= */}
+
+            <h1
+              className="
+                absolute
+                bottom-[40px]
+                left-[120px]
+                z-50
+                font-display
+                font-black
+                text-[#dbd4c2]
+                text-[108.8px]
+                leading-[0.8]
+                tracking-[-0.06em]
+                whitespace-nowrap
+                drop-shadow-[0_5px_4px_rgba(0,0,0,0.5)]
+              "
+            >
+              ANNOUNCEMENTS
+            </h1>
+
+          </div>
+
+        </MasterCanvas>
+
       </div>
 
-      {/* =========================
-          WHITE POST-IT LARGE
-          ========================= */}
-
-      <img
-        src="/images/home/announcements/white-postick-l.png"
-        alt=""
-        className="
-          absolute
-          top-[300px]
-          right-[610px]
-          z-10
-          w-[340px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
 
       {/* =========================
-          LONG WHITE POST-IT
+          ABOUT US TEXT LOOP
+          KEEPING YOUR ORIGINAL
+          120px POSITIONING SETUP
           ========================= */}
 
-      <img
-        src="/images/home/announcements/long-white-postick.png"
-        alt=""
-        className="
-          absolute
-          bottom-[180px]
-          left-[125px]
-          z-10
-          w-[500px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
+{/* =========================
+    ABOUT US TEXT LOOP
+    120px BELOW ANNOUNCEMENTS
+    ========================= */}
 
-      {/* =========================
-          LONG WHITE TEXT
-          ========================= */}
+{/* =========================
+    ABOUT US TEXT LOOP
+    ========================= */}
 
-      <div
-        className={`
-          text-stick-animate
-          long-white-text-trigger
-          absolute
-          bottom-[250px]
-          left-[150px]
-          z-20
-          text-center
-          w-[375px]
-          font-bold
-          text-[#254c3a]
-          text-[20px]
-          leading-tight
-          ${visibleItems.longWhiteText ? 'animate' : ''}
-        `}
-      >
-        Keep up to date for all the latest events through our website and
-        social, Don't miss out on a thing!!!
-      </div>
-
-      {/* =========================
-          SMALL RULED
-          ========================= */}
-
-      <img
-        src="/images/home/announcements/ruled-narrow-postick.png"
-        alt=""
-        className="
-          absolute
-          top-[120px]
-          left-[420px]
-          z-10
-          w-[175px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
-
-      {/* =========================
-          SMALL RULED TEXT
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          top-[185px]
-          left-[450px]
-          z-20
-          w-[135px]
-          text-center
-          font-bold
-          text-[#254c3a]
-          text-[16px]
-          leading-tight
-        "
-      >
-        Air frier in the green room!!! chat to me nice rudeboy
-      </div>
-
-      {/* =========================
-          BIG GREEN
-          ========================= */}
-
-      <img
-        src="/images/home/announcements/green-postick-l.png"
-        alt=""
-        className="
-          absolute
-          top-[25px]
-          left-[125px]
-          z-5
-          w-[395px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
-
-      {/* =========================
-          MICROPHONE
-          ========================= */}
-
-      <img
-        src="/images/home/announcements/microphone-a.png"
-        alt=""
-        className="
-          absolute
-          top-[265px]
-          left-[100px]
-          z-5
-          w-[160px]
-          drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_12px_16px_rgba(0,0,0,0.5)]
-          cursor-pointer
-        "
-      />
-
-      {/* =========================
-          TITLE
-          ========================= */}
-
-      <h1
-        className="
-          absolute
-          bottom-[40px]
-          left-[120px]
-          z-50
-          font-display
-          font-black
-          text-[#dbd4c2]
-          text-[clamp(4rem,9.2vw,6.8rem)]
-          leading-[0.8]
-          tracking-[-0.06em]
-          whitespace-nowrap
-          drop-shadow-[0_5px_4px_rgba(0,0,0,0.5)]
-        "
-      >
-        ANNOUNCEMENTS
-      </h1>
-
-      </div>
+<section
+  className="
+    relative
+    z-20
+    mt-[700px]
+    w-full
+    h-[520px]
+    overflow-hidden
+  "
+>
+  <div className="w-full">
+    <TextLoop
+      text="Find out a bit about us"
+      shape="wave"
+      speed={95}
+      direction="forward"
+      separator="✦"
+      curviness={42}
+      fontSize={42}
+      fontWeight={700}
+      letterSpacing={1}
+      uppercase
+      color="#254c3a"
+      ribbon
+      ribbonColor="#f2eae0"
+      ribbonWidth={70}
+      pauseOnHover
+    />
+  </div>
+</section>
 
     </section>
   )

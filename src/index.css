@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600;700&family=Special+Elite&display=swap');
+
 @import "tailwindcss";
 
 
@@ -17,6 +17,13 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: clip;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 *,
@@ -43,7 +50,13 @@ a {
   inset: 0;
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 640px) {
+
   .about-us-collage {
     overflow: hidden;
   }
@@ -68,6 +81,11 @@ a {
   .hero-section > img {
     max-width: 70vw;
   }
+
+
+  /* =======================================================
+     GET INVOLVED
+  ======================================================== */
 
   .get-involved-page {
     height: 86.111vw;
@@ -103,6 +121,11 @@ a {
   .get-involved-page .get-involved-options {
     width: 100%;
   }
+
+
+  /* =======================================================
+     RESOURCES
+  ======================================================== */
 
   .resources-section {
     min-height: 100svh;
@@ -158,6 +181,11 @@ a {
     white-space: normal;
   }
 
+
+  /* =======================================================
+     ANNOUNCEMENTS
+  ======================================================== */
+
   .announcements-section {
     height: 86.111vw;
     min-height: 0;
@@ -178,6 +206,11 @@ a {
   .announcements-collage > div.font-bold {
     position: absolute;
   }
+
+
+  /* =======================================================
+     EVENTS
+  ======================================================== */
 
   .events-section {
     height: auto;
@@ -241,6 +274,11 @@ a {
     letter-spacing: -0.08em;
   }
 
+
+  /* =======================================================
+     MAPS
+  ======================================================== */
+
   .maps-section .maps-half {
     width: 100%;
     height: auto;
@@ -289,6 +327,11 @@ a {
     height: auto;
   }
 
+
+  /* =======================================================
+     SPONSORS
+  ======================================================== */
+
   .sponsors-page,
   .sponsors-page > div {
     min-height: 0;
@@ -336,6 +379,11 @@ a {
     max-width: none;
   }
 
+
+  /* =======================================================
+     FAQ
+  ======================================================== */
+
   .faq-page {
     min-height: auto;
     padding: 2rem 1rem 3rem;
@@ -364,6 +412,11 @@ a {
   .faq-page .faq-questions button > span:last-child {
     font-size: 2rem;
   }
+
+
+  /* =======================================================
+     COMMITTEE
+  ======================================================== */
 
   .committee-section {
     min-height: 100svh;
@@ -394,6 +447,11 @@ a {
   }
 }
 
+
+/* =========================================================
+   BODONI FLF
+========================================================= */
+
 @font-face {
   font-family: 'Bodoni FLF';
   src: url('./assets/fonts/BodoniFLF-Roman.woff2') format('woff2');
@@ -401,15 +459,6 @@ a {
   font-style: normal;
   font-display: swap;
 }
-
-@theme {
-  --color-isoc-green: #1e4d39;
-  --color-isoc-cream: #f4f1ea;
-  --font-display: 'Bodoni FLF', 'Bodoni Moda',  Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-typewriter: 'Special Elite', monospace;
-}
-
 
 @font-face {
   font-family: 'Bodoni FLF';
@@ -420,7 +469,7 @@ a {
 
 @font-face {
   font-family: 'Bodoni FLF';
-  src: url('public/fonts/bodoni-FLF/BodoniFLF-Bold.ttf') format('truetype');
+  src: url('/fonts/BodoniFLF-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -437,4 +486,29 @@ a {
   src: url('/fonts/BodoniFLF-BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
+}
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+@theme {
+  --color-isoc-green: #1e4d39;
+  --color-isoc-cream: #f4f1ea;
+
+  --font-display:
+    'Bodoni FLF',
+    'Bodoni Moda',
+    Georgia,
+    serif;
+
+  --font-body:
+    'Inter',
+    system-ui,
+    sans-serif;
+
+  --font-typewriter:
+    'Special Elite',
+    monospace;
 }

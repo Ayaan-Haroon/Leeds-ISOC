@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
+import MasterCanvas from '../../components/MasterCanvas'
 
 const AboutUs2 = () => {
   const [isThumbpinVisible, setIsThumbpinVisible] = useState(false)
   const [isFlowerVisible, setIsFlowerVisible] = useState(false)
   const [isPlasterVisible, setIsPlasterVisible] = useState(false)
   const [areStarsVisible, setAreStarsVisible] = useState(false)
-
   const [isQuranTextVisible, setIsQuranTextVisible] = useState(false)
   const [isHadithTextVisible, setIsHadithTextVisible] = useState(false)
   const [isDescriptionTextVisible, setIsDescriptionTextVisible] =
@@ -17,17 +17,13 @@ const AboutUs2 = () => {
       const flower = document.querySelector('.flower-trigger')
       const plaster = document.querySelector('.plaster-trigger')
       const stars = document.querySelector('.stars-trigger')
-
       const quranText = document.querySelector('.quran-text-trigger')
       const hadithText = document.querySelector('.hadith-text-trigger')
       const descriptionText = document.querySelector(
         '.description-text-trigger'
       )
 
-      // =========================
-      // THUMB PIN — fires as soon as it enters viewport
-      // =========================
-
+      // THUMB PIN
       if (thumbpin && !isThumbpinVisible) {
         const rect = thumbpin.getBoundingClientRect()
 
@@ -36,11 +32,7 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // PRETTY FLOWER — fires as soon as it enters viewport
-      // GATED: only after thumbpin has fired
-      // =========================
-
+      // FLOWER
       if (flower && !isFlowerVisible && isThumbpinVisible) {
         const rect = flower.getBoundingClientRect()
 
@@ -49,11 +41,7 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // GREEN PLASTER — delayed slightly more than before
-      // GATED: only after flower has fired
-      // =========================
-
+      // GREEN PLASTER
       if (plaster && !isPlasterVisible && isFlowerVisible) {
         const rect = plaster.getBoundingClientRect()
 
@@ -62,11 +50,7 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // STARS — delayed slightly more than before
-      // GATED: only after plaster has fired
-      // =========================
-
+      // STARS
       if (stars && !areStarsVisible && isPlasterVisible) {
         const rect = stars.getBoundingClientRect()
 
@@ -75,10 +59,7 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // QUR'AN TEXT — STICKS ON
-      // =========================
-
+      // QUR'AN TEXT
       if (quranText && !isQuranTextVisible) {
         const rect = quranText.getBoundingClientRect()
 
@@ -87,16 +68,8 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // HADITH TEXT — STICKS ON
-      // GATED: after Qur'an text
-      // =========================
-
-      if (
-        hadithText &&
-        !isHadithTextVisible &&
-        isQuranTextVisible
-      ) {
+      // HADITH TEXT
+      if (hadithText && !isHadithTextVisible && isQuranTextVisible) {
         const rect = hadithText.getBoundingClientRect()
 
         if (rect.top <= window.innerHeight * 0.9) {
@@ -104,11 +77,7 @@ const AboutUs2 = () => {
         }
       }
 
-      // =========================
-      // DESCRIPTION TEXT — STICKS ON
-      // GATED: after Hadith text
-      // =========================
-
+      // DESCRIPTION TEXT
       if (
         descriptionText &&
         !isDescriptionTextVisible &&
@@ -120,22 +89,11 @@ const AboutUs2 = () => {
           setIsDescriptionTextVisible(true)
         }
       }
-
-      // Stop listening once everything has triggered
-      if (
-        isThumbpinVisible &&
-        isFlowerVisible &&
-        isPlasterVisible &&
-        areStarsVisible &&
-        isQuranTextVisible &&
-        isHadithTextVisible &&
-        isDescriptionTextVisible
-      ) {
-        window.removeEventListener('scroll', handleScroll)
-      }
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
 
     // Check immediately in case the page is already scrolled
     handleScroll()
@@ -154,26 +112,8 @@ const AboutUs2 = () => {
   ])
 
   return (
-    <section
-      className="
-        about-us-collage
-        relative
-        min-h-screen
-        bg-[#f2eae0]
-        overflow-visible
-        isolate
-      "
-    >
-      {/* =========================
-          ANIMATION STYLES
-          ========================= */}
-
+<section className="about-us-collage relative isolate w-full overflow-visible bg-[#f2eae0]">
       <style>{`
-
-        /* =========================
-           THUMB PIN — DROP ON
-           ========================= */
-
         @keyframes thumbPinDrop {
           0% {
             opacity: 0;
@@ -198,10 +138,6 @@ const AboutUs2 = () => {
             transform: translateY(0) rotate(0deg) scale(1);
           }
         }
-
-        /* =========================
-           PRETTY FLOWER
-           ========================= */
 
         @keyframes flowerStick {
           0% {
@@ -228,10 +164,6 @@ const AboutUs2 = () => {
           }
         }
 
-        /* =========================
-           STARS — STICK ON
-           ========================= */
-
         @keyframes starsStick {
           0% {
             opacity: 0;
@@ -256,10 +188,6 @@ const AboutUs2 = () => {
             transform: translateY(0) rotate(0deg) scale(1);
           }
         }
-
-        /* =========================
-           GREEN PLASTER
-           ========================= */
 
         @keyframes plasterStick {
           0% {
@@ -286,10 +214,6 @@ const AboutUs2 = () => {
           }
         }
 
-        /* =========================
-           TEXT — STICKS ONTO PAPER
-           ========================= */
-
         @keyframes textStick {
           0% {
             opacity: 0;
@@ -314,10 +238,6 @@ const AboutUs2 = () => {
             transform: translateY(0) rotate(0deg) scale(1);
           }
         }
-
-        /* =========================
-           ANIMATION CLASSES
-           ========================= */
 
         .thumbpin-animate {
           opacity: 0;
@@ -384,10 +304,6 @@ const AboutUs2 = () => {
             forwards;
         }
 
-        /* =========================
-           REDUCED MOTION
-           ========================= */
-
         @media (prefers-reduced-motion: reduce) {
           .thumbpin-animate,
           .flower-animate,
@@ -398,503 +314,412 @@ const AboutUs2 = () => {
             animation: none;
           }
         }
-
       `}</style>
 
-      {/* =========================
-          BEIGE PAPER BACKGROUND
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          inset-0
-          z-0
-          opacity-90
-          mix-blend-multiply
-        "
-      >
+      {/* FULL-WIDTH BACKGROUND */}
+      <div className="absolute inset-0 z-0 overflow-visible opacity-90 mix-blend-multiply pointer-events-none">
         <img
           src="/images/home/stickers-n-that/beige-paper.png"
           alt=""
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-            pointer-events-none
-          "
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
       </div>
 
-      {/* =========================
-          WIDE RULED PAPER
-          ========================= */}
+      {/* =========================================================
+          MASTER CANVAS
+          Everything inside here uses the 1460 × 900 coordinate system.
+          MasterCanvas scales the complete composition when the screen
+          becomes narrower than 1460px.
+          ========================================================= */}
 
-      <img
-        src="/images/home/stickers-n-that/wide-ruled.png"
-        alt=""
-        className="
-          absolute
-          z-[1]
-          bottom-[40px]
-          left-[30px]
-          w-[425px]
-          rotate-[-4deg]
-          pointer-events-none
-        "
-      />
-
-      {/* =========================
-          FAT RULED PAPER
-          ========================= */}
-
-      <img
-        src="/images/home/stickers-n-that/fat-ruled.png"
-        alt=""
-        className="
-          absolute
-          z-[1]
-          top-[0px]
-          right-[20px]
-          w-[275px]
-          h-[300px]
-          pointer-events-none
-        "
-      />
-
-      {/* =========================
-          QUR'AN PAPER
-          HOVER ENABLED
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          z-[1]
-          top-[25px]
-          left-[50px]
-          w-[450px]
-          h-[450px]
-          pointer-events-auto
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-          hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
-          cursor-pointer
-        "
-      >
-        <img
-          src="/images/about-us-img-2/qur'an.png"
-          alt=""
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            pointer-events-none
-          "
-        />
-
+      <MasterCanvas>
         <div
-          className={`
-            text-stick-animate
-            quran-text-trigger
-            absolute
-            top-[75px]
-            left-[60px]
-            rotate-[-5deg]
-            w-[340px]
-            text-center
-            text-[#254c3a]
-            font-body
-            font-bold
-            pointer-events-none
-            ${isQuranTextVisible ? 'animate' : ''}
-          `}
+          className="
+            relative
+            z-10
+            h-[900px]
+            w-[1460px]
+            overflow-visible
+          "
         >
-          {/* First Qur'an verse */}
-
-          <p
-            dir="rtl"
+          {/* WIDE RULED PAPER */}
+          <img
+            src="/images/home/stickers-n-that/wide-ruled.png"
+            alt=""
             className="
-              text-[18px]
-              leading-[1.8]
-              mb-[14px]
+              absolute
+              z-[1]
+              bottom-[40px]
+              left-[30px]
+              w-[425px]
+              rotate-[-4deg]
+              pointer-events-none
+            "
+          />
+
+          {/* FAT RULED PAPER */}
+          <img
+            src="/images/home/stickers-n-that/fat-ruled.png"
+            alt=""
+            className="
+              absolute
+              z-[1]
+              top-[0px]
+              right-[20px]
+              w-[275px]
+              h-[300px]
+              pointer-events-none
+            "
+          />
+
+          {/* QUR'AN PAPER */}
+          <div
+            className="
+              absolute
+              z-[1]
+              top-[25px]
+              left-[50px]
+              w-[450px]
+              h-[450px]
+              pointer-events-auto
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+              cursor-pointer
             "
           >
-            وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا
-          </p>
+            <img
+              src="/images/about-us-img-2/qur'an.png"
+              alt=""
+              className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                pointer-events-none
+              "
+            />
 
-          <p
+            <div
+              className={`
+                text-stick-animate
+                quran-text-trigger
+                absolute
+                top-[75px]
+                left-[60px]
+                rotate-[-5deg]
+                w-[340px]
+                text-center
+                text-[#254c3a]
+                font-body
+                font-bold
+                pointer-events-none
+                ${isQuranTextVisible ? 'animate' : ''}
+              `}
+            >
+              <p
+                dir="rtl"
+                className="text-[18px] leading-[1.8] mb-[14px]"
+              >
+                وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا
+              </p>
+
+              <p className="text-[16px] leading-[1.3] mb-[3px]">
+                And hold firmly to the rope of Allah all
+                together and do not be divided
+              </p>
+
+              <p className="text-[14px] leading-none mb-[20px]">
+                Qur&apos;an [3:103]
+              </p>
+
+              <p
+                dir="rtl"
+                className="text-[18px] leading-[1.8] mb-[12px]"
+              >
+                وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ
+              </p>
+
+              <p className="text-[16px] leading-[1.3] mb-[3px]">
+                And do not lose hope in the mercy of
+                Allah, for no one loses hope in Allah&apos;s
+                mercy except those with no faith.
+              </p>
+
+              <p className="text-[14px] leading-none">
+                Qur&apos;an [12:87]
+              </p>
+            </div>
+          </div>
+
+          {/* HADITH PAPER */}
+          <div
             className="
-              text-[16px]
-              leading-[1.3]
-              mb-[3px]
+              absolute
+              z-[1]
+              top-[50px]
+              left-[600px]
+              w-[400px]
+              h-[400px]
+              pointer-events-auto
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+              cursor-pointer
             "
           >
-            And hold firmly to the rope of Allah all
-            together and do not be divided
-          </p>
+            <img
+              src="/images/about-us-img-2/hadith.png"
+              alt=""
+              className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                pointer-events-none
+              "
+            />
 
-          <p
+            <div
+              className={`
+                text-stick-animate
+                hadith-text-trigger
+                absolute
+                top-[70px]
+                left-[85px]
+                w-[275px]
+                text-center
+                text-[#254c3a]
+                font-body
+                font-bold
+                rotate-[5deg]
+                pointer-events-none
+                ${isHadithTextVisible ? 'animate' : ''}
+              `}
+            >
+              <p
+                dir="rtl"
+                className="text-[18px] leading-[1.7] mb-[12px]"
+              >
+                قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:
+                <br />
+                الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا
+              </p>
+
+              <p className="text-[14px] leading-[1.3] mb-[10px]">
+                The Messenger of Allah (Peace and
+                Blessings be unto him):
+              </p>
+
+              <p className="text-[14px] leading-[1.3] mb-[10px]">
+                “The relationship of the believer with
+                another believer is like (the bricks of)
+                a building, each strengthening the
+                other.”
+              </p>
+
+              <p className="text-[14px] leading-[1.3]">
+                He (ﷺ) illustrated this by interlacing
+                the fingers of both his hands.
+              </p>
+            </div>
+          </div>
+
+          {/* DESCRIPTION PAPER */}
+          <div
             className="
-              text-[14px]
-              leading-none
-              mb-[20px]
+              absolute
+              z-[1]
+              bottom-[50px]
+              right-[100px]
+              w-[700px]
+              h-[350px]
+              pointer-events-auto
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
+              cursor-pointer
             "
           >
-            Qur&apos;an [3:103]
-          </p>
+            <img
+              src="/images/about-us-img-2/desc.png"
+              alt=""
+              className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                pointer-events-none
+              "
+            />
 
-          {/* Second Qur'an verse */}
+            <div
+              className={`
+                text-stick-animate
+                description-text-trigger
+                absolute
+                top-[140px]
+                left-[100px]
+                rotate-[3deg]
+                w-[565px]
+                text-center
+                text-[#254c3a]
+                font-body
+                font-bold
+                text-[18px]
+                leading-[1.35]
+                pointer-events-none
+                ${isDescriptionTextVisible ? 'animate' : ''}
+              `}
+            >
+              <p>
+                Leeds ISOC brings Muslim students together to strengthen
+                their faith, seek knowledge and build meaningful friendships.
+                Through talks, study circles, socials and community events, we
+                aim to create a welcoming space where students can learn,
+                connect and grow throughout their university journey.
+              </p>
+            </div>
+          </div>
 
-          <p
-            dir="rtl"
+          {/* GIRLS CARD */}
+          <div
             className="
-              text-[18px]
-              leading-[1.8]
-              mb-[12px]
+              absolute
+              z-20
+              bottom-[50px]
+              left-[35px]
+              bg-white
+              p-3
+              pb-7
+              rotate-[6deg]
+              shadow-xl
+              w-[400px]
+              h-[275px]
             "
           >
-            وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ
-          </p>
+            <img
+              src="/images/home/isocbitstrans/trimmed-girls.png"
+              alt=""
+              className="
+                absolute
+                bottom-[5px]
+                left-[40px]
+                w-full
+                h-full
+                object-contain
+                pointer-events-none
+              "
+            />
+          </div>
 
-          <p
+          {/* GREEN PLASTER */}
+          <img
+            src="/images/home/stickers-n-that/green-plaster.png"
+            alt=""
+            className={`
+              plaster-animate
+              plaster-trigger
+              absolute
+              z-[40]
+              bottom-[275px]
+              left-[350px]
+              w-[120px]
+              pointer-events-none
+              ${isPlasterVisible ? 'animate' : ''}
+            `}
+          />
+
+          {/* GREEN STARS */}
+          <img
+            src="/images/home/stickers-n-that/green-starts-3.png"
+            alt=""
+            className={`
+              stars-animate
+              stars-trigger
+              absolute
+              z-[40]
+              bottom-[225px]
+              left-[50px]
+              w-[80px]
+              pointer-events-none
+              ${areStarsVisible ? 'animate' : ''}
+            `}
+          />
+
+          {/* =====================================================
+              TEA / CHAI CARD
+              HANGS ABOVE THE MASTER CANVAS
+              ===================================================== */}
+
+          <div
             className="
-              text-[16px]
-              leading-[1.3]
-              mb-[3px]
+              absolute
+              z-30
+              top-[-40px]
+              right-[40px]
+              bg-white
+              p-3
+              pb-7
+              rotate-[8deg]
+              shadow-xl
+              w-[200px]
+              h-[350px]
             "
           >
-            And do not lose hope in the mercy of
-            Allah, for no one loses hope in Allah&apos;s
-            mercy except those with no faith.
-          </p>
+            <img
+              src="/images/home/isocbitstrans/trimmed-tea.png"
+              alt=""
+              className="
+                w-[200px]
+                h-[350px]
+                object-cover
+                pointer-events-none
+              "
+            />
+          </div>
 
-          <p
-            className="
-              text-[14px]
-              leading-none
-            "
-          >
-            Qur&apos;an [12:87]
-          </p>
+          {/* THUMB PIN */}
+          <img
+            src="/images/home/stickers-n-that/thumbpin.png"
+            alt=""
+            className={`
+              thumbpin-animate
+              thumbpin-trigger
+              absolute
+              z-[40]
+              top-[-30px]
+              right-[66px]
+              w-[30px]
+              pointer-events-none
+              ${isThumbpinVisible ? 'animate' : ''}
+            `}
+          />
+
+          {/* PRETTY FLOWER */}
+          <img
+            src="/images/home/announcements/pretty-flower.png"
+            alt=""
+            className={`
+              flower-animate
+              flower-trigger
+              absolute
+              z-[40]
+              top-[290px]
+              right-[35px]
+              w-[65px]
+              pointer-events-none
+              ${isFlowerVisible ? 'animate' : ''}
+            `}
+          />
         </div>
-      </div>
-
-      {/* =========================
-          HADITH PAPER
-          HOVER ENABLED
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          z-[1]
-          top-[50px]
-          left-[600px]
-          w-[400px]
-          h-[400px]
-          pointer-events-auto
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-            hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
-          cursor-pointer
-        "
-      >
-        <img
-          src="/images/about-us-img-2/hadith.png"
-          alt=""
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            pointer-events-none
-          "
-        />
-
-        <div
-          className={`
-            text-stick-animate
-            hadith-text-trigger
-            absolute
-            top-[70px]
-            left-[85px]
-            w-[275px]
-            text-center
-            text-[#254c3a]
-            font-body
-            font-bold
-            rotate-[5deg]
-            pointer-events-none
-            ${isHadithTextVisible ? 'animate' : ''}
-          `}
-        >
-          <p
-            dir="rtl"
-            className="
-              text-[18px]
-              leading-[1.7]
-              mb-[12px]
-            "
-          >
-            قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:
-            <br />
-            الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا
-          </p>
-
-          <p
-            className="
-              text-[14px]
-              leading-[1.3]
-              mb-[10px]
-            "
-          >
-            The Messenger of Allah (Peace and
-            Blessings be unto him):
-          </p>
-
-          <p
-            className="
-              text-[14px]
-              leading-[1.3]
-              mb-[10px]
-            "
-          >
-            “The relationship of the believer with
-            another believer is like (the bricks of)
-            a building, each strengthening the
-            other.”
-          </p>
-
-          <p
-            className="
-              text-[14px]
-              leading-[1.3]
-            "
-          >
-            He (ﷺ) illustrated this by interlacing
-            the fingers of both his hands.
-          </p>
-        </div>
-      </div>
-
-      {/* =========================
-          DESCRIPTION PAPER
-          HOVER ENABLED
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          z-[1]
-          bottom-[50px]
-          right-[100px]
-          w-[700px]
-          h-[350px]
-          pointer-events-auto
-          transition-all
-          duration-300
-          ease-out
-          hover:-translate-y-2
-       hover:drop-shadow-[0_6px_5px_rgba(0,0,0,0.25)]
-          cursor-pointer
-        "
-      >
-        <img
-          src="/images/about-us-img-2/desc.png"
-          alt=""
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            pointer-events-none
-          "
-        />
-
-        <div
-          className={`
-            text-stick-animate
-            description-text-trigger
-            absolute
-            top-[140px]
-            left-[100px]
-            rotate-[3deg]
-            w-[565px]
-            text-center
-            text-[#254c3a]
-            font-body
-            font-bold
-            text-[18px]
-            leading-[1.35]
-            pointer-events-none
-            ${isDescriptionTextVisible ? 'animate' : ''}
-          `}
-        >
-          <p>
-            Leeds ISOC brings Muslim students together to strengthen
-            their faith, seek knowledge and build meaningful friendships.
-            Through talks, study circles, socials and community events, we
-            aim to create a welcoming space where students can learn,
-            connect and grow throughout their university journey.
-          </p>
-        </div>
-      </div>
-
-      {/* =========================
-          GIRLS CARD
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          z-20
-          bottom-[50px]
-          left-[35px]
-          bg-white
-          p-3
-          pb-7
-          rotate-[6deg]
-          shadow-xl
-          w-[400px]
-          h-[275px]
-        "
-      >
-        <img
-          src="/images/home/isocbitstrans/trimmed-girls.png"
-          alt=""
-          className="
-            absolute
-            bottom-[5px]
-            left-[40px]
-            w-full
-            h-full
-            object-contain
-            pointer-events-none
-          "
-        />
-      </div>
-
-      {/* =========================
-          GREEN PLASTER
-          ========================= */}
-
-      <img
-        src="/images/home/stickers-n-that/green-plaster.png"
-        alt=""
-        className={`
-          plaster-animate
-          plaster-trigger
-          absolute
-          z-[40]
-          bottom-[275px]
-          left-[350px]
-          w-[120px]
-          pointer-events-none
-          ${isPlasterVisible ? 'animate' : ''}
-        `}
-      />
-
-      {/* =========================
-          GREEN STARS
-          ========================= */}
-
-      <img
-        src="/images/home/stickers-n-that/green-starts-3.png"
-        alt=""
-        className={`
-          stars-animate
-          stars-trigger
-          absolute
-          z-[40]
-          bottom-[225px]
-          left-[50px]
-          w-[9vw]
-          max-w-[80px]
-          pointer-events-none
-          ${areStarsVisible ? 'animate' : ''}
-        `}
-      />
-
-      {/* =========================
-          TEA CARD
-          ========================= */}
-
-      <div
-        className="
-          absolute
-          z-20
-          top-[-40px]
-          right-[40px]
-          bg-white
-          p-3
-          pb-7
-          rotate-[8deg]
-          shadow-xl
-          w-[200px]
-          h-[350px]
-        "
-      >
-        <img
-          src="/images/home/isocbitstrans/trimmed-tea.png"
-          alt=""
-          className="
-            w-[200px]
-            h-[350px]
-            object-cover
-            pointer-events-none
-          "
-        />
-      </div>
-
-      {/* =========================
-          THUMB PIN
-          ========================= */}
-
-      <img
-        src="/images/home/stickers-n-that/thumbpin.png"
-        alt=""
-        className={`
-          thumbpin-animate
-          thumbpin-trigger
-          absolute
-          z-[40]
-          top-[-30px]
-          right-[66px]
-          w-[8vw]
-          max-w-[30px]
-          pointer-events-none
-          ${isThumbpinVisible ? 'animate' : ''}
-        `}
-      />
-
-      {/* =========================
-          PRETTY FLOWER
-          ========================= */}
-
-      <img
-        src="/images/home/announcements/pretty-flower.png"
-        alt=""
-        className={`
-          flower-animate
-          flower-trigger
-          absolute
-          z-[40]
-          top-[290px]
-          right-[35px]
-          w-[9vw]
-          max-w-[65px]
-          pointer-events-none
-          ${isFlowerVisible ? 'animate' : ''}
-        `}
-      />
+      </MasterCanvas>
     </section>
   )
 }

@@ -1,43 +1,67 @@
+import TextLoop from "../../components/TextLoop";
+
 const AboutUs = () => {
-
   return (
-
-    <section
+    <main
       className="
         relative
-        h-[50vh]
+        min-h-screen
+        w-full
         overflow-hidden
-        isolate
-        flex
-        items-center
-        justify-center
-        px-8
+        bg-[#254c3a]
+        bg-cover
+        bg-center
+        bg-no-repeat
       "
       style={{
         backgroundImage:
-          "url('/images/home/isocbitstrans/aboutusfr.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+          "url('/images/home/stickers-n-that/light-green-paper.png')",
       }}
     >
-
-      <h1
+      {/* TEXT LOOP */}
+      <section
         className="
-          font-display
-          font-black
-          text-isoc-cream
-          tracking-[-0.08em]
-          text-[clamp(3rem,8vw,8rem)]
-          text-center
-          drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]
+          relative
+          flex
+          h-[200px]
+          w-full
+          items-center
+          justify-center
+          overflow-hidden
         "
       >
-        ABOUT US
-      </h1>
+        <TextLoop
+          text="Find out a bit about us"
+          shape="wave"
+          speed={95}
+          direction="forward"
+          separator="✦"
+          curviness={42}
+          fontSize={48}
+          fontWeight={700}
+          letterSpacing={2}
+          uppercase
+          color="#254c3a"
+          ribbon
+          ribbonColor="#f2eae0"
+          ribbonWidth={80}
+          pauseOnHover
+        />
+      </section>
 
-    </section>
-  )
-}
+      {/* ABOUT US CONTENT */}
+      <section
+        className="
+          relative
+          w-full
+          px-8
+          py-20
+        "
+      >
+        {/* Your About Us content */}
+      </section>
+    </main>
+  );
+};
 
-export default AboutUs
+export default AboutUs;

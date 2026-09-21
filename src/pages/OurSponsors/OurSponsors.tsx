@@ -1,4 +1,5 @@
 import React from "react";
+import MasterCanvas from "../../components/MasterCanvas";
 
 const rightSponsors = [
   {
@@ -81,191 +82,180 @@ const leftSponsors = [
 export default function OurSponsors() {
   return (
     <main
-      className="sponsors-page
-        relative
-        min-h-screen
-        w-full
-        overflow-hidden
-        bg-cover
-        bg-center
-        bg-no-repeat
+className="sponsors-page relative w-full overflow-hidden
       "
       style={{
-        backgroundImage:
-          "url('/images/OurSponsors/background.png')",
+        backgroundImage: "url('/images/OurSponsors/background.png')",
       }}
     >
-      <div className="sponsors-artboard relative min-h-screen w-full">
+      <div className="relative z-10 w-full flex justify-center">
+        <MasterCanvas>
+          <div className="sponsors-artboard relative h-[900px] w-[1460px] overflow-hidden">
 
-        {/* =====================================================
-            TITLE
-        ====================================================== */}
+            {/* =====================================================
+                TITLE
+            ====================================================== */}
 
-        <h1
-          className="
-            sponsors-title
-            absolute
-            left-[12.5%]
-            top-[17%]
-            z-20
-            w-[36%]
-            text-right
-            text-[6.3vw]
-            font-bold
-            uppercase
-            leading-[0.76]
-            tracking-[-0.045em]
-            text-[#1f513f]
-          "
-          style={{
-            fontFamily: "'Bodoni FLF', serif",
-          }}
-        >
-          <span className="block">OUR</span>
-          <span className="block">SPONSORS</span>
-        </h1>
+            <h1
+              className="
+                sponsors-title
+                absolute
+                left-[183px]
+                top-[153px]
+                z-20
+                w-[526px]
+                text-right
+                text-[91.98px]
+                font-bold
+                uppercase
+                leading-[0.76]
+                tracking-[-0.045em]
+                text-[#1f513f]
+              "
+              style={{
+                fontFamily: "'Bodoni FLF', serif",
+              }}
+            >
+              <span className="block">OUR</span>
+              <span className="block">SPONSORS</span>
+            </h1>
 
+            {/* =====================================================
+                RIGHT SIDE — SPONSORS 1–9
+            ====================================================== */}
 
-        {/* =====================================================
-            RIGHT SIDE — SPONSORS 1–9
-        ====================================================== */}
+            <section
+              className="
+                sponsors-list
+                absolute
+                left-[740px]
+                top-[122px]
+                z-20
+                w-[686px]
+              "
+            >
+              <div className="flex flex-col">
+                {rightSponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.number}
+                    className="
+                      flex
+                      h-[58.5px]
+                      w-full
+                      items-center
+                      gap-[11.7px]
+                    "
+                  >
+                    <img
+                      src={`/images/OurSponsors/${sponsor.number}.png`}
+                      alt=""
+                      className="
+                        h-[40.15px]
+                        w-[40.15px]
+                        shrink-0
+                        object-contain
+                      "
+                    />
 
-        <section
-          className="
-            sponsors-list
-            absolute
-            left-[50.7%]
-            top-[13.5%]
-            z-20
-            w-[47%]
-          "
-        >
-          <div className="flex flex-col">
-
-            {rightSponsors.map((sponsor) => (
-              <div
-                key={sponsor.number}
-                className="
-                  flex
-                  h-[6.5vh]
-                  w-full
-                  items-center
-                  gap-[0.8vw]
-                "
-              >
-                <img
-                  src={`/images/OurSponsors/${sponsor.number}.png`}
-                  alt=""
-                  className="
-                    h-[2.75vw]
-                    w-[2.75vw]
-                    shrink-0
-                    object-contain
-                  "
-                />
-
-                <p
-                  className="
-                    whitespace-nowrap
-                    text-[2.05vw]
-                    font-bold
-                    leading-none
-                    tracking-[-0.045em]
-                    text-[#1f513f]
-                  "
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                  }}
-                >
-                  {sponsor.text}
-                </p>
+                    <p
+                      className="
+                        whitespace-nowrap
+                        text-[29.93px]
+                        font-bold
+                        leading-none
+                        tracking-[-0.045em]
+                        text-[#1f513f]
+                      "
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                      }}
+                    >
+                      {sponsor.text}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </section>
+
+            {/* =====================================================
+                LEFT SIDE — SPONSORS 11–19
+            ====================================================== */}
+
+            <section
+              className="
+                sponsors-list
+                absolute
+                left-[73px]
+                top-[319.5px]
+                z-20
+                w-[664px]
+              "
+            >
+              <div className="flex flex-col">
+                {leftSponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.number}
+                    className="
+                      flex
+                      h-[54.45px]
+                      w-full
+                      items-center
+                      justify-end
+                      gap-[11.7px]
+                    "
+                  >
+                    <p
+                      className="
+                        whitespace-nowrap
+                        text-right
+                        text-[29.93px]
+                        font-bold
+                        leading-none
+                        tracking-[-0.045em]
+                        text-[#1f513f]
+                      "
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                      }}
+                    >
+                      {sponsor.text}
+                    </p>
+
+                    <img
+                      src={`/images/OurSponsors/${sponsor.number}.png`}
+                      alt=""
+                      className="
+                        h-[40.15px]
+                        w-[40.15px]
+                        shrink-0
+                        object-contain
+                      "
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* =====================================================
+                BOTTOM ARROWS
+            ====================================================== */}
+
+            <img
+              src="/images/OurSponsors/arrows.png"
+              alt=""
+              className="
+                sponsors-arrows
+                absolute
+                left-[774px]
+                top-[661.5px]
+                z-10
+                w-[248.2px]
+                object-contain
+              "
+            />
 
           </div>
-        </section>
-
-
-        {/* =====================================================
-            LEFT SIDE — SPONSORS 11–19
-        ====================================================== */}
-
-        <section
-          className="
-            sponsors-list
-            absolute
-            left-[5%]
-            top-[35.5%]
-            z-20
-            w-[45.5%]
-          "
-        >
-          <div className="flex flex-col">
-
-            {leftSponsors.map((sponsor) => (
-              <div
-                key={sponsor.number}
-                className="
-                  flex
-                  h-[6.05vh]
-                  w-full
-                  items-center
-                  justify-end
-                  gap-[0.8vw]
-                "
-              >
-                <p
-                  className="
-                    whitespace-nowrap
-                    text-right
-                    text-[2.05vw]
-                    font-bold
-                    leading-none
-                    tracking-[-0.045em]
-                    text-[#1f513f]
-                  "
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                  }}
-                >
-                  {sponsor.text}
-                </p>
-
-                <img
-                  src={`/images/OurSponsors/${sponsor.number}.png`}
-                  alt=""
-                  className="
-                    h-[2.75vw]
-                    w-[2.75vw]
-                    shrink-0
-                    object-contain
-                  "
-                />
-              </div>
-            ))}
-
-          </div>
-        </section>
-
-
-        {/* =====================================================
-            BOTTOM ARROWS
-        ====================================================== */}
-
-        <img
-          src="/images/OurSponsors/arrows.png"
-          alt=""
-          className="
-            sponsors-arrows
-            absolute
-            left-[53%]
-            top-[73.5%]
-            z-10
-            w-[17%]
-            object-contain
-          "
-        />
-
+        </MasterCanvas>
       </div>
     </main>
   );
