@@ -1,6 +1,7 @@
-import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer,AboutUs2Responsive, AnnouncementsResponsive, CommitteeResponsive, ResourcesResponsive} from './pages'
-import GetInvolved from './pages/GetInvolved/GetInvolved'
-import OurSponsors from './pages/OurSponsors/OurSponsors'
+import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer,AboutUs2Responsive, AnnouncementsResponsive, CommitteeResponsive, ResourcesResponsive, GetInvolvedResponsive, MapsResponsive, FAQResponsive} from './pages'
+
+
+import OurSponsorsResponsive from './pages/OurSponsors/OurSponsorsResponsive'
 
 function App() {
   return (
@@ -12,10 +13,10 @@ function App() {
       <Events/>
       <CommitteeResponsive/>
       <ResourcesResponsive/>
-      <GetInvolved/>
-      <OurSponsors/>
-      <Maps/>
-      <FAQ />
+      <GetInvolvedResponsive/>
+      <OurSponsorsResponsive/>
+      <MapsResponsive/>
+      <FAQResponsive/>
       <Footer/>
       
     </>
