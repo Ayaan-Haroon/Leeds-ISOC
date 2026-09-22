@@ -21,7 +21,7 @@ const mosques = [
   },
   {
     name: "MAKKI MASJID",
-    image: "public/images/home/isocbitstrans/makki-masjid.jpg",
+    image: "/images/home/stickers-n-that/makki-masjid.jpg",
     link: "https://www.google.com/maps/search/?api=1&query=Makki+Masjid%2C+Leeds",
     details: [
       "Approx. 21-minute walk from Parkinson’s steps.",
@@ -37,24 +37,22 @@ const mosques = [
       "Bus 8 from Leeds University (Bus Stop A) → Headrow → Lincoln Green Centre → approx. 4-minute walk.",
     ],
   },
-];
+]
 
 const MapsMobile = () => {
-
   const [areMapCardsVisible, setAreMapCardsVisible] = useState(false)
   const [isTitleVisible, setIsTitleVisible] = useState(false)
 
-  const mapCardsRef = useRef(null)
-  const titleRef = useRef(null)
+  const mapCardsRef = useRef<HTMLDivElement | null>(null)
+  const titleRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-
     const handleScroll = () => {
-
       const vh = window.innerHeight
 
       if (titleRef.current && !isTitleVisible) {
         const rect = titleRef.current.getBoundingClientRect()
+
         if (rect.top <= vh * 0.85) {
           setIsTitleVisible(true)
         }
@@ -62,6 +60,7 @@ const MapsMobile = () => {
 
       if (mapCardsRef.current && !areMapCardsVisible) {
         const rect = mapCardsRef.current.getBoundingClientRect()
+
         if (rect.top <= vh * 0.7) {
           setAreMapCardsVisible(true)
         }
@@ -77,115 +76,166 @@ const MapsMobile = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-
   }, [areMapCardsVisible, isTitleVisible])
 
   return (
-    <section className="maps-mobile relative w-full overflow-hidden isolate flex items-center justify-center min-h-screen">
+    <section
+      className="
+        maps-mobile
+        relative
+        isolate
+        flex
+        min-h-screen
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        p-0
+        m-0
+      "
+    >
 
-      {/* BACKGROUND */}
+      {/* FULL VIEWPORT GRAIN / BACKGROUND */}
       <div
-        className="absolute inset-0 z-0 opacity-90 mix-blend-multiply pointer-events-none"
+        className="
+          absolute
+          inset-0
+          z-0
+          opacity-100
+          mix-blend-multiply
+          pointer-events-none
+        "
         style={{
           backgroundImage:
-            "url('/images/home/stickers-n-that/light-green-paper.png')",
-
+            "url('/images/home/stickers-n-that/darkone.png')",
+          backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "nrepeat",
+          backgroundRepeat: "no-repeat",
         }}
       />
 
-      {/* =========================
-          MOBILE ARTBOARD
-          378 × 560 — matches Committee
-          ========================= */}
+      {/* MOBILE ARTBOARD */}
       <div
         className="
           relative
           z-10
-          w-[378px]
+          m-0
           h-[800px]
+          w-[378px]
+          max-w-none
           overflow-visible
+          p-0
         "
       >
 
         {/* =====================================================
-            SECTION 1 — MOSQUE LIST + TITLE
+            SECTION 1 — MOSQUE LIST + TITLE (FLOW LAYOUT)
             ===================================================== */}
 
-        <div className="relative w-full h-[680px] overflow-hidden">
+        <div className="relative m-0 flex h-[680px] w-full flex-col items-center overflow-visible p-0">
 
           {/* FOUR MOSQUES — 2×2 grid */}
-          <div className="absolute left-[14px] top-[50px] grid w-[350px] grid-cols-2 gap-x-[12px] gap-y-[14px]">
-
+          <div
+            className="
+              m-0
+              mt-[50px]
+              grid
+              w-[350px]
+              grid-cols-2
+              gap-x-[12px]
+              gap-y-[14px]
+              p-0
+            "
+          >
             {mosques.map((mosque) => (
               <div
                 key={mosque.name}
-                className="flex min-w-0 gap-[7px]"
+                className="m-0 flex min-w-0 gap-[7px] p-0"
               >
-                {/* MOSQUE IMAGE — GOOGLE MAPS */}
                 <a
                   href={mosque.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block shrink-0"
+                  className="m-0 block shrink-0 p-0"
                 >
                   <img
                     src={mosque.image}
                     alt={mosque.name}
-                    className="h-[42px] w-[42px] rounded-full border-[1px] border-[#f2eae0] object-cover"
+                    className="
+                      m-0
+                      h-[42px]
+                      w-[42px]
+                      rounded-full
+                      border-[1px]
+                      border-[#f2eae0]
+                      object-cover
+                      p-0
+                    "
                   />
                 </a>
 
-                <div className="min-w-0 font-body text-[#f2eae0]">
-
-                  {/* MOSQUE TITLE — GOOGLE MAPS */}
+                <div className="m-0 min-w-0 p-0 font-body text-[#f2eae0]">
                   <a
                     href={mosque.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block"
+                    className="m-0 block p-0"
                   >
-                    <h2 className="mb-[3px] text-[15px] font-bold uppercase leading-[1.05]">
+                    <h2 className="m-0 mb-[3px] p-0 text-[15px] font-bold uppercase leading-[1.05]">
                       {mosque.name}
                     </h2>
                   </a>
 
-                  <ul className="list-disc space-y-[2px] pl-[8px] text-[10.5px] leading-[1.25]">
+                  <ul className="m-0 list-disc space-y-[2px] pl-[8px] text-[10.5px] leading-[1.25]">
                     {mosque.details.map((detail, index) => (
                       <li key={index}>{detail}</li>
                     ))}
                   </ul>
-
                 </div>
               </div>
             ))}
-
           </div>
 
-          {/* MOSQUES & MAPS TITLE — slides in from LEFT */}
-          <div
-            ref={titleRef}
-            className={`
-              absolute
-              left-[14px]
-              top-[390px]
-              w-[350px]
-              maps-title-slide
-              ${isTitleVisible ? 'maps-title-in' : 'maps-title-left'}
-            `}
-          >
-            <h1 className="whitespace-nowrap text-center font-display text-[42px] font-bold uppercase leading-[0.75] tracking-[-3px] text-[#f2eae0] drop-shadow-[0_2px_3px_rgba(0,0,0,0.45)]">
+          {/* MOSQUES & MAPS TITLE — now flows naturally, centered */}
+         <div
+  ref={titleRef}
+  className={`
+    absolute
+    left-1/2
+    top-[330px]
+    m-0
+    flex
+    w-full
+    justify-center
+    p-0
+    maps-title-slide
+    ${isTitleVisible ? 'maps-title-in' : 'maps-title-left'}
+  `}
+>
+            <h1
+              className="
+                m-0
+                whitespace-nowrap
+                p-0
+                text-center
+                font-display
+                text-[42px]
+                font-bold
+                uppercase
+                leading-[0.75]
+                tracking-[-3px]
+                text-[#f2eae0]
+                drop-shadow-[0_2px_3px_rgba(0,0,0,0.45)]
+              "
+            >
               MOSQUES &amp; MAPS
             </h1>
           </div>
 
         </div>
 
-
         {/* =====================================================
             SECTION 2 — MAP CARD STACK
-            Rotation softened from ±4° → ±2°
             ===================================================== */}
 
         <div
@@ -194,18 +244,21 @@ const MapsMobile = () => {
             absolute
             bottom-[75px]
             left-1/2
-            -translate-x-1/2
-            w-[362px]
+            m-0
             h-[245px]
+            w-[362px]
+            -translate-x-1/2
             overflow-visible
+            p-0
           "
         >
 
-          {/* BACK PAPER — rotated -2° */}
+          {/* BACK PAPER */}
           <div
             className={`
               absolute
               inset-0
+              m-0
               bg-[#f2eae0]
               border-[5.7px]
               border-white
@@ -216,44 +269,40 @@ const MapsMobile = () => {
             `}
           />
 
-          {/* FRONT PAPER — rotated +2° */}
+          {/* FRONT PAPER */}
           <div
             className={`
               absolute
               inset-0
+              m-0
+              overflow-hidden
               bg-[#f2eae0]
               border-[5.7px]
               border-white
               shadow-[0_11px_23px_rgba(0,0,0,0.3)]
               rotate-2
-              overflow-hidden
               maps-mobile-front-card
               ${areMapCardsVisible ? 'animate' : ''}
             `}
           >
-
-            {/* MAP IMAGE — fills the interior */}
-            <div className="absolute inset-0 flex items-center justify-center p-[8px]">
+            <div className="absolute inset-0 m-0 flex items-center justify-center p-[8px]">
               <img
                 src="/images/home/isocbitstrans/leeds-map.png"
                 alt="Map of Leeds"
-                className="w-full h-full object-contain"
+                className="m-0 h-full w-full object-contain p-0"
               />
             </div>
-
           </div>
 
         </div>
-
       </div>
 
       {/* =========================
-          ANIMATIONS — rotation softened to ±2°
+          ANIMATIONS
           ========================= */}
 
       <style>{`
 
-        /* Title slide-in */
         .maps-title-slide {
           opacity: 0;
           transition:
@@ -261,8 +310,15 @@ const MapsMobile = () => {
             translate 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /*
+          FIX:
+          The title now translates based on its own width (-120%),
+          not the full viewport width (-100vw). This keeps it visually
+          anchored to the artboard and prevents it from flying too far
+          off-screen during the slide-in.
+        */
         .maps-title-left {
-          translate: -120vw 0;
+          translate: -120% 0;
         }
 
         .maps-title-in {
@@ -281,7 +337,6 @@ const MapsMobile = () => {
         }
 
         @keyframes mapsMobileSlideLeft {
-
           0% {
             opacity: 0;
             transform: translateX(-100vw) rotate(-2deg);
@@ -296,11 +351,9 @@ const MapsMobile = () => {
             opacity: 1;
             transform: translateX(0) rotate(-2deg);
           }
-
         }
 
         @keyframes mapsMobileSlideRight {
-
           0% {
             opacity: 0;
             transform: translateX(100vw) rotate(2deg);
@@ -315,7 +368,6 @@ const MapsMobile = () => {
             opacity: 1;
             transform: translateX(0) rotate(2deg);
           }
-
         }
 
         .maps-mobile-back-card.animate {
@@ -337,7 +389,6 @@ const MapsMobile = () => {
         }
 
         @media (prefers-reduced-motion: reduce) {
-
           .maps-title-slide,
           .maps-mobile-back-card,
           .maps-mobile-front-card {
@@ -346,13 +397,12 @@ const MapsMobile = () => {
             translate: 0 0 !important;
             animation: none !important;
           }
-
         }
 
       `}</style>
 
     </section>
-  );
-};
+  )
+}
 
-export default MapsMobile;
+export default MapsMobile
