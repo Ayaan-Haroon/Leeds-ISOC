@@ -85,7 +85,7 @@ const AboutUs2Mobile = () => {
   ])
 
   return (
-    <section className="about-us-mobile relative w-full h-[425px] overflow-visible isolate">
+    <section className="about-us-mobile relative z-30 w-full h-[525px] overflow-visible isolate">
 
       {/* BACKGROUND */}
 
@@ -123,15 +123,15 @@ const AboutUs2Mobile = () => {
           relative
           z-10
           mx-auto
-          w-[340px]
-          h-[425px]
+          w-[345px]
+          h-[505px]
           overflow-visible
         "
       >
 
 
         {/* =====================================================
-            QUR'AN PAPER
+            QUR'AN PAPER — top-LEFT corner of screen, scaled UP 15%
             ===================================================== */}
 
         <div
@@ -139,9 +139,9 @@ const AboutUs2Mobile = () => {
             absolute
             z-[10]
             top-[42px]
-            left-[0px]
-            w-[190px]
-            h-[190px]
+            left-[-20px]
+            w-[219px]
+            h-[219px]
             rotate-[-4deg]
             transition-all
             duration-300
@@ -161,14 +161,15 @@ const AboutUs2Mobile = () => {
             "
           />
 
+          {/* Only the second ayah — made larger and clearer, inside paper bounds */}
           <div
             className={`
               mobile-text-stick
               mobile-quran-text-trigger
               absolute
-              top-[35px]
-                left-[25px]
-                w-[140px]
+              top-[45px]
+              left-[32px]
+              w-[155px]
               rotate-[-8deg]
               text-center
               text-[#254c3a]
@@ -182,41 +183,9 @@ const AboutUs2Mobile = () => {
             <p
               dir="rtl"
               className="
-                text-[6.3px]
-                leading-[1.7]
-                mb-[6px]
-              "
-            >
-              وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا
-            </p>
-
-            <p
-              className="
-                text-[5.8px]
-                leading-[1.3]
-                mb-[2px]
-              "
-            >
-              And hold firmly to the rope of Allah all
-              together and do not be divided
-            </p>
-
-            <p
-              className="
-                text-[5px]
-                leading-none
+                text-[12px]
+                leading-[1.65]
                 mb-[8px]
-              "
-            >
-              Qur&apos;an [3:103]
-            </p>
-
-            <p
-              dir="rtl"
-              className="
-                text-[6.3px]
-                leading-[1.7]
-                mb-[5px]
               "
             >
               وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ
@@ -224,9 +193,9 @@ const AboutUs2Mobile = () => {
 
             <p
               className="
-                text-[5.8px]
-                leading-[1.3]
-                mb-[2px]
+                text-[10px]
+                leading-[1.35]
+                mb-[3px]
               "
             >
               And do not lose hope in the mercy of
@@ -236,7 +205,7 @@ const AboutUs2Mobile = () => {
 
             <p
               className="
-                text-[5px]
+                text-[7px]
                 leading-none
               "
             >
@@ -248,7 +217,7 @@ const AboutUs2Mobile = () => {
 
 
         {/* =====================================================
-            TEA / CHAI PHOTO
+            TEA / CHAI PHOTO — top-RIGHT corner of screen
             ===================================================== */}
 
         <div
@@ -256,14 +225,14 @@ const AboutUs2Mobile = () => {
             absolute
             z-[20]
             top-[-14px]
-            right-[4px]
+            right-[-20px]
             bg-white
-            p-[5px]
-            pb-[13px]
+            p-[4px]
+            pb-[11px]
             rotate-[7deg]
             shadow-[0_3px_7px_rgba(0,0,0,0.25)]
-            w-[100px]
-            h-[175px]
+            w-[85px]
+            h-[149px]
           "
         >
           <img
@@ -290,7 +259,7 @@ const AboutUs2Mobile = () => {
             absolute
             z-[50]
             top-[-13px]
-            right-[34px]
+            right-[10px]
             w-[18px]
             pointer-events-none
             ${isThumbpinVisible ? 'mobile-animate' : ''}
@@ -308,8 +277,8 @@ const AboutUs2Mobile = () => {
             mobile-flower-trigger
             absolute
             z-[50]
-            top-[160px]
-            right-[3px]
+            top-[120px]
+            right-[-25px]
             w-[33px]
             pointer-events-none
             ${isFlowerVisible ? 'mobile-animate' : ''}
@@ -318,22 +287,22 @@ const AboutUs2Mobile = () => {
 
 
         {/* =====================================================
-            GIRLS PHOTO
+            GIRLS PHOTO — bottom-LEFT, overflows page below
             ===================================================== */}
 
         <div
           className="
             absolute
-            z-[20]
-            bottom-[7px]
-            left-[7px]
+            z-[10]
+            bottom-[-40px]
+            left-[-15px]
             bg-white
-            p-[6px]
-            pb-[15px]
+            p-[5px]
+            pb-[13px]
             rotate-[5deg]
             shadow-[0_3px_7px_rgba(0,0,0,0.25)]
-            w-[160px]
-            h-[125px]
+            w-[136px]
+            h-[106px]
           "
         >
 
@@ -343,9 +312,9 @@ const AboutUs2Mobile = () => {
             className="
               absolute
               bottom-[3px]
-              left-[15px]
-              w-[135px]
-              h-[112px]
+              left-[13px]
+              w-[115px]
+              h-[95px]
               object-contain
               pointer-events-none
             "
@@ -363,10 +332,10 @@ const AboutUs2Mobile = () => {
             mobile-stars-animate
             mobile-stars-trigger
             absolute
-            z-[45]
-            bottom-[73px]
-            left-[-2px]
-            w-[41px]
+            z-[70]
+            bottom-[30px]
+            left-[-10px]
+            w-[30px]
             pointer-events-none
             ${areStarsVisible ? 'mobile-animate' : ''}
           `}
@@ -382,10 +351,11 @@ const AboutUs2Mobile = () => {
             mobile-plaster-animate
             mobile-plaster-trigger
             absolute
-            z-[45]
-            bottom-[116px]
-            left-[135px]
+            z-[70]
+            bottom-[30px]
+            left-[90px]
             w-[55px]
+            rotate-[15deg]
             pointer-events-none
             ${isPlasterVisible ? 'mobile-animate' : ''}
           `}
@@ -393,23 +363,23 @@ const AboutUs2Mobile = () => {
 
 
         {/* =====================================================
-            HADITH PAPER
+            HADITH PAPER — scaled UP 10%
             ===================================================== */}
 
         <div
-  className="
-    absolute
-    z-[10]
-    bottom-[35px]
-    right-[-3px]
-    w-[160px]
-    h-[155px]
-    rotate-[5deg]
-    transition-all
-    duration-300
-    ease-out
-  "
->
+          className="
+            absolute
+            z-[10]
+            bottom-[35px]
+            right-[-20px]
+            w-[220px]
+            h-[200px]
+            rotate-[5deg]
+            transition-all
+            duration-300
+            ease-out
+          "
+        >
 
           <img
             src="/images/about-us-img-2/hadith.png"
@@ -428,9 +398,9 @@ const AboutUs2Mobile = () => {
               mobile-text-stick
               mobile-hadith-text-trigger
               absolute
-              top-[28px]
-              left-[34px]
-              w-[110px]
+              top-[38px]
+              left-[45px]
+              w-[150px]
               text-center
               text-[#254c3a]
               font-body
@@ -443,32 +413,21 @@ const AboutUs2Mobile = () => {
             <p
               dir="rtl"
               className="
-                text-[6.3px]
-                leading-[1.55]
-                mb-[5px]
+                text-[12.5px]
+                leading-[1.5]
+                mb-[7px]
+                rotate-[4deg]
               "
             >
-              قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:
-              <br />
               الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا
             </p>
 
             <p
               className="
-                text-[5.1px]
-                leading-[1.3]
-                mb-[4px]
-              "
-            >
-              The Messenger of Allah (Peace and
-              Blessings be unto him):
-            </p>
-
-            <p
-              className="
-                text-[5.1px]
-                leading-[1.3]
-                mb-[4px]
+                text-[9px]
+                leading-[1.35]
+                mb-[6px]
+                rotate-[4deg]
               "
             >
               “The relationship of the believer with
@@ -479,8 +438,9 @@ const AboutUs2Mobile = () => {
 
             <p
               className="
-                text-[5.1px]
-                leading-[1.3]
+                text-[9px]
+                leading-[1.35]
+                rotate-[4deg]
               "
             >
               He (ﷺ) illustrated this by interlacing
@@ -494,86 +454,54 @@ const AboutUs2Mobile = () => {
 
 
       {/* =====================================================
-          MOBILE ANIMATIONS
+          MOBILE ANIMATIONS — softened stick-on bounce
           ===================================================== */}
 
       <style>{`
 
-        @keyframes mobileStickDrop {
+        @keyframes mobileStickOn {
           0% {
             opacity: 0;
-            transform: translateY(-18px) rotate(-3deg) scale(0.97);
+            transform: scale(0.4) rotate(-10deg);
           }
 
-          55% {
+          45% {
             opacity: 1;
-            transform: translateY(3px) rotate(1deg) scale(1.01);
+            transform: scale(1.08) rotate(5deg);
           }
 
-          80% {
-            transform: translateY(-1px) rotate(-0.5deg) scale(1);
+          70% {
+            transform: scale(0.97) rotate(-2.5deg);
+          }
+
+          88% {
+            transform: scale(1.015) rotate(1deg);
           }
 
           100% {
             opacity: 1;
-            transform: translateY(0) rotate(0deg) scale(1);
+            transform: scale(1) rotate(0deg);
           }
         }
 
-        @keyframes mobilePinDrop {
-          0% {
-            opacity: 0;
-            transform: translateY(-16px) rotate(-10deg) scale(1.1);
-          }
-
-          65% {
-            opacity: 1;
-            transform: translateY(3px) rotate(3deg) scale(0.98);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateY(0) rotate(0deg) scale(1);
-          }
-        }
-
-        .mobile-text-stick {
-          opacity: 0;
-        }
-
-        .mobile-text-stick.mobile-animate {
-          animation:
-            mobileStickDrop
-            0.4s
-            cubic-bezier(0.2, 0.8, 0.2, 1)
-            forwards;
-        }
-
-        .mobile-thumbpin-animate {
-          opacity: 0;
-        }
-
-        .mobile-thumbpin-animate.mobile-animate {
-          animation:
-            mobilePinDrop
-            0.35s
-            cubic-bezier(0.2, 0.8, 0.2, 1)
-            forwards;
-        }
-
+        .mobile-text-stick,
+        .mobile-thumbpin-animate,
         .mobile-flower-animate,
         .mobile-plaster-animate,
         .mobile-stars-animate {
           opacity: 0;
+          transform: scale(0.4) rotate(-10deg);
         }
 
+        .mobile-text-stick.mobile-animate,
+        .mobile-thumbpin-animate.mobile-animate,
         .mobile-flower-animate.mobile-animate,
         .mobile-plaster-animate.mobile-animate,
         .mobile-stars-animate.mobile-animate {
           animation:
-            mobileStickDrop
-            0.3s
-            cubic-bezier(0.2, 0.8, 0.2, 1)
+            mobileStickOn
+            0.45s
+            cubic-bezier(0.34, 1.2, 0.64, 1)
             forwards;
         }
 
@@ -584,6 +512,7 @@ const AboutUs2Mobile = () => {
           .mobile-plaster-animate,
           .mobile-stars-animate {
             opacity: 1;
+            transform: none;
             animation: none;
           }
         }

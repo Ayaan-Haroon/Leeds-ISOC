@@ -1,10 +1,39 @@
+import { useEffect, useRef, useState } from 'react'
+
 const GetInvolvedMobile = () => {
+
+  const [isArrowVisible, setIsArrowVisible] = useState(false)
+  const arrowRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!arrowRef.current || isArrowVisible) return
+
+      const rect = arrowRef.current.getBoundingClientRect()
+      const vh = window.innerHeight
+
+      if (rect.top <= vh * 0.85) {
+        setIsArrowVisible(true)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
+
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isArrowVisible])
+
   return (
     <main
       className="
         relative
         w-full
-        h-[520px]
+        h-[570px]
         overflow-hidden
       "
       style={{
@@ -24,7 +53,7 @@ const GetInvolvedMobile = () => {
           relative
           mx-auto
           w-[340px]
-          h-[520px]
+          h-[560px]
           overflow-hidden
         "
       >
@@ -36,7 +65,7 @@ const GetInvolvedMobile = () => {
           className="
             absolute
             left-[34px]
-            top-[22px]
+            top-[35px]
             z-30
             w-[272px]
             text-[58px]
@@ -68,30 +97,34 @@ const GetInvolvedMobile = () => {
           alt="Leeds Islamic Society collage"
           className="
             absolute
-            left-[20px]
-            top-[82px]
+            left-[5px]
+            top-[115px]
             z-20
-            w-[300px]
+            w-[330px]
             object-contain
           "
         />
 
 
         {/* =====================================================
-            LARGE ARROW
+            LARGE ARROW — slides in from the RIGHT
         ====================================================== */}
         <img
+          ref={arrowRef}
           src="/images/GetInvolved/arrow.png"
           alt=""
-          className="
+          className={`
             absolute
-            left-[121px]
-            top-[218px]
+            right-[0px]
+            top-[340px]
             z-30
             w-[100px]
-            rotate-[-3deg]
+            rotate-[20deg]
+            -scale-x-100
             object-contain
-          "
+            get-involved-arrow
+            ${isArrowVisible ? 'get-involved-arrow-in' : 'get-involved-arrow-right'}
+          `}
         />
 
 
@@ -113,9 +146,24 @@ const GetInvolvedMobile = () => {
         >
 
           {/* =================================================
-              MEMBERSHIPS
+              MEMBERSHIPS — enlarged + clickable
           ================================================== */}
-          <div className="relative w-[135px]">
+          <a
+            href="https://example.com/memberships"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              relative
+              block
+              w-[135px]
+              transition-transform
+              duration-200
+              ease-out
+              hover:scale-105
+              cursor-pointer
+            "
+            aria-label="Memberships"
+          >
             <img
               src="/images/GetInvolved/ripped-paper.png"
               alt=""
@@ -134,7 +182,7 @@ const GetInvolvedMobile = () => {
                 items-center
                 justify-center
                 px-[4px]
-                text-[13px]
+                text-[15px]
                 font-semibold
                 uppercase
                 leading-none
@@ -146,13 +194,28 @@ const GetInvolvedMobile = () => {
             >
               Memberships
             </span>
-          </div>
+          </a>
 
 
           {/* =================================================
-              VOLUNTEERING
+              VOLUNTEERING — enlarged + clickable
           ================================================== */}
-          <div className="relative w-[135px]">
+          <a
+            href="https://example.com/volunteering"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              relative
+              block
+              w-[135px]
+              transition-transform
+              duration-200
+              ease-out
+              hover:scale-105
+              cursor-pointer
+            "
+            aria-label="Volunteering"
+          >
             <img
               src="/images/GetInvolved/ripped-paper2.png"
               alt=""
@@ -171,7 +234,7 @@ const GetInvolvedMobile = () => {
                 items-center
                 justify-center
                 px-[4px]
-                text-[13px]
+                text-[15px]
                 font-semibold
                 uppercase
                 leading-none
@@ -183,11 +246,43 @@ const GetInvolvedMobile = () => {
             >
               Volunteering
             </span>
-          </div>
+          </a>
 
         </div>
 
       </div>
+
+      {/* =====================================================
+          ARROW SLIDE-IN ANIMATION
+          ===================================================== */}
+      <style>{`
+
+        .get-involved-arrow {
+          opacity: 0;
+          transition:
+            opacity 0.7s ease-out,
+            translate 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .get-involved-arrow-right {
+          translate: 120vw 0;
+        }
+
+        .get-involved-arrow-in {
+          opacity: 1;
+          translate: 0 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .get-involved-arrow {
+            opacity: 1 !important;
+            translate: 0 0 !important;
+            transition: none !important;
+          }
+        }
+
+      `}</style>
+
     </main>
   );
 };

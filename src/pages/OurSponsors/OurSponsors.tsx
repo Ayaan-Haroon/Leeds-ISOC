@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MasterCanvas from "../../components/MasterCanvas";
 
 const rightSponsors = [
@@ -80,6 +80,42 @@ const leftSponsors = [
 ];
 
 export default function OurSponsors() {
+  const titleRef = useRef(null);
+  const arrowsRef = useRef(null);
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const [isArrowsVisible, setIsArrowsVisible] = useState(false);
+
+  useEffect(() => {
+    const titleEl = titleRef.current;
+    const arrowsEl = arrowsRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          if (entry.target === titleEl) {
+            setIsTitleVisible(true);
+          } else if (entry.target === arrowsEl) {
+            setIsArrowsVisible(true);
+          }
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (titleEl) observer.observe(titleEl);
+    if (arrowsEl) observer.observe(arrowsEl);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main
 className="sponsors-page relative w-full overflow-hidden
@@ -88,17 +124,88 @@ className="sponsors-page relative w-full overflow-hidden
         backgroundImage: "url('/images/OurSponsors/background.png')",
       }}
     >
+      {/* =====================================================
+          SLIDE-IN ANIMATIONS
+      ====================================================== */}
+      <style>{`
+        @keyframes sponsorsTitleSlide {
+          0% {
+            opacity: 0;
+            transform: translateX(-180px);
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes sponsorsArrowsSlide {
+          0% {
+            opacity: 0;
+            transform: translateX(180px);
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .sponsors-title-slide {
+          opacity: 0;
+        }
+
+        .sponsors-title-slide.sponsors-title-slide-in {
+          animation:
+            sponsorsTitleSlide
+            1s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            0s
+            forwards;
+        }
+
+        .sponsors-arrows-slide {
+          opacity: 0;
+        }
+
+        .sponsors-arrows-slide.sponsors-arrows-slide-in {
+          animation:
+            sponsorsArrowsSlide
+            1s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            0.15s
+            forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .sponsors-title-slide,
+          .sponsors-arrows-slide {
+            opacity: 1;
+            transform: none;
+            animation: none;
+          }
+        }
+      `}</style>
+
       <div className="relative z-10 w-full flex justify-center">
         <MasterCanvas>
           <div className="sponsors-artboard relative h-[900px] w-[1460px] overflow-hidden">
 
             {/* =====================================================
-                TITLE
+                TITLE — slides in from the LEFT
             ====================================================== */}
 
             <h1
-              className="
+              ref={titleRef}
+              className={`
                 sponsors-title
+                sponsors-title-slide
+                ${isTitleVisible ? "sponsors-title-slide-in" : ""}
                 absolute
                 left-[183px]
                 top-[153px]
@@ -111,7 +218,7 @@ className="sponsors-page relative w-full overflow-hidden
                 leading-[0.76]
                 tracking-[-0.045em]
                 text-[#1f513f]
-              "
+              `}
               style={{
                 fontFamily: "'Bodoni FLF', serif",
               }}
@@ -237,21 +344,24 @@ className="sponsors-page relative w-full overflow-hidden
             </section>
 
             {/* =====================================================
-                BOTTOM ARROWS
+                BOTTOM ARROWS — slides in from the RIGHT
             ====================================================== */}
 
             <img
+              ref={arrowsRef}
               src="/images/OurSponsors/arrows.png"
               alt=""
-              className="
+              className={`
                 sponsors-arrows
+                sponsors-arrows-slide
+                ${isArrowsVisible ? "sponsors-arrows-slide-in" : ""}
                 absolute
                 left-[774px]
                 top-[661.5px]
                 z-10
                 w-[248.2px]
                 object-contain
-              "
+              `}
             />
 
           </div>

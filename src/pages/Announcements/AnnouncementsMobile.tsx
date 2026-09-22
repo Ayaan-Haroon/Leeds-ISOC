@@ -1,7 +1,15 @@
 const AnnouncementsMobile = () => {
   return (
-    <section className="announcements-mobile relative w-full h-[400px] overflow-hidden isolate">
-
+    <section
+      className="
+        announcements-mobile-section
+        relative
+        w-full
+        h-[475px]
+        overflow-hidden
+        isolate
+      "
+    >
       {/* =========================
           BACKGROUND
           ========================= */}
@@ -24,16 +32,19 @@ const AnnouncementsMobile = () => {
       />
 
       {/* =========================
-          320px MOBILE ARTBOARD
+          MOBILE ARTBOARD
+          Scaled up 15% from the original 320 × 600 design
+          (368 × 690). Every image below is sized and
+          positioned at its original value × 1.15.
           ========================= */}
       <div
         className="
           relative
           z-10
           mx-auto
-          top-[30px]
+          top-[35px]
           h-[600px]
-          w-[320px]
+          w-[368px]
           overflow-hidden
         "
       >
@@ -46,10 +57,10 @@ const AnnouncementsMobile = () => {
           alt=""
           className="
             absolute
-            left-[18px]
-            top-[5px]
+            left-[21px]
+            top-[6px]
             z-10
-            w-[145px]
+            w-[167px]
             rotate-[-2deg]
             drop-shadow-[0_3px_5px_rgba(0,0,0,0.3)]
           "
@@ -63,10 +74,10 @@ const AnnouncementsMobile = () => {
           alt=""
           className="
             absolute
-            left-[133px]
-            top-[32px]
+            left-[153px]
+            top-[37px]
             z-30
-            w-[70px]
+            w-[81px]
             drop-shadow-[0_3px_4px_rgba(0,0,0,0.3)]
           "
         />
@@ -79,10 +90,10 @@ const AnnouncementsMobile = () => {
           alt=""
           className="
             absolute
-            right-[20px]
-            top-[35px]
+            right-[23px]
+            top-[40px]
             z-30
-            w-[67px]
+            w-[77px]
             drop-shadow-[0_3px_4px_rgba(0,0,0,0.3)]
           "
         />
@@ -96,9 +107,9 @@ const AnnouncementsMobile = () => {
           className="
             absolute
             left-[-2px]
-            top-[82px]
+            top-[94px]
             z-30
-            w-[72px]
+            w-[83px]
             rotate-[-8deg]
             drop-shadow-[0_3px_4px_rgba(0,0,0,0.3)]
           "
@@ -112,10 +123,10 @@ const AnnouncementsMobile = () => {
           alt=""
           className="
             absolute
-            right-[25px]
-            top-[96px]
+            right-[29px]
+            top-[110px]
             z-20
-            w-[135px]
+            w-[155px]
             rotate-[7deg]
             drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
           "
@@ -129,10 +140,10 @@ const AnnouncementsMobile = () => {
           alt=""
           className="
             absolute
-            left-[20px]
-            top-[170px]
+            left-[23px]
+            top-[196px]
             z-40
-            w-[205px]
+            w-[236px]
             drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]
           "
         />
@@ -143,15 +154,15 @@ const AnnouncementsMobile = () => {
         <div
           className="
             absolute
-            left-[42px]
-            top-[202px]
+            left-[48px]
+            top-[232px]
             z-50
-            w-[160px]
+            w-[184px]
             text-center
             font-body
             font-medium
             text-[#171717]
-            text-[11px]
+            text-[13px]
             leading-[1.35]
           "
         >
@@ -166,17 +177,17 @@ const AnnouncementsMobile = () => {
         <h1
           className="
             absolute
-            top-[310px]
+            top-[357px]
             left-[-3px]
             z-50
-            w-[326px]
+            w-[375px]
             text-center
             font-display
             font-black
             text-[#dbd4c2]
-            text-[38px]
+            text-[40px]
             leading-[0.8]
-            tracking-[-0.065em]
+            tracking-[-0.1em]
             whitespace-nowrap
             drop-shadow-[0_3px_4px_rgba(0,0,0,0.5)]
           "

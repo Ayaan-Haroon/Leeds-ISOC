@@ -1,9 +1,125 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MasterCanvas from "../../components/MasterCanvas";
 
 const Resources = () => {
+  const socialRef = useRef(null);
+  const imageRef = useRef(null);
+  const [isSocialVisible, setIsSocialVisible] = useState(false);
+  const [isImageVisible, setIsImageVisible] = useState(false);
+
+  useEffect(() => {
+    const socialEl = socialRef.current;
+    const imageEl = imageRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          if (entry.target === socialEl) {
+            setIsSocialVisible(true);
+          } else if (entry.target === imageEl) {
+            setIsImageVisible(true);
+          }
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (socialEl) observer.observe(socialEl);
+    if (imageEl) observer.observe(imageEl);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="resources-section relative min-h-screen w-full overflow-hidden bg-[#f2eae0]">
+
+      {/* =====================================================
+          ANIMATION STYLES
+      ====================================================== */}
+      <style>{`
+        /* =========================
+           SOFT SHAKE-IN (for social icons)
+           ========================= */
+
+        @keyframes resourcesShakeIn {
+          0% {
+            opacity: 0;
+            transform: scale(0.85) rotate(-6deg);
+          }
+
+          45% {
+            opacity: 1;
+            transform: scale(1.05) rotate(3deg);
+          }
+
+          70% {
+            transform: scale(0.98) rotate(-1.5deg);
+          }
+
+          88% {
+            transform: scale(1.01) rotate(0.5deg);
+          }
+
+          100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+          }
+        }
+
+        /* =========================
+           SLIDE-IN FROM RIGHT (for the image)
+           ========================= */
+
+        @keyframes resourcesSlideIn {
+          0% {
+            opacity: 0;
+            transform: translateX(120vw);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .resources-shake {
+          opacity: 0;
+        }
+
+        .resources-shake.resources-shake-in {
+          animation:
+            resourcesShakeIn
+            0.5s
+            cubic-bezier(0.34, 1.2, 0.64, 1)
+            forwards;
+        }
+
+        .resources-slide {
+          opacity: 0;
+        }
+
+        .resources-slide.resources-slide-in {
+          animation:
+            resourcesSlideIn
+            0.9s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .resources-shake,
+          .resources-slide {
+            opacity: 1;
+            transform: none;
+            animation: none;
+          }
+        }
+      `}</style>
 
       {/* =====================================================
           FULL-WIDTH BACKGROUND
@@ -42,10 +158,11 @@ const Resources = () => {
           >
 
             {/* =====================================================
-                SOCIAL MEDIA
+                SOCIAL MEDIA — shake-in with staggered delays
             ====================================================== */}
 
             <div
+              ref={socialRef}
               className="
                 resources-social
                 absolute
@@ -64,11 +181,14 @@ const Resources = () => {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="
+                style={{ animationDelay: '0.05s' }}
+                className={`
+                  resources-shake
+                  ${isSocialVisible ? "resources-shake-in" : ""}
                   text-[#60785e]
                   transition-transform
                   hover:scale-110
-                "
+                `}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,14 +227,17 @@ const Resources = () => {
               <a
                 href="#"
                 aria-label="TikTok"
-                className="
+                style={{ animationDelay: '0.15s' }}
+                className={`
+                  resources-shake
+                  ${isSocialVisible ? "resources-shake-in" : ""}
                   flex
                   flex-col
                   items-center
                   text-[#60785e]
                   transition-transform
                   hover:scale-110
-                "
+                `}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -135,11 +258,14 @@ const Resources = () => {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="
+                style={{ animationDelay: '0.25s' }}
+                className={`
+                  resources-shake
+                  ${isSocialVisible ? "resources-shake-in" : ""}
                   text-[#60785e]
                   transition-transform
                   hover:scale-110
-                "
+                `}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +292,7 @@ const Resources = () => {
 
 
             {/* =====================================================
-                USTAADH AKEEL
+                USTAADH AKEEL — static
             ====================================================== */}
 
             <div
@@ -176,7 +302,7 @@ const Resources = () => {
                 left-[175px]
                 top-[31px]
                 z-30
-                w-[780px]
+                w-[820px]
                 text-left
                 text-[#60785e]
               "
@@ -185,7 +311,7 @@ const Resources = () => {
               <h2
                 className="
                   m-0
-                  text-[40px]
+                  text-[42px]
                   font-bold
                   uppercase
                   leading-[0.9]
@@ -202,7 +328,7 @@ const Resources = () => {
                 className="
                   m-0
                   mt-[8px]
-                  text-[19px]
+                  text-[22px]
                   font-bold
                   leading-[1.15]
                 "
@@ -215,7 +341,7 @@ const Resources = () => {
                   m-0
                   mt-[12px]
                   max-w-[750px]
-                  text-[18px]
+                  text-[20px]
                   font-medium
                   leading-[1.4]
                   tracking-[-0.015em]
@@ -231,7 +357,7 @@ const Resources = () => {
                 className="
                   m-0
                   mt-[12px]
-                  text-[16px]
+                  text-[18px]
                   font-bold
                   leading-[1.3]
                 "
@@ -247,8 +373,7 @@ const Resources = () => {
 
 
             {/* =====================================================
-                FRESHERS GUIDE
-                ORIGINAL POSITION
+                FRESHERS GUIDE — static
             ====================================================== */}
 
             <img
@@ -268,7 +393,7 @@ const Resources = () => {
 
 
             {/* =====================================================
-                SISTER JAAN
+                SISTER JAAN — static
             ====================================================== */}
 
             <div
@@ -278,7 +403,7 @@ const Resources = () => {
                 left-[700px]
                 top-[400px]
                 z-30
-                w-[450px]
+                w-[520px]
                 text-left
                 text-[#60785e]
               "
@@ -287,7 +412,7 @@ const Resources = () => {
               <h2
                 className="
                   m-0
-                  text-[40px]
+                  text-[42px]
                   font-bold
                   uppercase
                   leading-[0.9]
@@ -304,7 +429,7 @@ const Resources = () => {
                 className="
                   m-0
                   mt-[8px]
-                  text-[19px]
+                  text-[22px]
                   font-bold
                   leading-[1.15]
                 "
@@ -316,8 +441,8 @@ const Resources = () => {
                 className="
                   m-0
                   mt-[12px]
-                  max-w-[440px]
-                  text-[18px]
+                  max-w-[480px]
+                  text-[20px]
                   font-medium
                   leading-[1.4]
                   tracking-[-0.015em]
@@ -333,7 +458,7 @@ const Resources = () => {
                 className="
                   m-0
                   mt-[12px]
-                  text-[16px]
+                  text-[18px]
                   font-bold
                   leading-[1.3]
                 "
@@ -349,8 +474,7 @@ const Resources = () => {
 
 
             {/* =====================================================
-                SPEAKERPHONE + NOTEPAD
-                ORIGINAL POSITION
+                SPEAKERPHONE + NOTEPAD — static
             ====================================================== */}
 
             <img
@@ -369,12 +493,16 @@ const Resources = () => {
 
 
             {/* =====================================================
-                EMPTY RIGHT BOX
+                IMAGE — slides in from the right on scroll
             ====================================================== */}
 
-            <div
-              className="
-                resources-empty-box
+            <img
+              ref={imageRef}
+              src="public/images/silly-imgs/theone.jpg"
+              alt=""
+              className={`
+                resources-slide
+                ${isImageVisible ? "resources-slide-in" : ""}
                 absolute
                 right-[54px]
                 top-[410px]
@@ -382,14 +510,13 @@ const Resources = () => {
                 h-[230px]
                 w-[212px]
                 rounded-[12px]
-                border-[5px]
-                border-[#60785e]
-              "
+                object-cover
+              `}
             />
 
 
             {/* =====================================================
-                RESOURCES TITLE
+                RESOURCES TITLE — static
             ====================================================== */}
 
             <div
