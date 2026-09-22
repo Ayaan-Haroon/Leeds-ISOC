@@ -209,24 +209,24 @@ const Events = () => {
               <div className={`events-card-wrapper ${cardClass(1)}`}>
                 <EventCard
                   topEvent={{
-                    day: "24",
+                    day: "30",
                     suffix: "th",
-                    month: "sept",
-                    title: "Games Night",
+                    month: "sep",
+                    title: "Roots Essentials",
                     description:
-                      "lorem ipsum dolor sit amet consectetur adipiscing elit laborum o facere animi reprehenderit nisi velit corrupti id d",
+                      "Every Wednesday from 6 - 8 PM. Join our foundational education series covering core Islamic knowledge.",
                     location:
-                      "Leeds University Union",
+                      "Maurice Keyworth LT (G.02)",
                   }}
                   bottomEvent={{
-                    day: "28",
-                    suffix: "th",
-                    month: "sept",
-                    title: "Study Circle",
+                    day: "2",
+                    suffix: "nd",
+                    month: "oct",
+                    title: "Brothers' Social",
                     description:
-                      "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat a assumenda facere animi reprehenderit nisi velit corrupti id d",
+                      "Every Friday from 6 - 8 PM. Unwind after a long week of work and enjoy good company and brotherhood.",
                     location:
-                      "Leeds University",
+                      "Green Room, Floor 1",
                   }}
                   rotate="
                     -rotate-11
@@ -247,21 +247,21 @@ const Events = () => {
                     day: "2",
                     suffix: "nd",
                     month: "oct",
-                    title: "Friday Khutbah",
+                    title: "Sisters' Social",
                     description:
-                      "lorem ipsum dolor sit amet consectetur veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
+                      "Every Friday from 6 - 8 PM. Relax and connect with sisters for an evening of warmth and fun activities.",
                     location:
-                      "Leeds University Union",
+                      "Green Room, Floor 2",
                   }}
                   bottomEvent={{
                     day: "5",
                     suffix: "th",
                     month: "oct",
-                    title: "Brothers' Social",
+                    title: "Hadith Class",
                     description:
-                      "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
+                      "Bi-weekly on Mondays from 6 - 8 PM. Delve into prophetic traditions and actionable spiritual lessons.",
                     location:
-                      "Leeds",
+                      "Baines Wing SR (1.06)",
                   }}
                   rotate="
                     rotate-1
@@ -280,24 +280,24 @@ const Events = () => {
               <div className={`events-card-wrapper ${cardClass(3)}`}>
                 <EventCard
                   topEvent={{
-                    day: "10",
+                    day: "7",
                     suffix: "th",
                     month: "oct",
-                    title: "Sisters' Circle",
+                    title: "Weekly Football",
                     description:
-                      "sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam assumenda facere animi reprehenderit nisi velit corrupti id d",
+                      "Every Wednesday from 5 - 6 PM. High-energy football session open to all brothers looking to stay active.",
                     location:
-                      "Leeds University",
+                      "The Edge",
                   }}
                   bottomEvent={{
-                    day: "12",
+                    day: "13",
                     suffix: "th",
                     month: "oct",
-                    title: "Community Dinner",
+                    title: "Tajweed Class",
                     description:
-                      "lorem ipsum dolor sit amet consectetur adipiscing elit laborum occaecat aliqua est labore optio veniam re animi reprehenderit nisi velit corrupti id d",
+                      "Every Tuesday from 6 - 8 PM. Master Quranic recitation and articulation in our 'Simply Tajweed' series.",
                     location:
-                      "Leeds University Union",
+                      "Baines Wing SR (1.06)",
                   }}
                   rotate="
                     rotate-11
