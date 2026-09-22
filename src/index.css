@@ -57,9 +57,18 @@ a {
 
 @media (max-width: 640px) {
 
+  /* =======================================================
+     ABOUT US
+  ======================================================== */
+
   .about-us-collage {
     overflow: hidden;
   }
+
+
+  /* =======================================================
+     HERO
+  ======================================================== */
 
   .hero-section {
     min-height: 100svh;
@@ -213,65 +222,37 @@ a {
   ======================================================== */
 
   .events-section {
-    height: auto;
-    min-height: 100svh;
+    height: 400vh;
+    min-height: 0;
+    position: relative;
   }
 
-  .events-section .events-sticky {
+  .events-section .events-screen {
     position: relative;
-    height: auto;
-    min-height: 100svh;
-    padding: 7rem 1rem 3rem;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
   }
 
+  /*
+   * IMPORTANT:
+   *
+   * Do NOT use transform: none !important on the event-card
+   * wrappers. Events.tsx controls their transforms in
+   * JavaScript while the Events screen is pinned.
+   */
+
   .events-section .events-title {
-    position: relative;
+    position: absolute;
     inset: auto;
-    margin-bottom: 2rem;
   }
 
-  .events-section .events-title p,
-  .events-section .events-title h1 {
-    font-size: clamp(3rem, 17vw, 5rem);
-    letter-spacing: -0.08em;
-  }
+  
 
-  .events-section .events-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    transform: none;
-  }
-
-  .events-section .event-card-wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    transform: none !important;
-  }
-
-  .events-section .event-card-wrapper > div {
-    transform: none !important;
-  }
 
   .events-section .event-card {
-    width: min(100%, 22rem);
-    height: auto;
-    min-height: 31rem;
-    padding: 1.25rem;
-    border-radius: 1.75rem;
-    transform: none !important;
-    rotate: 0deg !important;
-    translate: 0 0 !important;
-    scale: 1 !important;
-  }
-
-  .events-section .event-card h3 {
-    font-size: clamp(2.25rem, 11vw, 3rem);
-    line-height: 0.9;
-    letter-spacing: -0.08em;
+    width: 400px;
+    height: 580px;
   }
 
 
@@ -446,6 +427,13 @@ a {
     font-size: 4rem;
   }
 }
+
+
+/* =========================================================
+   EVENTS
+   GLOBAL
+========================================================= */
+
 
 
 /* =========================================================

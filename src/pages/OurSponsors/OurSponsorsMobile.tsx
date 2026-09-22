@@ -106,6 +106,7 @@ const OurSponsorsMobile = () => {
           w-[340px]
           h-[500px]
           overflow-hidden
+          translate-y-[45px]
         "
       >
 

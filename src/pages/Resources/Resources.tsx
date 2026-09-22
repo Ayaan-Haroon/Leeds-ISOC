@@ -2,11 +2,8 @@ import React from "react";
 import MasterCanvas from "../../components/MasterCanvas";
 
 const Resources = () => {
-  const fillerText =
-    "Resources, information and support for students. ";
-
   return (
-<section className="resources-section relative min-h-screen w-full overflow-hidden bg-[#f2eae0]">
+    <section className="resources-section relative min-h-screen w-full overflow-hidden bg-[#f2eae0]">
 
       {/* =====================================================
           FULL-WIDTH BACKGROUND
@@ -31,7 +28,7 @@ const Resources = () => {
           MASTER CANVAS
       ====================================================== */}
 
-      <div className="relative z-10 w-full flex justify-center">
+      <div className="relative z-10 flex w-full justify-center">
 
         <MasterCanvas>
 
@@ -54,7 +51,7 @@ const Resources = () => {
                 absolute
                 left-[76px]
                 top-[29px]
-                z-30
+                z-40
                 flex
                 flex-col
                 items-center
@@ -159,7 +156,7 @@ const Resources = () => {
                   />
 
                   <path
-                    d="M13.5 18v-5h1.75l.25-2h-2v-1.28c0-.58.16-.97 1-0.97h1.08V6.95c-.19-.03-.84-.08-1.6-.08-1.59 0-2.68.97-2.68 2.75V11H9.5v2h1.8v5h2.2z"
+                    d="M13.5 18v-5h1.75l.25-2h-2v-1.28c0-.58.16-.97 1-.97h1.08V6.95c-.19-.03-.84-.08-1.6-.08-1.59 0-2.68.97-2.68 2.75V11H9.5v2h1.8v5h2.2z"
                     fill="#f2eae0"
                   />
                 </svg>
@@ -167,8 +164,9 @@ const Resources = () => {
 
             </div>
 
+
             {/* =====================================================
-                TOP TEXT BOX
+                USTAADH AKEEL
             ====================================================== */}
 
             <div
@@ -177,30 +175,80 @@ const Resources = () => {
                 absolute
                 left-[175px]
                 top-[31px]
-                z-10
-                h-[270px]
-                w-[1015px]
-                overflow-hidden
-                border-[#60785e]
+                z-30
+                w-[780px]
+                text-left
+                text-[#60785e]
               "
             >
-              <p
+
+              <h2
                 className="
-                  p-[5px]
-                  text-[21px]
+                  m-0
+                  text-[40px]
                   font-bold
                   uppercase
-                  leading-[1.42]
-                  tracking-[-0.035em]
-                  text-[#60785e]
+                  leading-[0.9]
+                  tracking-[-0.05em]
+                "
+                style={{
+                  fontFamily: "'Bodoni FLF', serif",
+                }}
+              >
+                USTAADH AKEEL JERAAL
+              </h2>
+
+              <p
+                className="
+                  m-0
+                  mt-[8px]
+                  text-[19px]
+                  font-bold
+                  leading-[1.15]
                 "
               >
-                {fillerText.repeat(38)}
+                Muslim Chaplain, University of Leeds.
               </p>
+
+              <p
+                className="
+                  m-0
+                  mt-[12px]
+                  max-w-[750px]
+                  text-[18px]
+                  font-medium
+                  leading-[1.4]
+                  tracking-[-0.015em]
+                "
+              >
+                Akeel is here to support Muslim students with questions
+                around prayer, fasting, faith, university life,
+                homesickness, personal challenges, or simply for a
+                confidential chat.
+              </p>
+
+              <p
+                className="
+                  m-0
+                  mt-[12px]
+                  text-[16px]
+                  font-bold
+                  leading-[1.3]
+                "
+              >
+                Office: LUU GR.20
+                <br />
+                TEMP EMAIL: [ADD TEMP EMAIL]
+                <br />
+                TEMP MOBILE: [ADD TEMP MOBILE]
+              </p>
+
             </div>
+
 
             {/* =====================================================
                 FRESHERS GUIDE
+                ORIGINAL POSITION
             ====================================================== */}
 
             <img
@@ -210,7 +258,7 @@ const Resources = () => {
                 absolute
                 right-[44px]
                 top-[34px]
-                z-30
+                z-40
                 w-[234px]
                 rotate-[4deg]
                 object-contain
@@ -218,8 +266,91 @@ const Resources = () => {
               "
             />
 
+
+            {/* =====================================================
+                SISTER JAAN
+            ====================================================== */}
+
+            <div
+              className="
+                resources-copy-right
+                absolute
+                left-[700px]
+                top-[400px]
+                z-30
+                w-[450px]
+                text-left
+                text-[#60785e]
+              "
+            >
+
+              <h2
+                className="
+                  m-0
+                  text-[40px]
+                  font-bold
+                  uppercase
+                  leading-[0.9]
+                  tracking-[-0.05em]
+                "
+                style={{
+                  fontFamily: "'Bodoni FLF', serif",
+                }}
+              >
+                SISTER JAAN
+              </h2>
+
+              <p
+                className="
+                  m-0
+                  mt-[8px]
+                  text-[19px]
+                  font-bold
+                  leading-[1.15]
+                "
+              >
+                Muslim Student Advisor.
+              </p>
+
+              <p
+                className="
+                  m-0
+                  mt-[12px]
+                  max-w-[440px]
+                  text-[18px]
+                  font-medium
+                  leading-[1.4]
+                  tracking-[-0.015em]
+                "
+              >
+                Jaan supports Muslim students with faith, wellbeing,
+                relationships and academic or personal challenges,
+                helping students balance religious duties with
+                university life.
+              </p>
+
+              <p
+                className="
+                  m-0
+                  mt-[12px]
+                  text-[16px]
+                  font-bold
+                  leading-[1.3]
+                "
+              >
+                Emmanuel Centre
+                <br />
+                j.malik@leeds.ac.uk
+                <br />
+                07543800508
+              </p>
+
+            </div>
+
+
             {/* =====================================================
                 SPEAKERPHONE + NOTEPAD
+                ORIGINAL POSITION
             ====================================================== */}
 
             <img
@@ -236,35 +367,6 @@ const Resources = () => {
               "
             />
 
-            {/* =====================================================
-                RIGHT TEXT BLOCK
-            ====================================================== */}
-
-            <div
-              className="
-                resources-copy-right
-                absolute
-                left-[694px]
-                top-[335px]
-                z-20
-                h-[378px]
-                w-[496px]
-                overflow-hidden
-              "
-            >
-              <p
-                className="
-                  text-[20px]
-                  font-bold
-                  uppercase
-                  leading-[1.38]
-                  tracking-[-0.035em]
-                  text-[#60785e]
-                "
-              >
-                {fillerText.repeat(25)}
-              </p>
-            </div>
 
             {/* =====================================================
                 EMPTY RIGHT BOX
@@ -285,6 +387,7 @@ const Resources = () => {
               "
             />
 
+
             {/* =====================================================
                 RESOURCES TITLE
             ====================================================== */}
@@ -295,10 +398,11 @@ const Resources = () => {
                 absolute
                 bottom-[54px]
                 right-[73px]
-                z-30
+                z-40
                 w-[759px]
               "
             >
+
               <h1
                 className="
                   whitespace-nowrap
@@ -316,6 +420,7 @@ const Resources = () => {
               >
                 RESOURCES
               </h1>
+
             </div>
 
           </div>

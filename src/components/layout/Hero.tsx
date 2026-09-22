@@ -404,14 +404,28 @@ const Hero = () => {
       {/* =====================================================
           MOBILE VERSION
           MASTER DESIGN: 364 × 399
+
+          The collage is positioned at the bottom of the
+          viewport instead of simply sitting in normal flow.
       ====================================================== */}
-      <div className="md:hidden">
+      <div
+        className="
+          md:hidden
+          absolute
+          inset-x-0
+          bottom-0
+          z-10
+          h-[399px]
+        "
+      >
         <div
           className="
-            relative
-            mx-auto
+            absolute
+            bottom-0
+            left-1/2
             h-[399px]
             w-[364px]
+            -translate-x-1/2
           "
         >
 
@@ -422,7 +436,7 @@ const Hero = () => {
             className="
               absolute
               left-0
-              top-[44px]
+              top-[-270px]
               z-50
               w-[364px]
               text-center

@@ -85,32 +85,32 @@ const MapsMobile = () => {
 
               <div className="min-w-0 font-body text-[#f2eae0]">
 
-                {/* MOSQUE TITLE — GOOGLE MAPS */}
-                <a
-                  href={mosque.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <h2 className="mb-[2px] text-[7px] font-bold uppercase leading-[1.05]">
-                    {mosque.name}
-                  </h2>
-                </a>
+  {/* MOSQUE TITLE — GOOGLE MAPS */}
+  <a
+    href={mosque.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <h2 className="mb-[2px] text-[9px] font-bold uppercase leading-[1.05]">
+      {mosque.name}
+    </h2>
+  </a>
 
-                <ul className="list-disc space-y-[1px] pl-[7px] text-[5.2px] leading-[1.15]">
-                  {mosque.details.map((detail, index) => (
-                    <li key={index}>{detail}</li>
-                  ))}
-                </ul>
+  <ul className="list-disc space-y-[1px] pl-[7px] text-[7px] leading-[1.2]">
+    {mosque.details.map((detail, index) => (
+      <li key={index}>{detail}</li>
+    ))}
+  </ul>
 
-              </div>
+</div>
             </div>
           ))}
 
         </div>
 
         {/* MOSQUES & MAPS */}
-        <div className="absolute left-[10px] top-[175px] w-[320px]">
+        <div className="absolute left-[10px] top-[185px] w-[320px] translate-y-[20px]">
           <h1 className="whitespace-nowrap text-center font-display text-[30px] font-bold uppercase leading-[0.65] tracking-[-1.7px] text-[#f2eae0] drop-shadow-[0_2px_3px_rgba(0,0,0,0.45)]">
             MOSQUES &amp; MAPS
           </h1>
@@ -122,7 +122,7 @@ const MapsMobile = () => {
       {/* SECOND HALF */}
       {/* ========================= */}
 
-      <div className="relative z-10 mx-auto h-[295px] w-[340px] overflow-hidden">
+      <div className="relative z-10 mx-auto h-[295px] w-[340px] overflow-hidden -translate-y-[40px]">
 
         <div className="absolute left-[20px] top-[0px] h-[295px] w-[300px]">
 
