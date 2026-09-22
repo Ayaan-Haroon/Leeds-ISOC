@@ -1,6 +1,35 @@
+import { useEffect, useRef, useState } from "react";
 import MasterCanvas from "../../components/MasterCanvas";
 
 export default function GetInvolved() {
+  const arrowRef = useRef(null);
+  const [isArrowVisible, setIsArrowVisible] = useState(false);
+
+  useEffect(() => {
+    const el = arrowRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsArrowVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.45,
+      }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main
         className="get-involved-page relative w-full overflow-hidden "
@@ -9,6 +38,46 @@ export default function GetInvolved() {
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
+
+      {/* =====================================================
+          ARROW SLIDE-IN ANIMATION
+      ====================================================== */}
+      <style>{`
+        @keyframes getInvolvedArrowSlide {
+          0% {
+            opacity: 0;
+            transform: translateX(180px) rotate(-3deg);
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0) rotate(-3deg);
+          }
+        }
+
+        .get-involved-arrow-slide {
+          opacity: 0;
+        }
+
+        .get-involved-arrow-slide.get-involved-arrow-slide-in {
+          animation:
+            getInvolvedArrowSlide
+            1s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            0s
+            forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .get-involved-arrow-slide {
+            opacity: 1;
+            transform: rotate(-3deg);
+            animation: none;
+          }
+        }
+      `}</style>
 
       {/* =====================================================
           MASTER CANVAS
@@ -103,21 +172,23 @@ export default function GetInvolved() {
               </h1>
 
               {/* =====================================================
-                  LARGE ARROW
+                  LARGE ARROW — slides in from right on scroll
               ====================================================== */}
 
               <img
+                ref={arrowRef}
                 src="/images/GetInvolved/arrow.png"
                 alt=""
-                className="
+                className={`
+                  get-involved-arrow-slide
+                  ${isArrowVisible ? "get-involved-arrow-slide-in" : ""}
                   absolute
                   left-[285px]
                   top-[351px]
                   z-30
                   w-[183px]
-                  rotate-[-3deg]
                   object-contain
-                "
+                `}
               />
 
               {/* =====================================================

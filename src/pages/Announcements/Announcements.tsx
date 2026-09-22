@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
-import TextLoop from '../../components/TextLoop'
+
 import MasterCanvas from '../../components/MasterCanvas'
 
 const Announcements = () => {
   const [visibleItems, setVisibleItems] = useState({
     idkgText: false,
     longWhiteText: false,
+    ruledText: false,
   })
 
   useEffect(() => {
@@ -18,24 +19,20 @@ const Announcements = () => {
 
       const vh = window.innerHeight
 
-      // =========================
-      // IDKG TEXT
-      // =========================
-
       const idkgTextVisible =
         getPos('.idkg-text-trigger') <= vh * 0.85
 
-      // =========================
-      // LONG WHITE TEXT
-      // =========================
-
       const longWhiteTextVisible =
         getPos('.long-white-text-trigger') <= vh * 0.85
+
+      const ruledTextVisible =
+        getPos('.ruled-text-trigger') <= vh * 0.85
 
       setVisibleItems((prev) => ({
         idkgText: prev.idkgText || idkgTextVisible,
         longWhiteText:
           prev.longWhiteText || longWhiteTextVisible,
+        ruledText: prev.ruledText || ruledTextVisible,
       }))
     }
 
@@ -43,13 +40,15 @@ const Announcements = () => {
       passive: true,
     })
 
+    handleScroll()
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
   return (
-    <section className="announcements-section relative min-h-screen w-full overflow-hidden isolate">
+    <section className="announcements-section relative min-h-screen w-full overflow-hidden isolate ">
 
       {/* =========================
           ANIMATION STYLES
@@ -57,51 +56,44 @@ const Announcements = () => {
 
       <style>{`
         /* =========================
-           TEXT STICK ON
+           SOFT SHAKE-IN FOR TEXT
+           (scroll-triggered)
            ========================= */
 
-        @keyframes textStick {
+        @keyframes softShakeIn {
           0% {
             opacity: 0;
-            transform: translateY(-25px) rotate(-2deg) scale(0.98);
+            transform: scale(0.85) rotate(-6deg);
           }
 
-          55% {
+          45% {
             opacity: 1;
-            transform: translateY(4px) rotate(0.5deg) scale(1.01);
+            transform: scale(1.05) rotate(3deg);
           }
 
-          75% {
-            transform: translateY(-2px) rotate(-0.2deg) scale(1);
+          70% {
+            transform: scale(0.98) rotate(-1.5deg);
           }
 
-          90% {
-            transform: translateY(1px) rotate(0deg) scale(1);
+          88% {
+            transform: scale(1.01) rotate(0.5deg);
           }
 
           100% {
             opacity: 1;
-            transform: translateY(0) rotate(0deg) scale(1);
+            transform: scale(1) rotate(0deg);
           }
         }
-
-        /* =========================
-           TEXT DEFAULT
-           ========================= */
 
         .text-stick-animate {
           opacity: 0;
         }
 
-        /* =========================
-           TEXT ANIMATION
-           ========================= */
-
         .text-stick-animate.animate {
           animation:
-            textStick
-            0.40s
-            cubic-bezier(0.2, 0.8, 0.2, 1)
+            softShakeIn
+            0.5s
+            cubic-bezier(0.34, 1.2, 0.64, 1)
             0s
             forwards;
         }
@@ -113,6 +105,7 @@ const Announcements = () => {
         @media (prefers-reduced-motion: reduce) {
           .text-stick-animate {
             opacity: 1;
+            transform: none;
             animation: none;
           }
         }
@@ -146,11 +139,7 @@ const Announcements = () => {
           ANNOUNCEMENTS COLLAGE
           ========================= */}
 
-      <div className="announcements-collage">
-
-        {/* =========================
-            RESPONSIVE 1460 × 900 MASTER DESIGN
-            ========================= */}
+      <div className="announcements-collage ">
 
         <MasterCanvas>
 
@@ -159,8 +148,7 @@ const Announcements = () => {
               relative
               z-10
               w-[1460px]
-              h-[900px]
-              overflow-hidden
+              h-[880px]
             "
           >
 
@@ -261,7 +249,7 @@ const Announcements = () => {
 
 
             {/* =========================
-                IDKG TEXT
+                IDKG TEXT — shake in + hover lift
                 ========================= */}
 
             <div
@@ -273,12 +261,17 @@ const Announcements = () => {
                 right-[415px]
                 z-20
                 w-[225px]
-                rotate-[-11deg]
                 text-center
                 font-bold
                 text-[#254c3a]
                 text-[20px]
                 leading-tight
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:drop-shadow-[0_6px_6px_rgba(0,0,0,0.3)]
+                cursor-pointer
                 ${visibleItems.idkgText ? 'animate' : ''}
               `}
             >
@@ -335,7 +328,7 @@ const Announcements = () => {
 
 
             {/* =========================
-                LONG WHITE TEXT
+                LONG WHITE TEXT — shake in + hover lift
                 ========================= */}
 
             <div
@@ -352,6 +345,12 @@ const Announcements = () => {
                 text-[#254c3a]
                 text-[20px]
                 leading-tight
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:drop-shadow-[0_6px_6px_rgba(0,0,0,0.3)]
+                cursor-pointer
                 ${visibleItems.longWhiteText ? 'animate' : ''}
               `}
             >
@@ -385,11 +384,13 @@ const Announcements = () => {
 
 
             {/* =========================
-                SMALL RULED TEXT
+                SMALL RULED TEXT — shake in + hover lift
                 ========================= */}
 
             <div
-              className="
+              className={`
+                text-stick-animate
+                ruled-text-trigger
                 absolute
                 top-[185px]
                 left-[450px]
@@ -400,7 +401,14 @@ const Announcements = () => {
                 text-[#254c3a]
                 text-[16px]
                 leading-tight
-              "
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:drop-shadow-[0_6px_6px_rgba(0,0,0,0.3)]
+                cursor-pointer
+                ${visibleItems.ruledText ? 'animate' : ''}
+              `}
             >
               Air frier in the green room!!! chat to me nice rudeboy
             </div>
@@ -455,7 +463,7 @@ const Announcements = () => {
 
 
             {/* =========================
-                TITLE
+                TITLE — no animation, no hover
                 ========================= */}
 
             <h1
@@ -483,52 +491,6 @@ const Announcements = () => {
 
       </div>
 
-
-      {/* =========================
-          ABOUT US TEXT LOOP
-          KEEPING YOUR ORIGINAL
-          120px POSITIONING SETUP
-          ========================= */}
-
-{/* =========================
-    ABOUT US TEXT LOOP
-    120px BELOW ANNOUNCEMENTS
-    ========================= */}
-
-{/* =========================
-    ABOUT US TEXT LOOP
-    ========================= */}
-
-<section
-  className="
-    relative
-    z-20
-    mt-[700px]
-    w-full
-    h-[520px]
-    overflow-hidden
-  "
->
-  <div className="w-full">
-    <TextLoop
-      text="Find out a bit about us"
-      shape="wave"
-      speed={95}
-      direction="forward"
-      separator="✦"
-      curviness={42}
-      fontSize={42}
-      fontWeight={700}
-      letterSpacing={1}
-      uppercase
-      color="#254c3a"
-      ribbon
-      ribbonColor="#f2eae0"
-      ribbonWidth={70}
-      pauseOnHover
-    />
-  </div>
-</section>
 
     </section>
   )

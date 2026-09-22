@@ -1,8 +1,76 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ResourcesMobile = () => {
+  const catRef = useRef(null);
+  const [isCatVisible, setIsCatVisible] = useState(false);
+
+  useEffect(() => {
+    const el = catRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsCatVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="relative w-full h-[395px] overflow-hidden isolate bg-[#f2eae0]">
+    <section className="relative w-full h-[780px] overflow-hidden isolate bg-[#f2eae0] flex items-center justify-center">
+
+      {/* =====================================================
+          SLIDE-IN ANIMATION
+      ====================================================== */}
+      <style>{`
+        @keyframes catSlideIn {
+          0% {
+            opacity: 0;
+            transform: translateX(120px) rotate(6deg);
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0) rotate(0deg);
+          }
+        }
+
+        .cat-slide {
+          opacity: 0;
+        }
+
+        .cat-slide.cat-slide-in {
+          animation:
+            catSlideIn
+            1s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            0s
+            forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .cat-slide {
+            opacity: 1;
+            transform: none;
+            animation: none;
+          }
+        }
+      `}</style>
 
       {/* =====================================================
           BACKGROUND
@@ -23,29 +91,28 @@ const ResourcesMobile = () => {
       />
 
       {/* =====================================================
-          340px MOBILE ARTBOARD
-      ====================================================== */}
+          360px MOBILE ARTBOARD
+      ===================================================== */}
       <div
         className="
           relative
           z-10
-          mx-auto
-          w-[340px]
-          h-[395px]
+          w-[360px]
+          h-[730px]
           overflow-hidden
         "
       >
 
         {/* =====================================================
             USTAADH AKEEL — TOP LEFT
-        ====================================================== */}
+        ===================================================== */}
         <div
           className="
             absolute
             left-[10px]
-            top-[12px]
+            top-[30px]
             z-20
-            w-[150px]
+            w-[160px]
             text-left
             text-[#60785e]
           "
@@ -68,8 +135,8 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[8px]
+              mt-[14px]
+              text-[13px]
               font-bold
               leading-[1.15]
             "
@@ -80,10 +147,10 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[7px]
+              mt-[12px]
+              text-[12px]
               font-medium
-              leading-[1.35]
+              leading-[1.4]
               tracking-[-0.015em]
             "
           >
@@ -96,10 +163,10 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[7px]
+              mt-[12px]
+              text-[12px]
               font-bold
-              leading-[1.25]
+              leading-[1.35]
             "
           >
             Office: LUU GR.20
@@ -113,14 +180,14 @@ const ResourcesMobile = () => {
 
         {/* =====================================================
             SISTER JAAN — BOTTOM RIGHT
-        ====================================================== */}
+        ===================================================== */}
         <div
           className="
             absolute
-            right-[10px]
-            top-[73px]
+            right-[11px]
+            top-[130px]
             z-20
-            w-[150px]
+            w-[160px]
             text-right
             text-[#60785e]
           "
@@ -141,8 +208,8 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[8px]
+              mt-[14px]
+              text-[13px]
               font-bold
               leading-[1.15]
             "
@@ -153,10 +220,10 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[7px]
+              mt-[12px]
+              text-[12px]
               font-medium
-              leading-[1.35]
+              leading-[1.4]
               tracking-[-0.015em]
             "
           >
@@ -169,10 +236,10 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[5px]
-              text-[7px]
+              mt-[12px]
+              text-[12px]
               font-bold
-              leading-[1.25]
+              leading-[1.35]
             "
           >
             Emmanuel Centre
@@ -186,16 +253,15 @@ const ResourcesMobile = () => {
 
         {/* =====================================================
             RESTAURANT RECOMMENDATIONS
-            UNDER BOTH INFORMATION BLOCKS
-        ====================================================== */}
+        ===================================================== */}
         <div
           className="
             absolute
             left-[10px]
-            top-[202px]
+            top-[405px]
             z-20
             grid
-            w-[320px]
+            w-[340px]
             grid-cols-3
             gap-x-[8px]
             text-[#60785e]
@@ -204,7 +270,7 @@ const ResourcesMobile = () => {
 
           {/* COLUMN 1 */}
           <div className="min-w-0">
-            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+            <p className="m-0 text-[11px] font-bold leading-[1.4]">
               <span className="text-[6px]">①</span>{" "}
               TAO — East Asian
               <br />
@@ -215,12 +281,17 @@ const ResourcesMobile = () => {
               MY LAHORE —
               <br />
               British Asian
+              <br />
+              <span className="text-[6px]">①</span>{" "}
+              CHAI WALA —
+              <br />
+              Café
             </p>
           </div>
 
           {/* COLUMN 2 */}
           <div className="min-w-0">
-            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+            <p className="m-0 text-[11px] font-bold leading-[1.4]">
               <span className="text-[6px]">①</span>{" "}
               TAO — East Asian
               <br />
@@ -231,12 +302,17 @@ const ResourcesMobile = () => {
               MY LAHORE —
               <br />
               British Asian
+              <br />
+              <span className="text-[6px]">①</span>{" "}
+              CHAI WALA —
+              <br />
+              Café
             </p>
           </div>
 
           {/* COLUMN 3 */}
           <div className="min-w-0">
-            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+            <p className="m-0 text-[11px] font-bold leading-[1.4]">
               <span className="text-[6px]">①</span>{" "}
               TAO — East Asian
               <br />
@@ -247,6 +323,11 @@ const ResourcesMobile = () => {
               MY LAHORE —
               <br />
               British Asian
+              <br />
+              <span className="text-[6px]">①</span>{" "}
+              CHAI WALA —
+              <br />
+              Café
             </p>
           </div>
 
@@ -254,35 +335,40 @@ const ResourcesMobile = () => {
 
 
         {/* =====================================================
-            EMPTY BOX
-        ====================================================== */}
-        <div
-          className="
+            CAT IMAGE — slides in from the right on scroll
+        ===================================================== */}
+
+        <img
+          ref={catRef}
+          src="public/images/silly-imgs/theone.jpg"
+          alt=""
+          className={`
+            cat-slide
+            ${isCatVisible ? "cat-slide-in" : ""}
             absolute
-            left-[161px]
-            top-[254px]
+            left-[171px]
+            top-[525px]
             z-20
             h-[108px]
-            w-[153px]
+            w-[173px]
             rounded-[7px]
-            border-[3px]
-            border-[#60785e]
-          "
+            object-cover
+          `}
         />
 
 
         {/* =====================================================
             SPEAKER STICKER
-        ====================================================== */}
+        ===================================================== */}
         <img
           src="/images/Resources/speakerphoneandnotepad.png"
           alt=""
           className="
             absolute
             left-[-7px]
-            top-[254px]
+            top-[500px]
             z-30
-            w-[147px]
+            w-[157px]
             rotate-[-1deg]
             object-contain
           "
@@ -290,36 +376,37 @@ const ResourcesMobile = () => {
 
 
         {/* =====================================================
-            RESOURCES TITLE
-        ====================================================== */}
+            RESOURCES TITLE — BOTTOM CENTRE
+        ===================================================== */}
         <div
-  className="
-    absolute
-    right-0
-    top-[319px]
-    z-40
-    w-max
-  "
->
-  <h1
-    className="
-      m-0
-      whitespace-nowrap
-      text-left
-      text-[43px]
-      font-bold
-      uppercase
-      leading-[0.75]
-      tracking-[-0.055em]
-      text-[#60785e]
-    "
-    style={{
-      fontFamily: "'Bodoni FLF', serif",
-    }}
-  >
-    RESOURCES
-  </h1>
-</div>
+          className="
+            absolute
+            left-0
+            bottom-[15px]
+            w-[360px]
+            z-40
+            text-center
+          "
+        >
+          <h1
+            className="
+              m-0
+              whitespace-nowrap
+              text-[55.5px]
+              font-black
+              uppercase
+              leading-[0.85]
+              tracking-[-0.055em]
+              text-[#60785e]
+              drop-shadow-[0_4px_2px_rgba(0,0,0,0.2)]
+            "
+            style={{
+              fontFamily: "'Bodoni FLF', serif",
+            }}
+          >
+            RESOURCES
+          </h1>
+        </div>
 
       </div>
     </section>

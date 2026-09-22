@@ -14,7 +14,7 @@ const CommitteeMobile = () => {
       image: '/images/prettypretty.jpg',
       description:
         "Ayaan is a nice guy but he's a bit smelly. He lets me sleep over at his so I guess he's alright. Decent guy fr.\n\nAyaan doesn't eat enough sweet treats. If I were Ayaan I'd still be skinny but I'd have blocked arteries. My glucose levels aren't as bad as they could be because when I put on weight I think, OH NO! My sweet treats, how could they betray me like this :(\n\nThen I try to stop eating them for a while. Anyways, as I say. I love sweet things. The best version of things in this world are sweet. Sweet treats, sweet smells, sweet people.",
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -23,7 +23,7 @@ const CommitteeMobile = () => {
       role: 'Role 2',
       image: '/images/committee/person-2.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -32,7 +32,7 @@ const CommitteeMobile = () => {
       role: 'Role 3',
       image: '/images/committee/person-3.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -41,7 +41,7 @@ const CommitteeMobile = () => {
       role: 'Role 4',
       image: '/images/committee/person-4.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -50,7 +50,7 @@ const CommitteeMobile = () => {
       role: 'Role 5',
       image: '/images/committee/person-5.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -59,7 +59,7 @@ const CommitteeMobile = () => {
       role: 'Role 6',
       image: '/images/committee/person-6.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -68,7 +68,7 @@ const CommitteeMobile = () => {
       role: 'Role 7',
       image: '/images/committee/person-7.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -77,7 +77,7 @@ const CommitteeMobile = () => {
       role: 'Role 8',
       image: '/images/committee/person-8.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -86,7 +86,7 @@ const CommitteeMobile = () => {
       role: 'Role 9',
       image: '/images/committee/person-9.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -95,7 +95,7 @@ const CommitteeMobile = () => {
       role: 'Role 10',
       image: '/images/committee/person-10.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -104,7 +104,7 @@ const CommitteeMobile = () => {
       role: 'Role 11',
       image: '/images/committee/person-11.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -113,7 +113,7 @@ const CommitteeMobile = () => {
       role: 'Role 12',
       image: '/images/committee/person-12.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -122,7 +122,7 @@ const CommitteeMobile = () => {
       role: 'Role 13',
       image: '/images/committee/person-13.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -131,7 +131,7 @@ const CommitteeMobile = () => {
       role: 'Role 14',
       image: '/images/committee/person-14.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -140,7 +140,7 @@ const CommitteeMobile = () => {
       role: 'Role 15',
       image: '/images/committee/person-15.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -149,7 +149,7 @@ const CommitteeMobile = () => {
       role: 'Role 16',
       image: '/images/committee/person-16.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -158,7 +158,7 @@ const CommitteeMobile = () => {
       role: 'Role 17',
       image: '/images/committee/person-17.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -167,7 +167,7 @@ const CommitteeMobile = () => {
       role: 'Role 18',
       image: '/images/committee/person-18.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -176,7 +176,7 @@ const CommitteeMobile = () => {
       role: 'Role 19',
       image: '/images/committee/person-19.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -185,7 +185,7 @@ const CommitteeMobile = () => {
       role: 'Role 20',
       image: '/images/committee/person-20.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
     {
@@ -194,7 +194,7 @@ const CommitteeMobile = () => {
       role: 'Role 21',
       image: '/images/committee/person-21.jpg',
       description: 'Committee member description goes here.',
-      angle: '-rotate-2',
+      angle: '-rotate-4',
     },
 
     {
@@ -203,7 +203,7 @@ const CommitteeMobile = () => {
       role: 'Role 22',
       image: '/images/committee/person-22.jpg',
       description: 'Committee member description goes here.',
-      angle: 'rotate-2',
+      angle: 'rotate-4',
     },
 
   ]
@@ -253,7 +253,7 @@ const CommitteeMobile = () => {
 
   return (
 
-    <section className="committee-mobile relative w-full h-[475px] overflow-hidden isolate">
+    <section className="committee-mobile relative w-full h-[560px] overflow-hidden isolate flex items-center justify-center">
 
       {/* =========================
           BACKGROUND
@@ -279,6 +279,7 @@ const CommitteeMobile = () => {
 
       {/* =========================
           MOBILE ARTBOARD
+          378 × 560 — centred in the section via flex
           ========================= */}
 
       <div
@@ -286,9 +287,8 @@ const CommitteeMobile = () => {
           mobile-committee-trigger
           relative
           z-10
-          mx-auto
-          w-[320px]
-          h-[475px]
+          w-[378px]
+          h-[560px]
           overflow-visible
         "
       >
@@ -300,10 +300,11 @@ const CommitteeMobile = () => {
         <div
           className="
             absolute
-            top-[100px]
-            left-0
-            w-[320px]
-            h-[225px]
+            top-[90px]
+            left-1/2
+            -translate-x-1/2
+            w-[362px]
+            h-[281px]
             overflow-visible
           "
         >
@@ -315,14 +316,11 @@ const CommitteeMobile = () => {
           <div
             className={`
               absolute
-              top-[16px]
-              left-[27px]
-              w-[290px]
-              h-[225px]
+              inset-0
               bg-[#f2e2d3]
-              border-[4px]
+              border-[5.7px]
               border-white
-              shadow-[0_8px_16px_rgba(0,0,0,0.3)]
+              shadow-[0_11px_23px_rgba(0,0,0,0.3)]
               ${backCard.angle}
               committee-mobile-back-card
               ${areCardsVisible ? 'animate' : ''}
@@ -336,16 +334,13 @@ const CommitteeMobile = () => {
           <div
             className={`
               absolute
-              top-0
-              left-[15px]
-              w-[290px]
-              h-[225px]
+              inset-0
               bg-[#f2e2d3]
-              border-[4px]
+              border-[5.7px]
               border-white
-              shadow-[0_8px_16px_rgba(0,0,0,0.3)]
+              shadow-[0_11px_23px_rgba(0,0,0,0.3)]
               ${currentCard.angle}
-              scale-[0.98]
+              scale-[0.96]
               overflow-hidden
               committee-mobile-front-card
               ${areCardsVisible ? 'animate' : ''}
@@ -359,12 +354,12 @@ const CommitteeMobile = () => {
             <div
               className="
                 absolute
-                left-[7px]
-                top-[7px]
-                w-[104px]
-                h-[203px]
+                left-0
+                top-0
+                w-[44%]
+                h-full
                 overflow-hidden
-                p-[5px]
+                p-[9px]
               "
             >
 
@@ -388,15 +383,15 @@ const CommitteeMobile = () => {
             <div
               className="
                 absolute
-                right-[7px]
-                top-[5px]
-                w-[160px]
-                h-[205px]
+                right-0
+                top-0
+                w-[56%]
+                h-full
                 flex
                 flex-col
-                pt-[4px]
-                pb-[5px]
-                px-[5px]
+                pt-[11px]
+                pb-[10px]
+                px-[9px]
               "
             >
 
@@ -408,9 +403,8 @@ const CommitteeMobile = () => {
                 className="
                   relative
                   flex
-                  items-start
+                  items-center
                   w-full
-                  min-h-[50px]
                 "
               >
 
@@ -421,7 +415,7 @@ const CommitteeMobile = () => {
                     flex-1
                     text-center
                     min-w-0
-                    pr-[3px]
+                    pr-[5px]
                   "
                 >
 
@@ -430,8 +424,8 @@ const CommitteeMobile = () => {
                       bodoni-flf
                       font-bold
                       text-[#254c3a]
-                      text-[15px]
-                      leading-[0.9]
+                      text-[17px]
+                      leading-[0.95]
                       uppercase
                       break-words
                     "
@@ -444,11 +438,11 @@ const CommitteeMobile = () => {
                       font-body
                       font-bold
                       text-[#254c3a]
-                      text-[6px]
-                      mt-[3px]
+                      text-[7.4px]
+                      mt-[3.5px]
                       uppercase
                       tracking-wide
-                      leading-[1]
+                      leading-none
                     "
                   >
                     {currentCard.role}
@@ -460,10 +454,10 @@ const CommitteeMobile = () => {
 
                 <div
                   className="
-                    w-[42px]
-                    h-[49px]
+                    w-[50px]
+                    h-[56px]
                     shrink-0
-                    ml-[3px]
+                    ml-auto
                   "
                 >
 
@@ -487,11 +481,11 @@ const CommitteeMobile = () => {
 
               <div
                 className="
-                  mt-[2px]
+                  mt-[6px]
                   w-full
                   flex-1
                   flex
-                  items-start
+                  items-center
                   justify-center
                   overflow-hidden
                 "
@@ -502,8 +496,8 @@ const CommitteeMobile = () => {
                     font-body
                     font-bold
                     text-[#254c3c]
-                    text-[7px]
-                    leading-[1.2]
+                    text-[8.3px]
+                    leading-[1.25]
                     text-center
                     whitespace-pre-line
                   "
@@ -517,25 +511,38 @@ const CommitteeMobile = () => {
 
           </div>
 
-          {/* =========================
-              LEFT ARROW
-              ========================= */}
+        </div>
 
+        {/* =========================
+            ARROWS — below the cards, centred
+            ========================= */}
+
+        <div
+          className="
+            absolute
+            left-1/2
+            -translate-x-1/2
+            top-[375px]
+            z-30
+            flex
+            items-center
+            justify-center
+            gap-[36px]
+          "
+        >
+
+          {/* LEFT ARROW */}
           <button
             onClick={prevSlide}
             className="
-              absolute
-              left-[-1px]
-              top-[91px]
-              z-30
               text-[#f2eae0]
-              text-[42px]
+              text-[53px]
               font-light
               leading-none
               hover:scale-110
               transition-transform
-              w-[24px]
-              h-[45px]
+              w-[29px]
+              h-[56px]
               flex
               items-center
               justify-center
@@ -545,25 +552,18 @@ const CommitteeMobile = () => {
             ‹
           </button>
 
-          {/* =========================
-              RIGHT ARROW
-              ========================= */}
-
+          {/* RIGHT ARROW */}
           <button
             onClick={nextSlide}
             className="
-              absolute
-              right-[-1px]
-              top-[91px]
-              z-30
               text-[#f2eae0]
-              text-[42px]
+              text-[53px]
               font-light
               leading-none
               hover:scale-110
               transition-transform
-              w-[24px]
-              h-[45px]
+              w-[29px]
+              h-[56px]
               flex
               items-center
               justify-center
@@ -583,8 +583,8 @@ const CommitteeMobile = () => {
           className="
             absolute
             left-0
-            bottom-[18px]
-            w-[320px]
+            bottom-[40px]
+            w-[378px]
             z-10
             text-center
           "
@@ -595,12 +595,12 @@ const CommitteeMobile = () => {
               font-display
               font-black
               text-[#f2eae0]
-              text-[47px]
+              text-[55.5px]
               leading-[0.85]
               tracking-[-0.055em]
               uppercase
               whitespace-nowrap
-              drop-shadow-[0_3px_4px_rgba(0,0,0,0.6)]
+              drop-shadow-[0_3.5px_5px_rgba(0,0,0,0.6)]
             "
           >
             COMMITTEE
