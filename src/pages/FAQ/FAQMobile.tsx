@@ -47,7 +47,7 @@ export default function FAQMobile() {
       {/* TOP — FAQ ARTWORK */}
       {/* ===================================================== */}
 
-      <div className="relative z-10 mx-auto h-[275px] w-[340px] overflow-hidden">
+      <div className="relative z-10 mx-auto h-[275px] w-[340px] overflow-hidden translate-y-[20px]">
 
         {/* CENTRED ARTWORK */}
         <div className="absolute left-1/2 top-[2px] h-[270px] w-[270px] -translate-x-1/2">
@@ -100,7 +100,7 @@ export default function FAQMobile() {
       {/* FAQ QUESTIONS */}
       {/* ===================================================== */}
 
-      <section className="relative z-40 mx-auto mt-[-5px] w-[305px]">
+      <section className="relative z-40 mx-auto mt-[-5px] w-[305px] translate-y-[-30px]">
 
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;

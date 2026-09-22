@@ -37,39 +37,41 @@ const ResourcesMobile = () => {
       >
 
         {/* =====================================================
-            USTAADH AKEEL
+            USTAADH AKEEL — TOP LEFT
         ====================================================== */}
         <div
           className="
             absolute
-            left-[39px]
-            top-[10px]
+            left-[10px]
+            top-[12px]
             z-20
-            w-[262px]
-            text-center
+            w-[150px]
+            text-left
             text-[#60785e]
           "
         >
           <h2
             className="
               m-0
-              text-[25px]
+              text-[22px]
               font-bold
               uppercase
-              leading-[0.95]
+              leading-[0.9]
               tracking-[-0.055em]
             "
           >
-            USTAADH AKEEL JERAAL
+            USTAADH AKEEL
+            <br />
+            JERAAL
           </h2>
 
           <p
             className="
               m-0
-              mt-[3px]
-              text-[10px]
+              mt-[5px]
+              text-[8px]
               font-bold
-              leading-[1.05]
+              leading-[1.15]
             "
           >
             Muslim Chaplain, University of Leeds.
@@ -78,11 +80,11 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[4px]
-              text-[8px]
+              mt-[5px]
+              text-[7px]
               font-medium
               leading-[1.35]
-              tracking-[-0.025em]
+              tracking-[-0.015em]
             "
           >
             Akeel is here to support Muslim students with questions
@@ -94,8 +96,8 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[3px]
-              text-[8px]
+              mt-[5px]
+              text-[7px]
               font-bold
               leading-[1.25]
             "
@@ -110,26 +112,26 @@ const ResourcesMobile = () => {
 
 
         {/* =====================================================
-            SISTER JAAN
+            SISTER JAAN — BOTTOM RIGHT
         ====================================================== */}
         <div
           className="
             absolute
-            left-[39px]
-            top-[104px]
+            right-[10px]
+            top-[73px]
             z-20
-            w-[262px]
-            text-center
+            w-[150px]
+            text-right
             text-[#60785e]
           "
         >
           <h2
             className="
               m-0
-              text-[25px]
+              text-[22px]
               font-bold
               uppercase
-              leading-[0.95]
+              leading-[0.9]
               tracking-[-0.055em]
             "
           >
@@ -139,10 +141,10 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[3px]
-              text-[10px]
+              mt-[5px]
+              text-[8px]
               font-bold
-              leading-[1.05]
+              leading-[1.15]
             "
           >
             Muslim Student Advisor.
@@ -151,11 +153,11 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[4px]
-              text-[8px]
+              mt-[5px]
+              text-[7px]
               font-medium
               leading-[1.35]
-              tracking-[-0.025em]
+              tracking-[-0.015em]
             "
           >
             Jaan supports Muslim students with faith, wellbeing,
@@ -167,8 +169,8 @@ const ResourcesMobile = () => {
           <p
             className="
               m-0
-              mt-[3px]
-              text-[8px]
+              mt-[5px]
+              text-[7px]
               font-bold
               leading-[1.25]
             "
@@ -184,69 +186,67 @@ const ResourcesMobile = () => {
 
         {/* =====================================================
             RESTAURANT RECOMMENDATIONS
+            UNDER BOTH INFORMATION BLOCKS
         ====================================================== */}
         <div
           className="
             absolute
-            left-[18px]
-            top-[207px]
+            left-[10px]
+            top-[202px]
             z-20
-            w-[304px]
+            grid
+            w-[320px]
+            grid-cols-3
+            gap-x-[8px]
             text-[#60785e]
           "
         >
 
           {/* COLUMN 1 */}
-          <div
-            className="
-              absolute
-              left-[0px]
-              top-0
-              w-[96px]
-            "
-          >
-            <p className="m-0 text-[8px] font-bold leading-[1.75]">
-              <span className="text-[7px]">①</span> TAO — East Asian
+          <div className="min-w-0">
+            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+              <span className="text-[6px]">①</span>{" "}
+              TAO — East Asian
               <br />
-              <span className="text-[7px]">①</span> AAGRAH — Indian
+              <span className="text-[6px]">①</span>{" "}
+              AAGRAH — Indian
               <br />
-              <span className="text-[7px]">①</span> MY LAHORE — British Asian
+              <span className="text-[6px]">①</span>{" "}
+              MY LAHORE —
+              <br />
+              British Asian
             </p>
           </div>
 
           {/* COLUMN 2 */}
-          <div
-            className="
-              absolute
-              left-[103px]
-              top-0
-              w-[96px]
-            "
-          >
-            <p className="m-0 text-[8px] font-bold leading-[1.75]">
-              <span className="text-[7px]">①</span> TAO — East Asian
+          <div className="min-w-0">
+            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+              <span className="text-[6px]">①</span>{" "}
+              TAO — East Asian
               <br />
-              <span className="text-[7px]">①</span> AAGRAH — Indian
+              <span className="text-[6px]">①</span>{" "}
+              AAGRAH — Indian
               <br />
-              <span className="text-[7px]">①</span> MY LAHORE — British Asian
+              <span className="text-[6px]">①</span>{" "}
+              MY LAHORE —
+              <br />
+              British Asian
             </p>
           </div>
 
           {/* COLUMN 3 */}
-          <div
-            className="
-              absolute
-              left-[206px]
-              top-0
-              w-[98px]
-            "
-          >
-            <p className="m-0 text-[8px] font-bold leading-[1.75]">
-              <span className="text-[7px]">①</span> TAO — East Asian
+          <div className="min-w-0">
+            <p className="m-0 text-[7px] font-bold leading-[1.7]">
+              <span className="text-[6px]">①</span>{" "}
+              TAO — East Asian
               <br />
-              <span className="text-[7px]">①</span> AAGRAH — Indian
+              <span className="text-[6px]">①</span>{" "}
+              AAGRAH — Indian
               <br />
-              <span className="text-[7px]">①</span> MY LAHORE — British Asian
+              <span className="text-[6px]">①</span>{" "}
+              MY LAHORE —
+              <br />
+              British Asian
             </p>
           </div>
 
@@ -259,11 +259,11 @@ const ResourcesMobile = () => {
         <div
           className="
             absolute
-            left-[160px]
-            top-[211px]
+            left-[161px]
+            top-[254px]
             z-20
-            w-[154px]
-            h-[118px]
+            h-[108px]
+            w-[153px]
             rounded-[7px]
             border-[3px]
             border-[#60785e]
@@ -280,7 +280,7 @@ const ResourcesMobile = () => {
           className="
             absolute
             left-[-7px]
-            top-[228px]
+            top-[254px]
             z-30
             w-[147px]
             rotate-[-1deg]
@@ -293,33 +293,33 @@ const ResourcesMobile = () => {
             RESOURCES TITLE
         ====================================================== */}
         <div
-          className="
-            absolute
-            left-[149px]
-            top-[289px]
-            z-40
-            w-[190px]
-          "
-        >
-          <h1
-            className="
-              m-0
-              whitespace-nowrap
-              text-left
-              text-[45px]
-              font-bold
-              uppercase
-              leading-[0.75]
-              tracking-[-0.055em]
-              text-[#60785e]
-            "
-            style={{
-              fontFamily: "'Bodoni FLF', serif",
-            }}
-          >
-            RESOURCES
-          </h1>
-        </div>
+  className="
+    absolute
+    right-0
+    top-[319px]
+    z-40
+    w-max
+  "
+>
+  <h1
+    className="
+      m-0
+      whitespace-nowrap
+      text-left
+      text-[43px]
+      font-bold
+      uppercase
+      leading-[0.75]
+      tracking-[-0.055em]
+      text-[#60785e]
+    "
+    style={{
+      fontFamily: "'Bodoni FLF', serif",
+    }}
+  >
+    RESOURCES
+  </h1>
+</div>
 
       </div>
     </section>

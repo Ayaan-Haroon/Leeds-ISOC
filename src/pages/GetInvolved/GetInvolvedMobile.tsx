@@ -154,7 +154,7 @@ const GetInvolvedMobile = () => {
           ================================================== */}
           <div className="relative w-[135px]">
             <img
-              src="/images/GetInvolved/ripped-paper.png"
+              src="/images/GetInvolved/ripped-paper2.png"
               alt=""
               className="
                 block
