@@ -166,9 +166,6 @@ const AnnouncementsMobile = () => {
             leading-[1.35]
           "
         >
-          DW ABOUT THIS JUST SHOWING
-          <br />
-          AYAAN SMOETHING
         </div>
 
         {/* =========================
