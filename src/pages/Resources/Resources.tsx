@@ -498,7 +498,7 @@ const Resources = () => {
 
             <img
               ref={imageRef}
-              src="public/images/silly-imgs/theone.jpg"
+              src="public/images/theone.jpg"
               alt=""
               className={`
                 resources-slide

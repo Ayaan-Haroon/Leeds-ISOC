@@ -340,7 +340,7 @@ const ResourcesMobile = () => {
 
         <img
           ref={catRef}
-          src="public/images/silly-imgs/theone.jpg"
+          src="public/images/theone.jpg"
           alt=""
           className={`
             cat-slide
