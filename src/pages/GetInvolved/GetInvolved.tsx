@@ -32,16 +32,13 @@ export default function GetInvolved() {
 
   return (
     <main
-        className="get-involved-page relative w-full overflow-hidden "
+      className="get-involved-page relative w-full overflow-hidden"
       style={{
         backgroundImage:
           "url('/images/FAQ/Welcome%20To%20Website.png')",
       }}
     >
-
-      {/* =====================================================
-          ARROW SLIDE-IN ANIMATION
-      ====================================================== */}
+      {/* ARROW SLIDE-IN ANIMATION */}
       <style>{`
         @keyframes getInvolvedArrowSlide {
           0% {
@@ -79,102 +76,33 @@ export default function GetInvolved() {
         }
       `}</style>
 
-      {/* =====================================================
-          MASTER CANVAS
-      ====================================================== */}
-
-      <div className="relative z-10 w-full flex justify-center">
-
+      {/* MASTER CANVAS */}
+      <div className="relative z-10 flex w-full justify-center">
         <MasterCanvas>
-
-          <div
-            className="
-              get-involved-artboard
-              relative
-              h-[900px]
-              w-[1460px]
-              overflow-hidden
-            "
-          >
-
-            {/* =====================================================
-                LEFT 50% — COLLAGE
-            ====================================================== */}
-
-            <div
-              className="
-                get-involved-collage
-                absolute
-                left-0
-                top-0
-                h-[900px]
-                w-[730px]
-              "
-            >
+          <div className="get-involved-artboard relative h-[900px] w-[1460px] overflow-hidden">
+            {/* LEFT 50% — COLLAGE */}
+            <div className="get-involved-collage absolute left-0 top-0 h-[900px] w-[730px]">
               <img
                 src="/images/GetInvolved/collage.png"
                 alt="Leeds Islamic Society collage"
-                className="
-                  absolute
-                  left-[22px]
-                  top-[72px]
-                  z-20
-                  w-[730px]
-                  object-contain
-                "
+                className="absolute left-[22px] top-[72px] z-20 w-[730px] object-contain"
               />
             </div>
 
-            {/* =====================================================
-                RIGHT 50% — CONTENT
-            ====================================================== */}
-
-            <div
-              className="
-                get-involved-content
-                absolute
-                right-0
-                top-0
-                h-[900px]
-                w-[730px]
-              "
-            >
-
-              {/* =====================================================
-                  GET INVOLVED TITLE
-              ====================================================== */}
-
+            {/* RIGHT 50% — CONTENT */}
+            <div className="get-involved-content absolute right-0 top-0 h-[900px] w-[730px]">
+              {/* GET INVOLVED TITLE */}
               <h1
-                className="
-                  absolute
-                  left-[58px]
-                  top-[81px]
-                  z-30
-                  w-[613px]
-                  text-[120px]
-                  font-bold
-                  uppercase
-                  leading-[0.86]
-                  tracking-[-0.045em]
-                  text-[#f7f2e8]
-                "
+                className="absolute left-[58px] top-[81px] z-30 w-[613px] text-[120px] font-bold uppercase leading-[0.86] tracking-[-0.045em] text-[#f7f2e8]"
                 style={{
                   fontFamily: "'Bodoni FLF', serif",
                 }}
               >
-                <span className="block">
-                  GET
-                </span>
-
-                <span className="block">
-                  INVOLVED
-                </span>
+                <span className="block">GET</span>
+                <span className="block">INVOLVED</span>
               </h1>
 
-              {/* =====================================================
-                  LARGE ARROW — slides in from right on scroll
-              ====================================================== */}
-
+              {/* LARGE ARROW */}
               <img
                 ref={arrowRef}
                 src="/images/GetInvolved/arrow.png"
@@ -191,109 +119,60 @@ export default function GetInvolved() {
                 `}
               />
 
-              {/* =====================================================
-                  BOTTOM OPTIONS
-              ====================================================== */}
-
-              <div
-                className="
-                  get-involved-options
-                  absolute
-                  bottom-[81px]
-                  left-[51px]
-                  z-30
-                  flex
-                  w-[628px]
-                  items-center
-                  justify-between
-                  gap-[29px]
-                "
-              >
-
+              {/* BOTTOM OPTIONS */}
+              <div className="get-involved-options absolute bottom-[81px] left-[51px] z-30 flex w-[628px] items-center justify-between gap-[29px]">
                 {/* MEMBERSHIPS */}
-
-                <div className="relative w-[299px]">
-
+                <a
+                  href="https://engage.luu.org.uk/groups/KCT/islamic/memberships"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Find out about memberships"
+                  className="relative block w-[299px] cursor-pointer transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4D3B]"
+                >
                   <img
-                    src="/images/GetInvolved/ripped-paper.png"
+                    src="/images/GetInvolved/ripped-paper2.png"
                     alt=""
-                    className="
-                      block
-                      w-full
-                      object-contain
-                    "
+                    className="block w-full object-contain"
                   />
 
                   <span
-                    className="
-                      absolute
-                      inset-0
-                      flex
-                      items-center
-                      justify-center
-                      px-2
-                      text-[29px]
-                      font-semibold
-                      uppercase
-                      leading-none
-                      text-[#1F4D3B]
-                    "
+                    className="absolute inset-0 flex items-center justify-center px-2 text-[29px] font-semibold uppercase leading-none text-[#1F4D3B]"
                     style={{
                       fontFamily: "'Bodoni FLF', serif",
                     }}
                   >
                     Memberships
                   </span>
-
-                </div>
+                </a>
 
                 {/* VOLUNTEERING */}
-
-                <div className="relative w-[299px]">
-
+                <a
+                  href="https://docs.google.com/forms/d/1i44ACDkWhCoATeVMKTiFQ9bzxin7_-VDPhZ6wHE4RRI/viewform?pli=1&pli=1&edit_requested=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Find out about volunteering"
+                  className="relative block w-[299px] cursor-pointer transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4D3B]"
+                >
                   <img
                     src="/images/GetInvolved/ripped-paper.png"
                     alt=""
-                    className="
-                      block
-                      w-full
-                      object-contain
-                    "
+                    className="block w-full object-contain"
                   />
 
                   <span
-                    className="
-                      absolute
-                      inset-0
-                      flex
-                      items-center
-                      justify-center
-                      px-2
-                      text-[29px]
-                      font-semibold
-                      uppercase
-                      leading-none
-                      text-[#1F4D3B]
-                    "
+                    className="absolute inset-0 flex items-center justify-center px-2 text-[29px] font-semibold uppercase leading-none text-[#1F4D3B]"
                     style={{
                       fontFamily: "'Bodoni FLF', serif",
                     }}
                   >
                     Volunteering
                   </span>
-
-                </div>
-
+                </a>
               </div>
-
             </div>
-
           </div>
-
         </MasterCanvas>
-
       </div>
-
     </main>
   );
 }

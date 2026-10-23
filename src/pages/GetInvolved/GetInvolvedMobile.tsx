@@ -149,7 +149,7 @@ const GetInvolvedMobile = () => {
               MEMBERSHIPS — enlarged + clickable
           ================================================== */}
           <a
-            href="https://example.com/memberships"
+            href="https://engage.luu.org.uk/groups/KCT/islamic/memberships"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -201,7 +201,7 @@ const GetInvolvedMobile = () => {
               VOLUNTEERING — enlarged + clickable
           ================================================== */}
           <a
-            href="https://example.com/volunteering"
+            href="https://docs.google.com/forms/d/1i44ACDkWhCoATeVMKTiFQ9bzxin7_-VDPhZ6wHE4RRI/viewform?pli=1&pli=1&edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
             className="
