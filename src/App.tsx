@@ -1,6 +1,5 @@
 import { AboutUs, AboutUs2, Home, Events, Committee, Resources, Maps, Announcements, StudentSupport, FAQ, Footer,AboutUs2Responsive, AnnouncementsResponsive, CommitteeResponsive, ResourcesResponsive, GetInvolvedResponsive, MapsResponsive, FAQResponsive, EventsResponsive} from './pages'
 
-
 import OurSponsorsResponsive from './pages/OurSponsors/OurSponsorsResponsive'
 
 function App() {
