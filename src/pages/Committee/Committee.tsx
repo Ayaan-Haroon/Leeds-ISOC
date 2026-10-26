@@ -14,7 +14,7 @@ const cards = [
       image: '/images/profile-pics/talhapfp.png',
       fontSize: 30, // Scaled down to fit
       description:
-        "Talha is a Medicine student who made the bold move of shaving his head seven months ago. Outside of his busy role, he loves travelling, sampling delicious food, exploring cultures, and photography.\n\nHis top comfort dish is Nihari and his favourite colour is purple. He loves how regular gatherings and good food bring people together, aiming to make every newcomer feel fully welcomed.\n\nHis guidance draws from Surah Taha (20:46): 'Have no fear! I am with you, hearing and seeing.' When stepping into a new university chapter, know that you are never alone and can face uncertainty with trust in Him.",
+        "Surah Taha 20:46 - Allah reassured 'them', \"Have no fear! I am with you, hearing and seeing. - قَالَ لَا تَخَافَا إِنَّنِي مَعَكُمَا أَسْمَعُ وَأَرَى\"\n\nThis ayah is in the context of Allah swt reassuring Musa AS and Harun AS before they face fir'awn. It teaches us to have absolute certainty and trust in Allah and His plan. Coming to university for the first time and entering a new environment, you are bound to feel uncertain about what is ahead. This ayah encourages us to move forward whilst relying on Allah swt, for he is with you and never out of reach.",
       angle: '-rotate-4',
     },
     {
@@ -24,7 +24,7 @@ const cards = [
       image: '/images/profile-pics/qaispfp.png',
       fontSize: 30, // Scaled down to fit
       description:
-        "Qais is a 3rd Year Accounting & Finance student who represented Zimbabwe in a 2021 Debate Championship. He spends his free hours hitting the gym, travelling, and practicing traditional Tatreez.\n\nHis ultimate dish is Raan with Afghan Pulao, paired with Tyrian purple. He values how the brothers' community grounded his uni years, providing an environment conducive to deepening Islamic knowledge.\n\nHis anchor is Surah Az-Zumar (39:53): 'Do not lose hope in Allah's mercy.' It reminds freshers that no matter the dunya's perspective, Allah's doors of forgiveness and mercy are perpetually open.",
+        "Surah Az-Zumar (39:53) \"O My servants who have exceeded the limits against their souls! Do not lose hope in Allah's mercy, for Allah certainly forgives all sins. He is indeed the All-Forgiving, Most Merciful\"\n\nThis verse often reminds me that regardless of the dunya's perception, Allah SWT never considers an individual to be beyond forgiveness. I chose this ayah as it reminds me thatmy Lord is Most Merciful and to never consider myself to be beyond his mercy. It keeps me anchored in times where my imaan may not be as high, and reminds me that the doors of forgiveness are always open.",
       angle: 'rotate-4',
     },
     {
@@ -33,7 +33,7 @@ const cards = [
       role: 'Vice President Sister',
       image: '/images/profile-pics/mayapfp.png',
       description:
-        "Maya is a 2nd Year Medicine student who once spotted food vlogger Mark Wiens at Karachi airport a decade ago. Her hobbies include studying languages, travelling, and Pinterest doom scrolling.\n\nHer ultimate order is kabli pilau paired with a mixed grill platter and a crisp Mirinda, backed by the colour greeny-blue. She loves praying Jummah with friends and grabbing sweet treats from the bake sales.\n\nHer advice reflects the Hadith to 'Tie your camel.' Having applied to medical school twice, it gave her comfort to always try her hardest while trusting completely in what is beyond her control.",
+        "‘Tie your camel’ Hadith Sunan al-Tirmidhi (2517)\n\nWhen applying to medical school for the second time I was told this Hadith at an important moment. It reassured me and reminded me to trust Allah’s plan. I chose this because I know starting uni comes with a lot of anxieties so I hope it reminds freshers to try their best without dwelling on factors outside of their control.",
       angle: '-rotate-4',
     },
     {
@@ -42,7 +42,7 @@ const cards = [
       role: 'General Secretary',
       image: '/images/profile-pics/fatimapfp.png',
       description:
-        "Fatima is a 3rd Year Medicine student and the self-proclaimed best hypothetical maker around. Outside her studies, she enjoys travelling, hiking, and practicing calligraphy.\n\nHer favourite colour is pink and she cannot resist a slice of Matilda cake. What she treasures most about Leeds iSoc is how welcoming everyone is, having met some of her closest friends through all the fire socials.\n\nHer chosen advice is Surah Qaf (50:16): 'We are closer to him than his jugular vein.' It serves as an anchor that we are never truly alone through life's hardships and can always call upon and rely on Allah.",
+        "Surah Qaf (50:16): \"And indeed We have created man, and We know what his soul whispers to him, and We are closer to him than [his] jugular vein.\"\n\nI chose this ayah as a reminder that we’re never alone no matter what hardships or problems we face and that we can always call upon and rely on Allah (swt).",
       angle: 'rotate-4',
     },
     {
@@ -52,7 +52,7 @@ const cards = [
       image: '/images/profile-pics/ismaeelpfp.png',
       fontSize: 24, // Scaled down to prevent overflow
       description:
-        "Ismaeel is a 3rd Year Politics student with a hidden talent for whipping up homemade tiramisu. His favourite pastimes include sipping hot chai, reading non-fiction, and strolling through museums.\n\nHe loves Paanch Masala fish and neutral cream tones. He admires how iSoc transcends an ordinary society, generating lasting impact for both the dunya and the akhira through charity and community action.\n\nHis guidance is Surah Al-Fath (48:1) referencing the Treaty of Hudaibiyah. He highlights that what might look like an immediate setback is often Allah's decree unfolding into an eternal triumph.",
+        "Al-Fath - Verse 1\n\nIndeed, We have granted you a clear triumph 'O Prophet'\n\nIn this verse Allah is speaking about the treaty of Hudaibiyah where the Muslims attempted to perform ummrah but were turned away by the Quraysh and agreed to a treaty that at a quick glance could be perceived as unfair. Allah declaring Hudaibiyah as a victory reminds us that even in times of perceived weakness westher it be political like this one, only Allah knows the full truth and a perceived negative is written by Allah to be an enternal postive.",
       angle: '-rotate-4',
     },
 
@@ -63,7 +63,7 @@ const cards = [
       role: 'Head of Student Affairs',
       image: '/images/profile-pics/sulemanpfp.png',
       description:
-        "Suleman is a 3rd Year Medicine student who has quite literally survived being stuck in quicksand. He stays active with any physical sport and never turns down a bowl of ice cream.\n\nHis signature colour is bold red. What he values most about Leeds iSoc is the wide breadth and high quality of inspiring speakers and educational classes brought to campus.\n\nHis reflection centers on Surah Al-Fatihah (1:1): 'In the name of Allah, the Entirely Merciful.' He shares that every success begins and concludes with Allah's remembrance—trust Him and everything resolves.",
+        "\"In the name of Allah, the Entirely Merciful, the Especially Merciful\" (1:1)\n\nSo many pieces of advice could be taken for this one ayah alone, but I want to focus on how everything successful starts and ends with the remembrance of Allah SWT. Place your trust in Him and all your affairs will begin to resolve.",
       angle: 'rotate-4',
     },
     {
@@ -72,7 +72,7 @@ const cards = [
       role: 'Head of Marketing',
       image: '/images/profile-pics/adamahmedpfp.png',
       description:
-        "Adam is a 3rd Year Human Physiology student who will never back down from a Pokémon battle. In his downtime, you will find him outdoors hiking, rock climbing, and practicing martial arts.\n\nHis absolute favourite dish is his Ammi's lamb pilau, and his go-to colour is green. He loves Leeds iSoc for its strong sense of brotherhood, providing an encouraging community that always offers a safe space.\n\nHis advice comes from Surah At-Talaq (65:2-3): 'And whoever is mindful of Allah, He will make a way out for them.' It is a vital reminder of taqwa and that Allah always provides in ways we cannot imagine.",
+        "65:2-3: \"And whoever is mindful of Allah, He will make a way out for them, and provide for them from sources they could never imagine\"\n\nI chose these Ayat because it really drills into us how even when we can't see a way forward, Allah will always provide for us in ways we can't imagine. It reminds us the importance of taqwa.",
       angle: '-rotate-4',
     },
 
@@ -83,7 +83,7 @@ const cards = [
       role: 'Education Brother',
       image: '/images/profile-pics/anaspfp.png',
       description:
-        "Anas is a 2nd Year Medicine student with a quick mind who can solve a Rubik's cube in under 30 seconds. His hobbies include badminton, table tennis, reading, and exploring the outdoors.\n\nHis favourite meal is the Warn a Bro's box from Barakah Bros, and his favourite colour is blue. His favourite aspect of Leeds iSoc is how lively and active it remains with insightful events and talks.\n\nHe shares the Hadith: 'A man is upon the religion of his close friend.' He reminds freshers that your company shapes your direction, so choose friends who safeguard your imaan and elevate your purpose.",
+        "A simple, yet powerful advice from the Messenger ﷺ :\n\nالرجل على دين خليله فلينظر أحدكم من يخالل\n\n\"A man is upon the religion/path of his close friend, so let one of you look at whom he befriends.\"\n(Sunan al-Tirmidhī 2378)\n\nYour environment shapes who you are and who you will become. The companions you choose can truly change your bearings in life: either positively or negatively. It's easy to fall prey to the temptations of university life. Build a circle around you that will help you safeguard your imaan, enable you to grow and succeed in your ambitions. Find your purpose and contribution to this ummah beyond your degree.",
       angle: 'rotate-4',
     },
     {
@@ -92,7 +92,7 @@ const cards = [
       role: 'Education Sister',
       image: '/images/profile-pics/hibapfp.png',
       description:
-        "Hiba is a 3rd Year Medicine student who can build an entire house of cards out of a full UNO deck. Her downtime is spent baking, hiking, camping, sketching, and building Lego sets.\n\nShe loves dynamite prawns and any shade of blue. Her favourite thing about Leeds iSoc is how everyone unites under one shared purpose, helping her meet some of her best friends through events.\n\nHer reminder comes from Surah Ghafir (40:60): 'Call upon Me; I will respond to you.' When starting university feels overwhelming or uncertain, remember that Allah has no limits and is only one du'a away.",
+        "“Call upon me; I will respond to you.” [40:60]\n\nStarting university can be exciting, but it can also be scary and uncertain. You might feel overwhelmed by your degree, struggle to find your people, feel homesick or simply not know what the future holds. In those moments, I think we sometimes forget just how capable Allah is. People may have limits, but Allah has none, and He Himself tells us to talk to Him. There is no middleman here - Allah says “I”: it’s a direct line, a direct call between you and Allah. The answer to our du’a may not always come in the way or at the time we expect, but that doesn’t mean Allah hasn’t heard us. Whatever this new chapter brings, remember that Allah is always there, and He",
       angle: '-rotate-4',
     },
     {
@@ -102,7 +102,7 @@ const cards = [
       image: '/images/profile-pics/kareempfp.png',
       fontSize: 24, // Scaled down to prevent overflow
       description:
-        "Kareem is a 3rd Year Medicine student who holds the unique talent of being able to bird whistle. You will frequently spot him riding Beryl bikes around town, travelling, and learning new things.\n\nHis go-to comfort food is Macarona Bashamel, and his favourite colour is blue. To him, the brotherhood formed at Leeds iSoc is unmatched, and there is no community quite like it.\n\nHis advice is rooted in Surah Ali 'Imran (3:159): 'And when you have decided, then rely upon Allah.' He reminds everyone that sometimes decisions require less overthinking and that taking action is worth far more.",
+        "Surah Ali 'Imran (3:159): “And when you have decided, then rely upon Allah. Indeed, Allah loves those who rely [upon Him].”\n\nSometimes some decisions require less thought and more action. Doing will always be worth more than thinking.",
       angle: 'rotate-4',
     },
     {
@@ -111,7 +111,7 @@ const cards = [
       role: 'Prayer Spaces Sister',
       image: '/images/profile-pics/aminapfp.png',
       description:
-        "Amina is a 2nd Year Medicine student and an avid sweet potato lover who eats one every single day. When she gets free time, she enjoys travelling, hiking, and cooking.\n\nHer favourite dish is her grandmother's couscous, and her signature colour is purple. Leeds iSoc quickly became a home away from home for her, inspiring her to give back and foster that same warmth for others.\n\nHer advice draws from Surah Az-Zumar (39:53): 'Do not despair of the mercy of Allah.' She shares this to reassure students never to lose hope, especially when university life becomes demanding and tough.",
+        "“O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the All-Forgiving, the Most Merciful.” (Surah Az-Zumar, 39:53)\n\nI chose this ayah because it reminds me that no matter what difficulties we face, we should never lose hope in Allah’s mercy. I think it’s a really important reminder to carry with us through university, especially when things get difficult.",
       angle: '-rotate-4',
     },
     {
@@ -120,7 +120,7 @@ const cards = [
       role: 'Charity and Community Brother',
       image: '/images/profile-pics/hadipfp.png',
       description:
-        "Hadi is a 3rd Year Medicine student who promises he is truly ambidextrous. When he is taking a break from studies, he enjoys hiking, cooking up good meals, and keeping house plants.\n\nHis go-to food is Khabsa, which he ate every Friday in Saudi, and his favourite colour is purple. He loves how Leeds iSoc makes uni feel like home, especially during Ramadan iftars away from family.\n\nHis chosen verse is Surah Ar-Rahman (55:13): 'So which of the favours of your Lord would you deny?' It serves to ground us in gratitude, remembering that even in trials, Allah is the best of planners.",
+        "(55:13) Surah Ar-Rahman ayah 13 “So which of the favours of your Lord would you deny?”\n\nSometimes it’s easy to get caught up in what’s lacking in our lives and we forget about all the blessings we have. I chose this ayah to remind us of all the good Allah has given us and that, even in times of hardship, everything happens for a reason and Allah is the best of planners.",
       angle: 'rotate-4',
     },
     {
@@ -129,7 +129,7 @@ const cards = [
       role: 'Charity and Community Officer Sister',
       image: '/images/profile-pics/farahpfp.png',
       description:
-        "Farah is a 3rd Year Law student who once clocked 16 hours of screen time playing Piano Tiles. You might also spot her carrying her trusty Snoopy around campus during intense exam periods.\n\nShe spends her time reading, baking, and making collages, with mac & cheese and burgundy/plum tones topping her favourites. She loves how many kindhearted best friends she found through Leeds iSoc.\n\nHer advice comes from Surah Ar-Ra'd (13:28): 'In the remembrance of Allah do hearts find rest.' She reminds freshers facing imposter syndrome that where you are was chosen for you by Allah.",
+        "Surah 13 (Ar-Ra’d), Verse 28 “أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ - Verily in the remembrance of Allah do hearts find rest/comfort/peace”\n\nI chose this Ayah because I know a lot of freshers (and even 3rd years🙋‍♀️) struggle with imposter syndrome, but this is a good reminder that this was written and meant for you by Allah - even if you can’t see why just yet😊",
       angle: '-rotate-4',
     },
     {
@@ -138,7 +138,7 @@ const cards = [
       role: 'Socials Brother & Sports Rep',
       image: '/images/profile-pics/hamzapfp.png',
       description:
-        "Hamza is a 3rd Year Medicine student who worked on the production team of an LA award-winning film. In his free time, he loves playing badminton, watching films, and travelling.\n\nHis favourite meal is his mum's lamb biryani, and his colour is orange. He loves the packed calendar of lively iSoc events and socials—plus the 20% Charcos student discount never hurts.\n\nHis advice is Surah Ar-Rum (30:22) regarding the diversity of mankind. He loves how university connects people from all walks of life and cherishes how iSoc builds a genuine, unified community.",
+        "Surah Ar-Rum (30:22) - \"And of His signs is the creation of the heavens and the earth and the diversity of your languages and your colors. Indeed in that are signs for those of knowledge.\"\n\nI chose this Ayah because one of my favourite things about the whole uni experience is getting to meet people from all sorts of backgrounds and walks of life. I appreciate how the ISoc manages create a genuine sense of community amongst everyone.",
       angle: 'rotate-4',
     },
     {
@@ -147,7 +147,7 @@ const cards = [
       role: 'Social Brother',
       image: '/images/profile-pics/uzairpfp.png',
       description:
-        "Uzair is a 2nd Year Dentistry student who attended 11 different schools before coming to university due to moving around often. His passions include cars, fencing, and heading out on spontaneous side quests.\n\nHis favourite food is a classic chicken shawarma, and his colour of choice is orange. He loves the relaxed, easygoing, and carefree environment shared among the Leeds iSoc members and committee.\n\nHis reminder is the brief yet profound question from Surah At-Takwir (81:26): 'So where are you going?' It serves to ground us that no matter our route, our ultimate end remains the same.",
+        "At-Takwir 81:26 - So where are you going?\n\nThis short rhetorical question acts as a reminder that no matter what path you take in life, the end result still remains the same, showing how even the smallest of ayahs can hold the deepest truths.",
       angle: '-rotate-4',
     },
     {
@@ -156,7 +156,7 @@ const cards = [
       role: 'Social Sister',
       image: '/images/profile-pics/inayapfp.png',
       description:
-        "Inaya is a 2nd Year Medicine student with an adventurous streak. She once attended a 7-day festival in Spain to run with bulls and casually hiked a glacier.\n\nShe loves travelling, trying out unconventional experiences, eating out, and snacking on crisps, with #182D09 being her chosen colour. For her, Leeds iSoc stands out for its warm atmosphere and impactful charity work.\n\nHer guiding verse is Surah Taha (20:114): 'My Lord increase me in knowledge.' Her father instilled this in her from childhood as a core reminder that education is a privilege and knowledge is the ultimate key.",
+        "(Surah Taha 20:114) \"My Lord increase me in knowledge\"\n\nThis is a verse, I'm certain we've all come across. I hold it in high regard and it has been such a central part of my life as I truly believe educating yourself is a privilege. I feel strongly that knowledge is the key to the world! This verse is extra special to me, as it's something my dad foregrounded throughout my childhood :)",
       angle: 'rotate-4',
     },
     {
@@ -165,7 +165,7 @@ const cards = [
       role: 'Social Sister',
       image: '/images/profile-pics/falaqpfp.png',
       description:
-        "Falaq is a 2nd Year Medicine student with an adventurous palate who loves trying funky food combinations. Her interests span learning foreign languages, food hunting, stargazing, and reading.\n\nHer favourite food is lamb tagine, and her favourite shade is Zandvoort Blue. She cherishes the sisterhood at Leeds iSoc, which kept her grounded through starting uni—plus post-social chai is unbeatable.\n\nHer guidance is Surah Al-Baqarah (2:216): 'Perhaps you hate a thing and it is good for you.' It anchors her belief that everything happens for a reason, guided by divine wisdom and gentle redirection.",
+        "Surah Al-Baqarah (2:216): \"But perhaps you hate a thing and it is good for you, and perhaps you love a thing and it is bad for you. And Allah knows, while you know not.\"\n\nI am a firm believer in “Everything happens for a reason.” It is Allah’s divine wisdom, protection and redirection when things don’t go the way we planned and this ayah reminds us of that.",
       angle: '-rotate-4',
     },
     {
@@ -175,7 +175,7 @@ const cards = [
       image: '/images/profile-pics/adilpfp.png',
       fontSize: 27, // Scaled down to prevent overflow
       description:
-        "Adil is a 2nd Year Medicine student who somehow managed to miss his flight last year. Outside of university, he enjoys playing football, reading, going glamping, and visiting historic heritage sites.\n\nHis comfort meal is Khuri Kitchri and his chosen palette is white/cream. He highlights iSoc's educational events as unmatched opportunities to learn, grow, and get well beyond your money's worth.\n\nHis advice is Surah Al-Hujurat (49:13) on how mankind was made into diverse tribes. He reminds freshers that connecting with people of varied backgrounds and cultures is a beautiful way to boost your imaan.",
+        "Al-Hujurat 49:13 \"O mankind, We have created you from a male and a female, and made you into races and tribes, so that you may identify one another. Surely the noblest of you, in Allah’s sight, is the one who is most pious of you. Surely Allah is All-Knowing, All-Aware.\"\n\nThis Ayah is perfect for the context of the Isoc. You will find people of all different backgrounds at Uni within Isoc and otherwise. It is our job - as muslims - to get to know people to benefit from the differences Allah has bestowed on us. An easy way to increase in Imaan is getting to know different people, cultures and tastes 👌. It allows recognition of Allah's signs and is quite fun.",
       angle: 'rotate-4',
     },
     {
@@ -184,7 +184,7 @@ const cards = [
       role: 'Social Media Officer',
       image: '/images/profile-pics/nabihahpfp.png',
       description:
-        "Nabihah is a Final Year Business with Marketing student on a mission, having visited nearly every cafe in Leeds. She loves hosting events, photography, baking, and relaxing with tiramisu.\n\nHer palette of choice is lavender and plum. She cherishes how the iSoc sisterhood brings the true warmth of home straight into the university environment, making campus life feel supportive.\n\nHer advice is the Hadith: 'Whoever comes to Me walking, I will come to him running.' In a busy environment, remember you don't need perfection to practice deen—sincere, small steps bring immense mercy.",
+        "\"Whoever comes to Me walking, I will come to him running\" Source: Sahih Muslim 2687\n\nUniversity is a new environment, surrounded by new kinds of pressure. It's easy to get distracted or feel distant from Allah. This hadith displays the mercy of Allah by showing us that we don’t need to be perfect to practice the deen - even with the smallest effort, Allah can see all the sincerity in your heart and comes rushing towards you with forgiveness.",
       angle: '-rotate-4',
     },
     {
@@ -193,7 +193,7 @@ const cards = [
       role: 'Videographer Sister',
       image: '/images/profile-pics/elana.png',
       description:
-        "Elana is a Law Graduate who could happily survive purely on sweet treats every day of the week. Her favourite pastimes include swimming, playing badminton, and baking.\n\nHer top meal combo is comforting chicken soup followed by honey cake, and her go-to colour is pink. She loves Leeds iSoc for its warm, welcoming community and the chance to connect with inspiring people.\n\nHer advice is Surah At-Talaq (65:2): 'And whoever is mindful of Allah, He will make for them a way out.' She holds onto this to trust in Allah's timing, knowing He opens doors right when we need it most.",
+        "Surah 65 (At-Talaq), Verse 2 “وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا — And whoever is mindful of Allah, He will make for them a way out”\n\nI chose this Ayah as a reminder to trust Allah's timing and plan, knowing that He always opens doors when we need it most.",
       angle: 'rotate-4',
     },
     {
@@ -203,7 +203,7 @@ const cards = [
       image: '/images/profile-pics/mariempfp.png',
       fontSize: 24, // Scaled down to prevent overflow
       description:
-        "Mariem is a 2nd Year Graphic Design and Communication student originally from Alexandria who cannot live without Dr Pepper. Her interests include making art, reading, listening to music, and seaside trips.\n\nHer staple meal is Egyptian Koushari and her favourite colour is classic blue. What she loves most about Leeds iSoc is the friendly, welcoming environment and the non-stop fun events on offer.\n\nHer message is the comforting promise of Surah Ash-Sharh (94:5): 'For indeed, with hardship will be ease.' Freshers should take heart that placing your trust in Allah eases every difficult path.",
+        "94:5 “ For indeed, with hardship [will be] ease”\n\nI chose this ayah because being a fresher is sometimes hard but if we put our trust in Allah he will make our paths easier",
       angle: '-rotate-4',
     },
 
@@ -226,7 +226,7 @@ const cards = [
         "I like to eat nice desserts, read books and go look at nice things.\n\n I think sweet things are usually the best version of things, sweet treats, sweet smells and sweet people. \n\n 2 week minecraft phase? ",
       angle: '-rotate-4',
     },
-  ]
+];
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % cards.length)
@@ -606,6 +606,11 @@ const cards = [
                           text-center
                           whitespace-pre-line
                         "
+                        style={
+                          currentCard.id === 8
+                            ? { fontSize: '12px', lineHeight: 1.2 }
+                            : undefined
+                        }
                       >
                         {currentCard.description}
                       </p>
