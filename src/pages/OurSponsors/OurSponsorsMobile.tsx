@@ -74,7 +74,7 @@ const leftSponsors = [
   },
   {
     number: 19,
-    text: "Mr Su's",
+    text: "Mr Su's 10%",
   },
 ];
 
