@@ -275,7 +275,7 @@ const Announcements = () => {
                 ${visibleItems.idkgText ? 'animate' : ''}
               `}
             >
-              Freshers guide is out cuh!! Check it out to see wag1 for the week.
+              
             </div>
 
 
@@ -410,7 +410,7 @@ const Announcements = () => {
                 ${visibleItems.ruledText ? 'animate' : ''}
               `}
             >
-              Air frier in the green room!!! chat to me nice rudeboy
+              
             </div>
 
 

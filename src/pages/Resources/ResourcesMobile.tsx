@@ -171,9 +171,9 @@ const ResourcesMobile = () => {
           >
             Office: LUU GR.20
             <br />
-            TEMP EMAIL: [ADD TEMP EMAIL]
+            EMAIL: a.jeraal@luu.ac.uk
             <br />
-            TEMP MOBILE: [ADD TEMP MOBILE]
+            
           </p>
         </div>
 
@@ -333,28 +333,6 @@ const ResourcesMobile = () => {
 
         </div>
 
-
-        {/* =====================================================
-            CAT IMAGE — slides in from the right on scroll
-        ===================================================== */}
-
-        <img
-          ref={catRef}
-          src="public/images/theone.jpg"
-          alt=""
-          className={`
-            cat-slide
-            ${isCatVisible ? "cat-slide-in" : ""}
-            absolute
-            left-[171px]
-            top-[525px]
-            z-20
-            h-[108px]
-            w-[173px]
-            rounded-[7px]
-            object-cover
-          `}
-        />
 
 
         {/* =====================================================

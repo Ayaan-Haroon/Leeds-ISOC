@@ -2,29 +2,29 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is this website about?",
+    question: "How do I join the ISoc WhatsApp chats?",
     answer:
-      "This website provides information, resources and answers to some of the most common questions.",
+      "Message us on the @leedisoc Instagram and mention whether you are a brother or a sister. Someone from the team will get back to you with a link inshaAllah!",
   },
   {
-    question: "How do I get started?",
+    question: "How do I keep updated with ISoc?",
     answer:
-      "You can get started by exploring the different sections of the website and following the information provided.",
+      "Our Instagram and WhatsApp channels are where we are most active. Event updates and specific details will be available on those. Any wider announcements will be on this website.",
   },
   {
-    question: "Who can use this website?",
+    question: "How do I get my ISoc Membership Card?",
     answer:
-      "The website is available for anyone who wants to learn more and access the resources provided.",
+      "Come by one of our Friday socials (free to attend every Friday at 6pm in the Green Room) and look for any committee member. They will be able to get you your own card and sign your name off once you show them your membership on engage.luu.org.uk!",
   },
   {
-    question: "Where can I find more information?",
+    question: "How do I use the sponsor discounts?",
     answer:
-      "You can explore the other sections of the website or get in touch with us if you need further information.",
+      "Sponsorship discounts can only be redeemed in-store once you show them your membership card. If you encounter any issues regarding redeeming the offers, message us on Instagram/WhatsApp or send an email to info@leedsisoc.com!",
   },
   {
-    question: "How can I contact you?",
+    question: "Do I have to be Muslim to come to ISoc events?",
     answer:
-      "You can contact us through the contact section of the website.",
+      "Not at all! We love seeing people come from other faiths and backgrounds, whether it be to learn more about Islam or just to hang out and enjoy an event with some friends. Everyone is welcome and we hope to see new faces all the time :)",
   },
 ];
 

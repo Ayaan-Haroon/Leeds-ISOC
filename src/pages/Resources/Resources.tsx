@@ -179,7 +179,7 @@ const Resources = () => {
               {/* INSTAGRAM */}
 
               <a
-                href="#"
+                href="https://www.instagram.com/leedsisoc/?hl=en"
                 aria-label="Instagram"
                 style={{ animationDelay: '0.05s' }}
                 className={`
@@ -225,7 +225,7 @@ const Resources = () => {
               {/* TIKTOK */}
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@leedsisoc"
                 aria-label="TikTok"
                 style={{ animationDelay: '0.15s' }}
                 className={`
@@ -256,7 +256,7 @@ const Resources = () => {
               {/* FACEBOOK */}
 
               <a
-                href="#"
+                href="https://www.facebook.com/leedsisoc/?locale=en_GB"
                 aria-label="Facebook"
                 style={{ animationDelay: '0.25s' }}
                 className={`
@@ -364,9 +364,9 @@ const Resources = () => {
               >
                 Office: LUU GR.20
                 <br />
-                TEMP EMAIL: [ADD TEMP EMAIL]
+                EMAIL: a.jeraal@luu.ac.uk
                 <br />
-                TEMP MOBILE: [ADD TEMP MOBILE]
+                
               </p>
 
             </div>
@@ -492,27 +492,6 @@ const Resources = () => {
             />
 
 
-            {/* =====================================================
-                IMAGE — slides in from the right on scroll
-            ====================================================== */}
-
-            <img
-              ref={imageRef}
-              src="public/images/theone.jpg"
-              alt=""
-              className={`
-                resources-slide
-                ${isImageVisible ? "resources-slide-in" : ""}
-                absolute
-                right-[54px]
-                top-[410px]
-                z-20
-                h-[230px]
-                w-[212px]
-                rounded-[12px]
-                object-cover
-              `}
-            />
 
 
             {/* =====================================================

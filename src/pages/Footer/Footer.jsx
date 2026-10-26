@@ -216,7 +216,7 @@ const Footer = () => {
               {/* INSTAGRAM */}
 
               <a
-                href="#"
+                href="https://www.instagram.com/leedsisoc/?hl=en"
                 aria-label="Instagram"
                 className="group flex w-fit items-center gap-3"
               >
@@ -285,7 +285,7 @@ const Footer = () => {
               {/* TIKTOK */}
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@leedsisoc"
                 aria-label="TikTok"
                 className="group flex w-fit items-center gap-3"
               >
@@ -337,7 +337,7 @@ const Footer = () => {
               {/* FACEBOOK */}
 
               <a
-                href="#"
+                href="https://www.facebook.com/leedsisoc/?locale=en_GB"
                 aria-label="Facebook"
                 className="group flex w-fit items-center gap-3"
               >
